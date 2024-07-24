@@ -1,0 +1,208 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: rgb(13, 22, 0);
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.cabezeraSuperior {
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(161, 255, 37);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.Logo-Cabeza {
+    width: 40%;
+}
+
+/*---------------------------------------*/
+
+.cabezeraInferior {
+    display: flex;
+    min-height: 65px;
+    background-color: rgb(186, 255, 96);
+    justify-content: center;
+    align-items: center;
+}
+
+.menuNavegación {
+    background: rgb(186, 255, 96);
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.menuNavegación li a {
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    display: block;
+}
+
+.menuNavegación li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menuNavegación li a:hover {
+    background: rgb(72, 127, 0);
+    color: white;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+h2 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    background-color: #1e3c00;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
+    text-align: center;
+}
+
+form h2 {
+    font-size: 30px;
+    color: #80ff00;
+    margin-bottom: 35px;
+}
+
+input {
+    padding: 17px;
+    background-color: transparent;
+    border: 2px solid #80ff00;
+    margin-bottom: 30px;
+    outline: none;
+    color: #80ff00;
+    font-size: 16px;
+}
+
+::placeholder {
+    color: #80ff00;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: #80ff00;
+    background-color: #1e3c00;
+    border: 2px solid #80ff00;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: impact;
+    font-size: 30px;
+    max-width: 80%;
+}
+
+.btn:hover {
+    background-color: #80ff00;
+    color: #1e3c00;
+}
+
+.login {
+    box-sizing: border-box;
+
+}
+
+main {
+    background: url(../../Imagenes/FondoPlantas-Oscuro.jpg);
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: #80ff00;
+    background-color: #1e3c00;
+    border: 2px solid #80ff00;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: impact;
+    font-size: 30px;
+    max-width: 40%;
+}
+
+.button:hover {
+    background-color: #80ff00;
+    color: #1e3c00;
+}
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.Logo-Pie {
+    width: 50%;
+}
+
+.pie-pagina {
+    width: 100%;
+    background-color: rgb(20, 35, 0);
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 10px 0;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+
+/*---------------------------------------*/
+
+.pie-pagina .grupo-2 {
+    background-color: rgb(13, 22, 0);
+    padding: 15px 10px;
+    text-align: center;
+    margin: auto;
+    color: rgb(255, 255, 255);
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+

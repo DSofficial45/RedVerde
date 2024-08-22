@@ -57,23 +57,6 @@ body {
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
-img {
-    width: 100%;
-    max-width: 100%;
-    padding: 50px;
-    width: 420px;
-}
-
-.contactoIzquierda {
-    background-color: #1e3c00;
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    width: 420px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
-    text-align: center;
-}
-
 main {
     background: url(../../Imagenes/FondoPlantas-Oscuro.jpg);
     width: 100%;
@@ -83,6 +66,85 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+.todo{
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contactosDerecha {
+    background-color: rgb(145, 199, 73);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactosIzquierda {
+    background-color: rgb(186, 255, 96);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 420px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    scale: 75%;
+    margin: 10px;
+}
+
+.usuario{
+    scale: 50%;
+}
+
+.primer{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.segundo{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.tercero{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.cuarto{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+}
+
+.texto{
+    background-color: rgb(186, 255, 96);
+    border: 5px solid black;
+    color: black;
+    font-family: arial;
+    padding: 5px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 

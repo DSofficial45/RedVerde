@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../model/productoDAO.php';
+    require_once __DIR__ . '/../model/productoModel.php';
     $funcion = $_GET['funcion'];
     switch ($funcion) {
         case "agregar":

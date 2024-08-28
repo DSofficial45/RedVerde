@@ -4,11 +4,11 @@
     switch ($funcion) {
     
         case "ver":
-            obtenerProducto();
+            verProducto();
         break;
 
         case "Añadir":
-            agregarProducto();
+            añadirProducto();
         break;
     
         case "eliminar":
@@ -16,7 +16,7 @@
         break;
         
         case "confirmar":
-            obtenerProducto();
+            confirmarCompra();
         break;
 
         case "modificar":

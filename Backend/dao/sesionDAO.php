@@ -39,7 +39,7 @@ class SesionModel {
             //verificar datos
             //obtener datos
 
-            $sesion = new SesionDAO($email, $nombre, $apellido, $telefono, $password, $isAdmin);
+            $sesion = new Perfil($email, $nombre, $apellido, $telefono, $password, $isAdmin);
             $_SESSION['sesion'] = $sesion;
 
         }

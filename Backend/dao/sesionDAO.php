@@ -29,6 +29,32 @@ class SesionModel {
     }
 }*/
 
+    session_start();
 
+    class SesionDAO{
+        public $email;
+        public $nombre;
+
+        public function iniciarSesion($email, $password){
+            //verificar datos
+            //obtener datos
+
+            $sesion = new Sesion($email,$nombre,$isAdmin);
+            $_SESSION['sesion'] = $sesion;
+
+        }
+
+        public function obtenerSesion(){
+            return $_SESSION['sesion'];
+        }
+
+        public function cerrarSesion(){
+            $_SESSION['sesion'] = null;
+        }
+
+        public function estaLogeado(){
+            return isset($_SESSION['sesion']);
+        }
+    }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-    class Compra{
+    class Perfil{
         public $email;
         public $nombre;
         public $apellido;

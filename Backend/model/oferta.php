@@ -1,6 +1,6 @@
 <?php
 
-    class Compra{
+    class Oferta{
         public $id;
         public $descuento;
         public $idProducto;

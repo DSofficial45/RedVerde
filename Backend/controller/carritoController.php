@@ -53,11 +53,9 @@
     
     function modificarProducto(){
         $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $stock = $_POST['stock'];
-        $descripcion = $_POST['descripcion'];
-        $tipo = $_POST['tipo'];
+        $estado = $_POST['estado'];
+        $emailUsuario = $_POST['emailUsuario'];
+        $fecha = $_POST['fecha'];
         $resultado = (new productoDAO())->modificarProductoModelo($id, $estado, $emailUsuario, $fecha);
         echo json_encode($resultado);
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2024 a las 22:10:49
+-- Tiempo de generación: 29-08-2024 a las 20:20:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `redverde`
+-- Base de datos: `red_verde`
 --
 
 -- --------------------------------------------------------
@@ -74,6 +74,17 @@ CREATE TABLE `compraproducto` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `factura`
+--
+
+CREATE TABLE `factura` (
+  `id` int(50) NOT NULL,
+  `precio` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `imagen`
 --
 
@@ -106,7 +117,9 @@ CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `precio` int(11) NOT NULL,
-  `stock` int(11) NOT NULL
+  `stock` int(11) NOT NULL,
+  `descripcion` varchar(250) NOT NULL,
+  `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

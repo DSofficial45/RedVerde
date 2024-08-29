@@ -32,9 +32,13 @@
     }
 
     function iniciarSesion(){
-        $nombre = $_POST['nombre'];
-        $contraseña = $_POST['contraseña'];
-        $resultado = (new SesionModel())->iniciarSesion($nombre, $contraseña);
+        $email = $_POST[''];
+        $nombre = $_POST[''];
+        $apellido = $_POST[''];
+        $telefono = $_POST[''];
+        $password = $_POST[''];
+        $isAdmin = $_POST[''];
+        $resultado = (new SesionDAO())->iniciarSesionModel($email,$nombre,$apellido,$telefono,$password,$isAdmin);
         echo json_encode($resultado);
     }
     

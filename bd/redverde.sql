@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2024 a las 22:35:35
+-- Tiempo de generación: 03-09-2024 a las 22:28:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `red_verde`
+-- Base de datos: `redverde`
 --
 
 -- --------------------------------------------------------
@@ -78,7 +78,7 @@ CREATE TABLE `compraproducto` (
 --
 
 CREATE TABLE `factura` (
-  `id` int(50) NOT NULL,
+  `idFactura` int(50) NOT NULL,
   `precio` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -192,6 +192,12 @@ ALTER TABLE `compraproducto`
   ADD PRIMARY KEY (`idCompra`,`idProducto`);
 
 --
+-- Indices de la tabla `factura`
+--
+ALTER TABLE `factura`
+  ADD PRIMARY KEY (`idFactura`);
+
+--
 -- Indices de la tabla `imagen`
 --
 ALTER TABLE `imagen`
@@ -263,6 +269,16 @@ ALTER TABLE `oferta`
 --
 ALTER TABLE `producto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `productocategoria`
+--
+ALTER TABLE `productocategoria`
+  ADD CONSTRAINT `productocategoria_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

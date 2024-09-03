@@ -12,15 +12,15 @@ class productoDAO {
         return $producto;
     }
 
-    public function añadirProductoModelo($nombre, $precio, $stock, $descripcion, $tipo){
-        $sql = "INSERT INTO producto(id, nombre, precio, stock, descripcion, tipo) VALUES ('$nombre', '$precio', '$stock', '$descripcion', '$tipo')";
+    public function añadirProductoModelo($estado, $emailUsuario, $fecha){
+        $sql = "INSERT INTO producto(id, nombre, precio, stock, descripcion, tipo) VALUES ('$estado', '$emailUsuario','$fecha')";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;
     }
 
-    public function confirmarCompraModelo($id, $estado, $emailUsuario, $fecha){
-        $sql = "INSERT INTO producto(id, nombre, precio, stock, descripcion, tipo) VALUES ('$nombre', '$precio', '$stock', '$descripcion', '$tipo')";
+    public function confirmarCompraModelo($estado, $emailUsuario, $fecha){
+        $sql = "INSERT INTO producto(id, nombre, precio, stock, descripcion, tipo) VALUES ('$estado', '$emailUsuario','$fecha')";
         $connection = connection();
         $respuesta = $connection->query($sql);
         return $respuesta;

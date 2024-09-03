@@ -41,7 +41,7 @@ class SesionModel {
 
             $sesion = new Perfil($email, $password);
             $_SESSION['sesion'] = $sesion;
-
+        
         }
 
         public function obtenerSesion(){

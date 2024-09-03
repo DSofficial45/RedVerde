@@ -31,7 +31,8 @@
         $idProducto = $_POST['idProducto'];
         $emailUsuario = $_POST['emailUsuario'];
         $fecha = $_POST['fecha'];
-        $resultado = (new productoDAO())->comentarModelo($texto, $idProducto, $emailUsuario, $fecha);
+        $resultado = (new productoDAO())->comentarModelo($texto, $idProducto	emailUsuario	fecha	
+    );
         echo json_encode($resultado);
     }
 

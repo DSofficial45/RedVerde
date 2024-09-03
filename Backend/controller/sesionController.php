@@ -26,19 +26,15 @@
     
     function registrarUsuario(){
         $nombre = $_POST['nombre'];
-        $contraseña = $_POST['contraseña'];
+        $contrasena = $_POST['contraseña'];
         $resultado = (new SesionDAO())->registrarUsuarioModel($nombre, $contraseña);
         echo json_encode($resultado);
     }
 
     function iniciarSesion(){
-        $email = $_POST[''];
-        $nombre = $_POST[''];
-        $apellido = $_POST[''];
-        $telefono = $_POST[''];
-        $password = $_POST[''];
-        $isAdmin = $_POST[''];
-        $resultado = (new SesionDAO())->iniciarSesionModel($email,$nombre,$apellido,$telefono,$password,$isAdmin);
+        $nombre = $_POST['nombre'];
+        $contrasena = $_POST['contraseña'];
+        $resultado = (new SesionDAO())->iniciarSesionModel($nombre, $contraseña);
         echo json_encode($resultado);
     }
     

@@ -27,12 +27,11 @@
     
     
     function comentar(){
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $stock = $_POST['stock'];
-        $descripcion = $_POST['descripcion'];
-        $tipo = $_POST['tipo'];
-        $resultado = (new productoDAO())->agregarProductoModelo($nombre, $precio, $stock, $descripcion, $tipo);
+        $texto = $_POST['texto'];
+        $idProducto = $_POST['idProducto'];
+        $emailUsuario = $_POST['emailUsuario'];
+        $fecha = $_POST['fecha'];
+        $resultado = (new productoDAO())->comentarModelo($texto, $idProducto, $emailUsuario, $fecha);
         echo json_encode($resultado);
     }
 

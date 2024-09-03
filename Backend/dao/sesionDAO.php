@@ -35,11 +35,11 @@ class SesionModel {
         public $email;
         public $nombre;
 
-        public function iniciarSesion($email, $password){
+        public function iniciarSesion($nombre, $contraseña){
             //verificar datos
             //obtener datos
 
-            $sesion = new Perfil($email, $password);
+            $sesion = new SesionDAO($nombre, $contraseña);
             $_SESSION['sesion'] = $sesion;
         
         }

@@ -25,9 +25,13 @@
     }
     
     function registrarUsuario(){
+        $email = $_POST['email'];
         $nombre = $_POST['nombre'];
-        $contrasena = $_POST['contraseña'];
-        $resultado = (new SesionDAO())->registrarUsuarioModel($nombre, $contraseña);
+        $apellido = $_POST['apellido'];
+        $telefono = $_POST['telefono'];
+        $password = $_POST['password'];
+        $isAdmin = $_POST['isAdmin'];
+        $resultado = (new SesionDAO())->registrarUsuarioModel($email, $nombre, $apellido, $telefono, $password, $isAdmin);
         echo json_encode($resultado);
     }
 

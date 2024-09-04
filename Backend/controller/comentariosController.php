@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../model/productoModel.php';
+    require_once __DIR__ . '/../dao/comentariosDAO.php';
     $funcion = $_GET['funcion'];
     switch ($funcion) {
     
@@ -20,45 +20,39 @@
         break;
     }
     
-    function verProducto(){
-        $resultado = (new productoDAO())->verProductoModelo();
-        echo json_encode($resultado);
-    }
-    
-    
     function comentar(){
         $texto = $_POST['texto'];
         $idProducto = $_POST['idProducto'];
         $emailUsuario = $_POST['emailUsuario'];
         $fecha = $_POST['fecha'];
-        $resultado = (new productoDAO())->comentarModelo($texto, $idProducto, $emailUsuario, $fecha);
+        $resultado = (new comentarioDAO())->comentarModelo($texto, $idProducto, $emailUsuario, $fecha);
         echo json_encode($resultado);
     }
 
-    function confirmarCompra(){
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $stock = $_POST['stock'];
-        $descripcion = $_POST['descripcion'];
-        $tipo = $_POST['tipo'];
-        $resultado = (new productoDAO())->confirmarCompraModelo($nombre, $precio, $stock, $descripcion, $tipo);
+    function responderComentario(){
+        $idComentario = $_POST['idComentario'];
+        $texto = $_POST['texto'];
+        $idProducto = $_POST['idProducto'];
+        $emailUsuario = $_POST['emailUsuario'];
+        $fecha = $_POST['fecha'];
+        $resultado = (new comentarioDAO())->responderComentarioModelo($idComentario, $texto, $idProducto, $emailUsuario, $fecha);
+        echo json_encode($resultado);
+    }
+
+    function eliminarComenatario(){
+        $idComentario = $_POST['idComentario'];
+        $idProducto = $_POST['idProducto'];
+        $resultado = (new comentarioDAO())->eliminarComenatarioModelo($idComentario, $idProducto);
         echo json_encode($resultado);
     }
     
-    function eliminarProducto(){
-        $id = $_POST['id'];
-        $resultado = (new productoDAO())->eliminarProductoModelo($id);
-        echo json_encode($resultado);
-    }
-    
-    function modificarProducto(){
-        $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
-        $precio = $_POST['precio'];
-        $stock = $_POST['stock'];
-        $descripcion = $_POST['descripcion'];
-        $tipo = $_POST['tipo'];
-        $resultado = (new productoDAO())->modificarProductoModelo($id, $nombre, $precio, $stock, $descripcion, $tipo);
+    function modificarComentario(){
+        $idComentario = $_POST['idComentario'];
+        $texto = $_POST['texto'];
+        $idProducto = $_POST['idProducto'];
+        $emailUsuario = $_POST['emailUsuario'];
+        $fecha = $_POST['fecha'];
+        $resultado = (new comentarioDAO())->modificarComentarioModelo($idComentario, $texto, $idProducto, $emailUsuario, $fecha);
         echo json_encode($resultado);
     }
 ?>

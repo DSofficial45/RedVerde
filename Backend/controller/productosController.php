@@ -1,7 +1,8 @@
 <?php
-    require_once __DIR__ . '/../model/productoDAO.php';
+    require_once __DIR__ . '/../dao/productosDAO.php';
     $funcion = $_GET['funcion'];
     switch ($funcion) {
+    
         case "agregar":
             agregarProducto();
         break;
@@ -12,11 +13,12 @@
     
         case "ver":
             verProducto();
-            break;
-        
+        break;
+    
         case "modificar":
             modificarProducto();
         break;
+    
     }
 
     function verProducto(){

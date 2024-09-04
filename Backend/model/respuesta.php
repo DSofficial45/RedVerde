@@ -3,7 +3,7 @@
     class Respuesta{
         public $ci;
         public $nombre;
-        public $    
+        public $
     }
 
 

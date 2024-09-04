@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../model/carritoDAO.php';
+    require_once __DIR__ . '/../dao/carritoDAO.php';
     $funcion = $_GET['funcion'];
     switch ($funcion) {
     
@@ -25,38 +25,27 @@
     }
 
     function verProducto(){
-        $resultado = (new productoDAO())->verProductoModelo();
+        $resultado = (new carritoDAO())->verProductoModelo();
         echo json_encode($resultado);
     }
     
     function añadirProducto(){
-        $estado = $_POST['estado'];
-        $emailUsuario = $_POST['emailUsuario'];
-        $fecha = $_POST['fecha'];
-        $resultado = (new productoDAO())->añadirProductoModelo($estado, $emailUsuario, $fecha);
+        $resultado = (new carritoDAO())->añadirProductoModelo();
         echo json_encode($resultado);
     }
 
     function confirmarCompra(){
-        $estado = $_POST['estado'];
-        $emailUsuario = $_POST['emailUsuario'];
-        $fecha = $_POST['fecha'];
-        $resultado = (new productoDAO())->confirmarCompraModelo($estado, $emailUsuario, $fecha);
+        $resultado = (new carritoDAO())->confirmarCompraModelo();
         echo json_encode($resultado);
     }
     
     function eliminarProducto(){
-        $id = $_POST['id'];
-        $resultado = (new productoDAO())->eliminarProductoModelo($id);
+        $resultado = (new carritoDAO())->eliminarProductoModelo();
         echo json_encode($resultado);
     }
     
     function modificarProducto(){
-        $id = $_POST['id'];
-        $estado = $_POST['estado'];
-        $emailUsuario = $_POST['emailUsuario'];
-        $fecha = $_POST['fecha'];
-        $resultado = (new productoDAO())->modificarProductoModelo($id, $estado, $emailUsuario, $fecha);
+        $resultado = (new carritoDAO())->modificarProductoModelo();
         echo json_encode($resultado);
     }
 ?>

@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../model/productoModel.php';
+    require_once __DIR__ . '/../dao/TransaccionesDAO.php';
     $funcion = $_GET['funcion'];
     switch ($funcion) {
     

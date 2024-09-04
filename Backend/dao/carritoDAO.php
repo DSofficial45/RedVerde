@@ -31,7 +31,7 @@ class carritoDAO {
         return $carrito;
     }
 
-    function modificarCantidadProducto(){
+    function modificarCantidadProductoModelo(){
         $connection = connection();
         $respuesta = $connection->query($sql);
         $carrito = $respuesta->fetch_all(MYSQLI_ASSOC);

@@ -45,7 +45,7 @@
     }
     
     function modificarCantidadProducto(){
-        $resultado = (new carritoDAO())->modificarProductoModelo();
+        $resultado = (new carritoDAO())->modificarCantidadProductoModelo();
         echo json_encode($resultado);
     }
 ?>

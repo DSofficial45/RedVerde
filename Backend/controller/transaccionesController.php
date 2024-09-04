@@ -14,4 +14,6 @@
         case "realizadas":
             verComprasRealizadas();
         break;
+
+        
     }

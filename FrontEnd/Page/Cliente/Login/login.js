@@ -3,11 +3,11 @@ window.onload = () => {
 }
 
 function agregarEvento(){
-    let formElement = document.querySelector();
+    let formElement = document.querySelector("#login");
     formElement.onsubmit = (e)=>{
         e.proventDefault();
-        let email = formElement.nombre.value;
-        let password = formElement.password.value;
+        let email = formElement.usuario.value;
+        let password = formElement.contraseña.value;
 
         iniciarSesion(email, password);
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2024 a las 23:19:17
+-- Tiempo de generación: 04-09-2024 a las 21:53:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -85,6 +85,19 @@ CREATE TABLE `factura` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `facturaproductocompra`
+--
+
+CREATE TABLE `facturaproductocompra` (
+  `idCompra` int(11) NOT NULL,
+  `idProducto` int(11) NOT NULL,
+  `precio` int(255) NOT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `imagen`
 --
 
@@ -130,7 +143,18 @@ CREATE TABLE `producto` (
 
 CREATE TABLE `productocategoria` (
   `idProducto` int(11) NOT NULL,
-  `nombreCategoria` int(11) NOT NULL
+  `nombreCategoria` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productoimagen`
+--
+
+CREATE TABLE `productoimagen` (
+  `idProducto` int(11) NOT NULL,
+  `idImagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -190,13 +214,22 @@ ALTER TABLE `compra`
 -- Indices de la tabla `compraproducto`
 --
 ALTER TABLE `compraproducto`
-  ADD PRIMARY KEY (`idCompra`,`idProducto`);
+  ADD PRIMARY KEY (`idCompra`,`idProducto`),
+  ADD KEY `idProducto` (`idProducto`);
 
 --
 -- Indices de la tabla `factura`
 --
 ALTER TABLE `factura`
   ADD PRIMARY KEY (`idFactura`);
+
+--
+-- Indices de la tabla `facturaproductocompra`
+--
+ALTER TABLE `facturaproductocompra`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCompra` (`idCompra`),
+  ADD KEY `idProducto` (`idProducto`);
 
 --
 -- Indices de la tabla `imagen`
@@ -221,7 +254,15 @@ ALTER TABLE `producto`
 -- Indices de la tabla `productocategoria`
 --
 ALTER TABLE `productocategoria`
-  ADD PRIMARY KEY (`idProducto`,`nombreCategoria`);
+  ADD PRIMARY KEY (`idProducto`,`nombreCategoria`),
+  ADD KEY `nombreCategoria` (`nombreCategoria`);
+
+--
+-- Indices de la tabla `productoimagen`
+--
+ALTER TABLE `productoimagen`
+  ADD KEY `idProducto` (`idProducto`),
+  ADD KEY `idImagen` (`idImagen`);
 
 --
 -- Indices de la tabla `usuario`
@@ -254,6 +295,12 @@ ALTER TABLE `compra`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `facturaproductocompra`
+--
+ALTER TABLE `facturaproductocompra`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `imagen`
 --
 ALTER TABLE `imagen`
@@ -276,10 +323,64 @@ ALTER TABLE `producto`
 --
 
 --
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`emailUsuario`) REFERENCES `usuario` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `compra`
+--
+ALTER TABLE `compra`
+  ADD CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`emailUsuario`) REFERENCES `usuario` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `compraproducto`
+--
+ALTER TABLE `compraproducto`
+  ADD CONSTRAINT `compraproducto_ibfk_1` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `compraproducto_ibfk_2` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `facturaproductocompra`
+--
+ALTER TABLE `facturaproductocompra`
+  ADD CONSTRAINT `facturaproductocompra_ibfk_1` FOREIGN KEY (`id`) REFERENCES `factura` (`idFactura`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `facturaproductocompra_ibfk_2` FOREIGN KEY (`idCompra`) REFERENCES `compra` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `facturaproductocompra_ibfk_3` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `imagen`
+--
+ALTER TABLE `imagen`
+  ADD CONSTRAINT `imagen_ibfk_1` FOREIGN KEY (`id`) REFERENCES `productoimagen` (`idImagen`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `oferta`
+--
+ALTER TABLE `oferta`
+  ADD CONSTRAINT `oferta_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `productocategoria`
 --
 ALTER TABLE `productocategoria`
-  ADD CONSTRAINT `productocategoria_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `productocategoria_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `productocategoria_ibfk_2` FOREIGN KEY (`nombreCategoria`) REFERENCES `categoria` (`nombre`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `productoimagen`
+--
+ALTER TABLE `productoimagen`
+  ADD CONSTRAINT `productoimagen_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuariocomentariousuario`
+--
+ALTER TABLE `usuariocomentariousuario`
+  ADD CONSTRAINT `usuariocomentariousuario_ibfk_1` FOREIGN KEY (`emailUsuario`) REFERENCES `usuario` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuariocomentariousuario_ibfk_2` FOREIGN KEY (`idComentario`) REFERENCES `comentario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

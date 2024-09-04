@@ -37,8 +37,8 @@
 
     function iniciarSesion(){
         $nombre = $_POST['nombre'];
-        $contrasena = $_POST['contraseña'];
-        $resultado = (new SesionDAO())->iniciarSesionModel($nombre, $contraseña);
+        $password = $_POST['password'];
+        $resultado = (new SesionDAO())->iniciarSesionModel($nombre, $password);
         echo json_encode($resultado);
     }
     

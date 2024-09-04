@@ -20,7 +20,7 @@
         break;
 
         case "modificar":
-            modificarProducto();
+            modificarCantidadProducto();
         break;
     }
 
@@ -44,7 +44,7 @@
         echo json_encode($resultado);
     }
     
-    function modificarProducto(){
+    function modificarCantidadProducto(){
         $resultado = (new carritoDAO())->modificarProductoModelo();
         echo json_encode($resultado);
     }

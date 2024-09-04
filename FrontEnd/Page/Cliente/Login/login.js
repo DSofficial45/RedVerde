@@ -3,7 +3,7 @@ window.onload = () => {
 }
 
 function agregarEvento(){
-    let fonElement = document.querySelector();
+    let formElement = document.querySelector();
     formElement.onsubmit = (e)=>{
         e.proventDefault();
         let email = formElement.nombre.value;
@@ -13,11 +13,13 @@ function agregarEvento(){
     }
 }
 
-async function login(nombre,password) {
-    let respuesta = await new SesionDAO().iniciarSesion(email,password){
-    if(respuesta.es){
-        
-    }
+async function iniciarSesion(nombre,password){
+    let respuesta = await new SesionDAO().iniciarSesion(nombre,password);
+    if(respuesta.estado){
+        let respuesta = await new SesionDAO().iniciarSesion(nombre,password);
+        console.log(respuesta);
+    }else{
+        alert(respuesta.mensaje);
     }
     
 }

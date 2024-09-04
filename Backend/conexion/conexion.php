@@ -5,7 +5,7 @@ function connection()
         $host = "localhost";
         $usuario = "";
         $password = "";
-        $bd = "red_verde";
+        $bd = "redVerdeBD";
         $puerto = 3306;
         $mysqli = new mysqli ($host, $usuario, $password, $bd, $puerto);
         return $mysqli;

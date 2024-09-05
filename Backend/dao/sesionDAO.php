@@ -55,18 +55,17 @@ require_once __DIR__ . '/../dao/respuesta.php';
 
         public function registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin){
             $conection = connection();
-            $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) VALUE ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');"
-            $respuesta = $conection->query($sql);
-            $fila = $respuesta->fetch_assoc();
-            if ($fila !=null){
-                $respuesta = new Respuesta(true,"Usuario registrado correctamente", null);
-            }else{
-                $respuesta = new Respuesta(false,"Error al registrar Usuario", null)
-               
+            $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) VALUE ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');";
+            try{
+                $respuesta = $conection->query($sql);
+                return new Respuesta(true,"Usuario registrado correctamente", null);
+            }catch(Exception $e){
+                return new Respuesta(false,"Error al registrar Usuario", null);
+
             }
 
-        }
 
+        }
             
     }
 

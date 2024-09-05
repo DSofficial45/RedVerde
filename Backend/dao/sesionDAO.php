@@ -45,10 +45,6 @@ require_once __DIR__ . '/../dao/respuesta.php';
         public function cerrarSesion(){
             $_SESSION['sesion'] = null;
         }
-
-        public function estaLogeado(){
-            return isset($_SESSION['sesion']);
-        }
             
     }
 

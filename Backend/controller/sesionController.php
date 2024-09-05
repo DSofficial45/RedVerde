@@ -14,13 +14,17 @@
         case "Cerrar":
             cerrarSesion();
             break;
+    
+        case "obtener":
+            obtenerSesion();
+            break;
         
         case "Ver":
             verUsuario();
         break;
     }
 
-    function obtenerUsuario(){
+    function obtenerSesion(){
         $resultado = (new SesionDAO())->obtenerSesion();
         echo json_decode($resultado);
     }

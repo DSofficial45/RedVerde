@@ -9,14 +9,21 @@ class productoDAO {
         $sql = "SELECT * FROM producto";
         $respuesta = $connection->query($sql);
         $producto = $respuesta->fetch_all(MYSQLI_ASSOC);
-        return $producto;
+        
+        return new Respuesta(true,"productos obtenidos",$producto);
     }
 
     public function agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion){
         $sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion')";
         $connection = connection();
-        $respuesta = $connection->query($sql);
-        return $respuesta;
+        try{
+            $respuesta = $connection->query($sql);
+            return new Respuesta(true,"producto agregado correctamente",null);
+        }catch(Exception $e){
+            return new Respuesta(false,"error al agregar producto",null);
+        }
+        
+        
     }
 
     public function eliminarProductoModelo($id){

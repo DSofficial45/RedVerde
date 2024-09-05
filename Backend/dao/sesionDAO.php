@@ -20,11 +20,14 @@ require_once __DIR__ . '/../dao/respuesta.php';
             if ($fila !=null){
                 $respuesta = new Respuesta(true,"Sesion Iniciada", null);
                 $_SESSION['sesion']=["usuario"=>$fila];
+                return $respuesta;
             }else{
                 $respuesta = new Respuesta(false,"Error al iniciar", null);
                 $_SESSION['sesion']=["usuario"=>$fila];
+                return $respuesta;
+               
             }
-            return $fila;
+            
         }
 
         public function obtenerSesion(){
@@ -44,6 +47,9 @@ require_once __DIR__ . '/../dao/respuesta.php';
 
         public function cerrarSesion(){
             $_SESSION['sesion'] = null;
+            $respuesta = new Respuesta(false,"Error al iniciar", null);
+            return $respuesta;
+
         }
             
     }

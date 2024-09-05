@@ -19,8 +19,14 @@
             verUsuario();
         break;
     }
+
+    function obtenerUsuario(){
+        $resultado = (new SesionDAO())->obtenerSesion();
+        echo json_decode($resultado);
+    }
+
     function verUsuario(){
-        $resultado = (new SesionDAO())->verUsuarioModel();
+        $resultado = (new SesionDAO())->verUsuario();
         echo json_encode($resultado);
     }
     
@@ -31,20 +37,20 @@
         $telefono = $_POST['telefono'];
         $password = $_POST['password'];
         $isAdmin = $_POST['isAdmin'];
-        $resultado = (new SesionDAO())->registrarUsuarioModel($email, $nombre, $apellido, $telefono, $password, $isAdmin);
+        $resultado = (new SesionDAO())->registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin);
         echo json_encode($resultado);
     }
 
     function iniciarSesion(){
         $nombre = $_POST['nombre'];
         $password = $_POST['password'];
-        $resultado = (new SesionDAO())->iniciarSesionModel($nombre, $password);
+        $resultado = (new SesionDAO())->iniciarSesion($nombre, $password);
         echo json_encode($resultado);
     }
     
     function cerrarSesion(){
         $id = $_POST['id'];
-        $resultado = (new SesionDAO())->cerrarSesionModelo($id);
+        $resultado = (new SesionDAO())->cerrarSesion($id);
         echo json_encode($resultado);
     }
 

@@ -19,6 +19,7 @@ class productoDAO {
         try{
             $respuesta = $connection->query($sql);
             return new Respuesta(true,"producto agregado correctamente",null);
+            
         }catch(Exception $e){
             return new Respuesta(false,"error al agregar producto",null);
         }
@@ -29,15 +30,24 @@ class productoDAO {
     public function eliminarProductoModelo($id){
         $sql = "DELETE FROM producto WHERE id ='$id'";
         $connection = connection();
-        $respuesta = $connection->query($sql);
-        return $respuesta;
+        try{
+            $respuesta = $connection->query($sql);
+            return new Respuesta(true,"producto eliminado correctamente",null);
+        }catch(Exception $e){
+            return new Respuesta(false,"error al eliminado producto",null);
+        }
+
     }
 
     public function modificarProductoModelo($id, $nombre, $fecha, $precio, $stock, $descripcion){
         $sql = "UPDATE libro SET nombre='$nombre', fecha='$fecha', precio='$precio', stock='$stock', descripcion='$descripcion' WHERE id=$id";
         $connection = connection();
-        $respuesta = $connection->query($sql);
-        return $respuesta;
+        try{
+            $respuesta = $connection->query($sql);
+            return new Respuesta(true,"producto modificado correctamente",null);
+        }catch(Exception $e){
+            return new Respuesta(false,"error al modificado producto",null);
+        }
     }
 
 }

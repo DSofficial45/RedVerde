@@ -12,7 +12,6 @@ require_once __DIR__ . '/../dao/respuesta.php';
         
 
         public function iniciarSesion($nombre, $password){
-            
             $conection = connection();
             $sql = "SELECT * FOR usuario WHERE nombre = 'nombre' AND password = 'password'";
             $respuesta = $conection->query($sql);
@@ -21,6 +20,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
                 $respuesta = new Respuesta(true,"Sesion Iniciada", null);
                 $_SESSION['sesion']=["usuario"=>$fila];
                 return $respuesta;
+                    
             }else{
                 $respuesta = new Respuesta(false,"Error al iniciar", null);
                 $_SESSION['sesion']=["usuario"=>$fila];
@@ -34,12 +34,13 @@ require_once __DIR__ . '/../dao/respuesta.php';
 
             $respuesta = new respuesta(true,"Sesion Iniciada",null);
             if(isset($_SESSION['sesion'])){
-    
                 $respuesta = new respuesta(true,"Sesion obtenida",$_SESSION['sesion']);
-            }
-            else{
-    
+                return $respuesta;
+                
+            }else{
                 $respuesta = new respuesta(true,"No se ha encontrado una sesion",null);
+                return $respuesta;
+
             }
             return $respuesta;
         
@@ -51,6 +52,21 @@ require_once __DIR__ . '/../dao/respuesta.php';
             return $respuesta;
 
         }
+
+        public function registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin){
+            $conection = connection();
+            $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) VALUE ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');"
+            $respuesta = $conection->query($sql);
+            $fila = $respuesta->fetch_assoc();
+            if ($fila !=null){
+                $respuesta = new Respuesta(true,"Usuario registrado correctamente", null);
+            }else{
+                $respuesta = new Respuesta(false,"Error al registrar Usuario", null)
+               
+            }
+
+        }
+
             
     }
 

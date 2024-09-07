@@ -118,7 +118,7 @@ input {
 }
 
 main {
-    background: url(../../Imagenes/FondoPlantas-Oscuro.jpg);
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
     width: 100%;
     max-width: 100%;
     text-align: center;

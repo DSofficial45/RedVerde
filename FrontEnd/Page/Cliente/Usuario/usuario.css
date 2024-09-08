@@ -84,13 +84,8 @@ body {
 main{
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-}
-
-main div{
-    display: flex;
-    justify-content: center;
-    background-color: #1e3c00;
 }
 
 /*---------------------------------------*/
@@ -99,7 +94,11 @@ main div{
 .info{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 60%;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #1e3c00;
 }
 
 .icono{
@@ -115,10 +114,18 @@ main div{
 }
 
 .datos{
+    display: flex;
+    align-content: left;
+    flex-direction: column;
     width: 75%;
     height: 100%;
     color: rgb(161, 255, 37);
-    font-size: 20px;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #1e3c00;
+}
+
+.datos div{
 }
 
 /*---------------------------------------*/
@@ -127,7 +134,7 @@ main div{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    width: 100%;
+    width: 60%;
     height: 100%;
     background-color: #000000;
 }
@@ -135,7 +142,7 @@ main div{
 #cambiar{
     width: 600px;
     height: 120px;
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px;
     margin: 10px;
     border: 10px solid rgb(161, 255, 37);
@@ -154,7 +161,7 @@ main div{
 #cerrar{
     width: 600px;
     height: 120px;
-    font-size: 50px;
+    font-size: 40px;
     padding: 20px;
     margin: 10px;
     border: 10px solid rgb(161, 255, 37);

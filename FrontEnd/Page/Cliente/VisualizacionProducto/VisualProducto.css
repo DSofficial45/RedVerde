@@ -89,35 +89,214 @@ main{
 }
 
 .producto{
-    background-color: rgb(223, 253, 184);
-    width: 80%;
-    margin-top: 100px;
-    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(94, 123, 47);
+    width: 90%;
+    max-width: 90%;
+    margin-top: 50px;
+    padding: 25px;
+}
+
+.selectorImagen{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
 }
 
 .imagen{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    width: 300px;
-    height: 300px;
     padding: 10px;
-    background-color: aqua;
+    width: 70%;
+    height: 100%;
 }
 
 img{
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
 
-.comentarios{
-    background-color: rgb(52, 67, 32);
-    width: 80%;
+.anterior{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: impact;
+    margin-top: 32.5%;
+    width: 15%;
+    height: 15%;
+    padding: 11x;
+    color: rgb(170, 255, 0);
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.anterior:hover{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(170, 255, 0);
+    color: rgb(33, 53, 0);
+}
+
+.siguiente{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: impact;
+    margin-top: 32.5%;
+    width: 15%;
+    height: 15%;
+    padding: 11x;
+    color: rgb(170, 255, 0);
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.siguiente:hover{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(170, 255, 0);
+    color: rgb(33, 53, 0);
+}
+
+/*----------------*/
+
+.info{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    color: rgb(170, 255, 0);
+    padding: 10px;
+    width: 70%;
+    height: 100%;
+}
+
+.nombre{
+    font-family: impact;
+    font-size: 40px;
+}
+
+.compra{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 60px;
+}
+
+#agregar{
+    display: flex;
+    justify-content: center;
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    color: rgb(170, 255, 0);
+    padding: 10px;
+    font-family: impact;
+    font-size: 30px;
+    height: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#agregar:hover{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(170, 255, 0);
+    color: rgb(33, 53, 0);
+}
+
+.contador{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+#numero{
+    display: flex;
+    justify-content: center;
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    color: rgb(170, 255, 0);
+    padding: 10px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.botonesContador{
+    display: flex;
+    flex-direction: column;
+}
+
+#mas{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    color: rgb(170, 255, 0);
+    padding: 10px;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#mas:hover{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(170, 255, 0);
+    color: rgb(33, 53, 0);
+}
+
+#menos{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(33, 53, 0);
+    color: rgb(170, 255, 0);
+    padding: 5px;
+    font-size: 15px;
+    width: 35px;
+    height: 35px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#menos:hover{
+    border: 3px solid rgb(170, 255, 0);
+    background-color: rgb(170, 255, 0);
+    color: rgb(33, 53, 0);
+}
+
+/*---------------------------------------*/
+
+.comentariosGeneral{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(114, 103, 103);
+    width: 86.5%;
     height: 700px;
     padding: 50px;
 }
 
+.comentar{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+}
 
+#usuario{
+    color:black;
+    background-color: #adff2f;
+    font-size: 10px;
+    padding: 5px;
+    width: 10%;
+    height: 40px;
+}
+
+#escribirComentario{
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    border: 5px solid rgb(0, 0, 0);
+    color: rgb(170, 255, 0);
+    border-bottom: 5px solid rgb(170, 255, 0);
+    border-radius: 5px;
+}
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 

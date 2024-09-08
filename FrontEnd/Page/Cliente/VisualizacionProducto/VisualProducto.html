@@ -23,23 +23,60 @@
                 <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
             </ul>
 
-            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" class="button"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
-            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" class="button"><img src="../../../assets/Iconos/Usuario.png"></a>
+            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
+            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html"><img src="../../../assets/Iconos/Usuario.png"></a>
         </div>
     </header>
 
     <main>
         <div class="producto">
-            <div class="imagen">
-                <img src="../../../assets/Iconos/Usuario.png">
+            <div class="selectorImagen">
+                <a class="anterior" id="anterior"><</a>
+
+                <div class="imagen" id="imagen">
+
+                </div>
+
+                <a class="siguiente" id="siguiente">></a>
             </div>
 
-            <div>
-                <div></div>
+            <div class="info">
+
+                <div class="nombre" id="nombre">
+                </div>
+
+                <div class="precio" id="precio">
+                </div>
+
+                <div class="descripcion" id="descripcion">
+                    <a>Descripción: </a>
+                </div>
+
+                <div class="stock" id="stock">
+                    <a>Unidades disponibles: </a>
+                </div>
+
+                <div class="compra">
+                    <button id='agregar'>AGREGAR AL CARRITO</button>
+                    <div class="contador">
+                        <input type='text' value='0' id="numero">
+                        <div class="botonesContador">
+                            <button id="mas">+</button>
+                            <button id="menos">-</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="comentarios">
+        <div class="comentariosGeneral">
+            <div class="comentar">
+                <div id="usuario"></div>
+                <input id="escribirComentario" type="text" placeholder="Escribir comentario...">
+            </div>
+
+            <div class="comentarios" id="nombreUsuario">Hola</div>
 
         </div>
     </main>

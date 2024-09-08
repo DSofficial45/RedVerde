@@ -81,7 +81,32 @@ body {
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
+main{
+    display: flex;
+    flex-direction: column;
+}
 
+main div{
+    display: flex;
+    justify-content: left;
+    border-top: 3px solid rgb(161, 255, 37);;
+    background-color: #1e3c00;
+    margin-left: 250px;
+    margin-right: 250px;
+
+}
+
+.icono{
+    display: flex;
+    align-content: center;
+    border-top: 0px solid rgb(161, 255, 37);;
+}
+
+main img{
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+}
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 

@@ -13,7 +13,7 @@
     <header>
         <div class="cabezeraSuperior">
             <a href="#">
-                <img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza">
+                <a href="../PagInicial/index.html"><img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza"></a>
             </a>
         </div>
         <div class="cabezeraInferior">
@@ -22,12 +22,15 @@
                 <li><a href="../Productos/Productos.html">CATALOGO</a></li>
                 <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
             </ul>
+
+            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" class="button"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
+            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" class="button"><img src="../../../assets/Iconos/Usuario.png"></a>
         </div>
     </header>
 
     <main>
-        <div class="barraBusqueda">
-
+        <div class="busqueda">
+            <input type="text" class="barraBusqueda" placeholder="Buscar..." id="barraBusqueda">
         </div>
 
         <div class="productos">
@@ -48,6 +51,62 @@
             </div>
 
             <div class="filtros">
+                <h1>FILTROS</h1>
+
+                <h3>PRECIO</h3>
+                <div class="precio"></div>
+                    <a>De</a>
+                <div class="minimo"></div>
+                    <a>a</a>
+                <div class="maximo"></div>
+                
+                <h3>ORDEN DE PRODUCTOS</h3>
+                
+                <select>
+                    <option>MENOR A MAYOR PRECIO</option>
+                    <option>MAYOR A MENOR PRECIO</option>
+                </select>
+
+                <h3>TIPO DE PRODUCTO</h3>
+
+                <div class="checkboxs">
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#aromáticos">
+                        <a>Aromáticos</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#florales">
+                        <a>Florales</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#arbustos">
+                        <a>Arbustos</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#arboles">
+                        <a>Árboles</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#macetas">
+                        <a>Macetas</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#tierra">
+                        <a>Tierra</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#velas">
+                        <a>Velas</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#inciensos">
+                        <a>Inciensos</a>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" class="check" id="#perfumados">
+                        <a>Perfumados</a>
+                    </div>
+                </div>    
 
             </div>
         </div>

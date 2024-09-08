@@ -10,9 +10,14 @@ body {
     display: flex;
     min-height: 70px;
     background-color: rgb(161, 255, 37);
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     padding: 10px;
+}
+
+.cabezeraSuperior a{
+    margin: 0px;
+    padding: 0px;
 }
 
 .Logo-Cabeza {
@@ -23,36 +28,55 @@ body {
 
 .cabezeraInferior {
     display: flex;
-    min-height: 65px;
     background-color: rgb(186, 255, 96);
-    justify-content: center;
-    align-items: center;
+    height: 60px;
 }
 
 .menuNavegación {
-    background: rgb(186, 255, 96);
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 0;
+    background: rgb(186, 255, 96);
     list-style: none;
+}
+
+.menuNavegación li {
+    margin: 0px;
+    padding: 5px;
 }
 
 .menuNavegación li a {
     text-decoration: none;
     color: black;
-    padding: 20px;
-    display: block;
-}
-
-.menuNavegación li {
-    display: inline-block;
-    text-align: center;
+    padding: 22.5px;
+    font-size: 15px;
 }
 
 .menuNavegación li a:hover {
     background: rgb(72, 127, 0);
     color: white;
+}
+
+.carritoIcono img{
+    width: 35px;
+    height: 35px;
+    padding: 12.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carritoIcono img:hover{
+    background: rgb(72, 127, 0);
+}
+
+.usuarioIcono img{
+    width: 35px;
+    height: 35px;
+    padding: 12.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.usuarioIcono img:hover{
+    background: rgb(72, 127, 0);
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------*/

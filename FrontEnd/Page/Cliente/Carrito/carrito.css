@@ -215,9 +215,8 @@ td img{
 }
 
 .UTU img{
-    margin: 2.5%;
+    margin: 5%;
     width: 60%;
-    height: 200px;
 }
 
 /*----------------*/
@@ -228,7 +227,6 @@ td img{
     justify-content: center;
     padding-top: 4%;
     width: 45%;
-    height: 100%;
 }
 
 .logoPie img{

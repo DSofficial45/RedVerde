@@ -173,7 +173,7 @@ input {
 .filtros{
     display: flex;
     flex-direction: column;
-    background-color: rgb(191, 255, 0);
+    background-color: rgb(165, 196, 72);
     padding: 20px;
     height: 100%;
     width: 20%;
@@ -187,24 +187,28 @@ input {
 
 .minimo{
     background-color: rgb(248, 255, 223);
-    border: 5px solid rgb(228, 255, 141);
+    border: 5px solid rgb(89, 105, 37);
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
-    width: 40px;
+    width: 50px;
     display: flex;
     justify-content: center;
 }
 
 .maximo{
     background-color: rgb(248, 255, 223);
-    border: 5px solid rgb(228, 255, 141);
+    border: 5px solid rgb(89, 105, 37);
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
-    width: 40px;
+    width: 50px;
     display: flex;
     justify-content: center;
+}
+
+.precio a{
+    margin-top: 10px;
 }
 
 select{
@@ -264,9 +268,8 @@ h1{
 }
 
 .UTU img{
-    margin: 2.5%;
+    margin: 5%;
     width: 60%;
-    height: 200px;
 }
 
 /*----------------*/
@@ -277,7 +280,6 @@ h1{
     justify-content: center;
     padding-top: 4%;
     width: 45%;
-    height: 100%;
 }
 
 .logoPie img{

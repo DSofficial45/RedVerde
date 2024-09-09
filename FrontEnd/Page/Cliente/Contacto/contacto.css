@@ -87,93 +87,91 @@ header{
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
 main {
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-    height: 60%;
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
 }
+
+/*---------------------------------------*/
 
 .todo{
-    margin: 50px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 100px;
 }
 
-.contactosDerecha {
-    background-color: rgb(145, 199, 73);
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
-    width: 420px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
+/*----------------*/
 
 .contactosIzquierda {
     background-color: rgb(186, 255, 96);
     display: flex;
     flex-direction: column;
     padding: 50px;
-    width: 420px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0, 2);
+    width: 80%;
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.logo{
-    scale: 75%;
-    margin: 10px;
+.contactosIzquierda img{
+    width: 80%;
+    padding: 50px;
 }
 
-.usuario{
-    scale: 50%;
+.contactosIzquierda a{
+    font-size: 20px;
 }
 
-.primer{
-    margin: 10px;
+/*----------------*/
+
+.contactosDerecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 30%;
+    background-color: rgb(145, 199, 73);
+}
+
+.contacto{
+    width: 80%;
+}
+
+.contenedor {
     display: flex;
     flex-direction: row;
-    padding: 0px;
+    align-content: center;
+    width: 100%;
 }
 
-.segundo{
-    margin: 10px;
+.contenedor div {
     display: flex;
-    flex-direction: row;
-    padding: 0px;
-}
-
-.tercero{
+    justify-content: center;
+    padding: 5px;
     margin: 10px;
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-}
-
-.cuarto{
-    margin: 10px;
-    display: flex;
-    flex-direction: row;
-    padding: 0px;
-}
-
-.texto{
     background-color: rgb(186, 255, 96);
     border: 5px solid black;
-    color: black;
-    font-family: arial;
-    padding: 5px;
-    width: 30px;
+    width: 200px;
     border-radius: 5px;
 }
 
+.contenedor a {
+    font-size: 20px;
+    font-family: arial;
+    padding: 1px;
+    color: black;
+}
+
+.contenedor img{
+    display: flex;
+    margin: 10px;
+    padding: 0px;
+    width: 40px;
+}
 
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
@@ -209,9 +207,8 @@ main {
 }
 
 .UTU img{
-    margin: 2.5%;
+    margin: 5%;
     width: 60%;
-    height: 200px;
 }
 
 /*----------------*/
@@ -222,7 +219,6 @@ main {
     justify-content: center;
     padding-top: 4%;
     width: 45%;
-    height: 100%;
 }
 
 .logoPie img{

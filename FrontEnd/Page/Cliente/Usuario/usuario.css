@@ -91,7 +91,7 @@ main{
     flex-direction: column;
     align-items: center;
     height: 60%;
-    background: url(../../../assets/Fondo/FondoPlantas.jpg);
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
 }
 
 /*---------------------------------------*/
@@ -101,9 +101,10 @@ main{
     display: flex;
     flex-direction: row;
     width: 60%;
+    margin-top: 80px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: #132700;
+    background-color: rgb(175, 205, 77);
 }
 
 .icono{
@@ -124,7 +125,7 @@ main{
     flex-direction: column;
     width: 75%;
     height: 100%;
-    color: rgb(161, 255, 37);
+    color: rgb(0, 0, 0);
     font-size: 30px;
     padding: 20px;
 }
@@ -135,9 +136,10 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin-bottom: 80px;
     width: 60%;
     height: 100%;
-    background-color: #000000;
+    background-color: rgb(59, 68, 28);
 }
 
 .cambiarCuenta{
@@ -148,17 +150,17 @@ main{
     font-size: 40px;
     padding: 20px;
     margin: 10px;
-    border: 10px solid rgb(161, 255, 37);
-    background-color: #0f1f00;
-    color: rgb(161, 255, 37);
+    border: 10px solid rgb(224, 255, 122);
+    background-color: rgb(224, 255, 122);
+    color: rgb(0, 0, 0);
     font-family: impact;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .cambiarCuenta:hover{
-    border: 10px solid rgb(161, 255, 37);
-    background-color: rgb(161, 255, 37);
-    color: #0f1f00;
+    border: 10px solid rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+    color: rgb(145, 255, 0);
 }
 
 .cerrarSesion{
@@ -169,9 +171,9 @@ main{
     font-size: 40px;
     padding: 20px;
     margin: 10px;
-    border: 10px solid rgb(161, 255, 37);
-    background-color: #0f1f00;
-    color: rgb(161, 255, 37);
+    border: 10px solid rgb(224, 255, 122);
+    background-color: rgb(224, 255, 122);
+    color: rgb(0, 0, 0);
     font-family: impact;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;

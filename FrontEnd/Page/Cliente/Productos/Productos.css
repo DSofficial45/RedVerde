@@ -186,8 +186,8 @@ input {
 }
 
 .minimo{
-    background-color: rgb(248, 255, 223);
-    border: 5px solid rgb(89, 105, 37);
+    background-color: rgb(224, 255, 122);
+    border: 5px solid rgb(0, 0, 0);
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
@@ -197,8 +197,8 @@ input {
 }
 
 .maximo{
-    background-color: rgb(248, 255, 223);
-    border: 5px solid rgb(89, 105, 37);
+    background-color: rgb(224, 255, 122);
+    border: 5px solid rgb(0, 0, 0);
     margin-left: 5px;
     margin-right: 5px;
     padding: 5px;
@@ -232,8 +232,12 @@ h1{
 .checkbox{
     display: flex;
     flex-direction: row;
+    font-size: 20px;
 }
 
+.check{
+    margin-top: 5px;
+}
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 

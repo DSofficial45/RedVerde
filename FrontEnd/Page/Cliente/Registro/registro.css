@@ -6,6 +6,11 @@ body {
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
+header{
+    height: 20%;
+    width: 100%;
+}
+
 .cabezeraSuperior {
     display: flex;
     min-height: 70px;
@@ -80,6 +85,10 @@ body {
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
+
+main{
+    height: 60%;
+}
 
 h2 {
     padding: 0;
@@ -173,59 +182,83 @@ main {
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
-.Logo-Pie {
-    width: 50%;
-}
-
 .pie-pagina {
-    width: 100%;
-    background-color: rgb(20, 35, 0);
-}
-
-.pie-pagina .grupo-1 {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 50px;
-    padding: 10px 0;
-}
-
-.pie-pagina .grupo-1 .box figure {
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pie-pagina .grupo-1 .box figure img {
-    width: 250px;
-}
-
-.pie-pagina .grupo-1 .box h2 {
-    color: rgb(255, 255, 255);
-    margin-bottom: 25px;
-    font-size: 20px;
-}
-
-.pie-pagina .grupo-1 .box p {
-    color: rgb(255, 255, 255);
-    margin-bottom: 10px;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(20, 35, 0);
 }
 
 /*---------------------------------------*/
 
-.pie-pagina .grupo-2 {
-    background-color: rgb(13, 22, 0);
-    padding: 15px 10px;
-    text-align: center;
-    margin: auto;
+.grupo-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 75%;
+    background-color: rgb(20, 35, 0);
+}
+
+/*----------------*/
+
+.UTU{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    padding-left: 5%;
+    width: 25%;
+    height: 100%;
+}
+
+.UTU img{
+    margin: 2.5%;
+    width: 60%;
+    height: 200px;
+}
+
+/*----------------*/
+
+.logoPie {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+    width: 45%;
+    height: 100%;
+}
+
+.logoPie img{
+    width: 60%;
+    height: 150px;
+}
+
+/*----------------*/
+
+.nombreGrupo{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 5px;
+    width: 30%;
+    height: 100%;
     color: rgb(255, 255, 255);
 }
 
-.pie-pagina .grupo-2 small {
-    font-size: 15px;
+/*---------------------------------------*/
+
+.grupo-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 25%;
+    background-color: rgb(13, 22, 0);
+    color: white;
+    font-weight: bold;
 }
 
+.grupo-2 p{
+    padding: 10px;
+}

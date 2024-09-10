@@ -203,33 +203,16 @@ main {
 
 /*----------------*/
 
-.UTU{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    padding-left: 5%;
-    width: 25%;
-    height: 100%;
-}
-
-.UTU img{
-    margin: 5%;
-    width: 60%;
-}
-
-/*----------------*/
-
 .logoPie {
     padding: 20px;
     display: flex;
     justify-content: center;
-    padding-top: 4%;
     width: 45%;
 }
 
 .logoPie img{
-    width: 60%;
-    height: 150px;
+    width: 50%;
+    padding: 10px;
 }
 
 /*----------------*/

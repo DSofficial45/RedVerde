@@ -61,7 +61,6 @@ require_once __DIR__ . '/../dao/respuesta.php';
                 return new Respuesta(true,"Usuario registrado correctamente", null);
             }catch(Exception $e){
                 return new Respuesta(false,"Error al registrar Usuario", null);
-
             }
 
 

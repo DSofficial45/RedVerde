@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Productos</title>
+    <title>Productos</title>
     <link rel="stylesheet" href="Productos.css">
     <script src="Productos.js" defer></script>
 </head>
@@ -22,38 +22,72 @@
                 <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
             </ul>
 
-            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" id="carritoUsuario"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
             <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
         </div>
     </header>
 
     <main>
-        <div>
-            
+        <div class="mainSuperior">
+            <form class="formularioProducto" id="formularioProducto">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Descripción">
+                <input type="number" placeholder="Precio">
+                <input type="number" placeholder="%OFERTA">
+            </form>
+            <div class="botones">
+                <button class="btn" id="crear">CREAR</button>
+                <button class="btn" id="modificar">MODIFICAR</button>
+            </div>
+        </div>
+
+        <div class="mainInferior">
+            <div class="filtro">
+                <select>
+                    <option>MAYOR A MENOR STOCK</option>
+                    <option>MENOR A MAYOR STOCK</option>
+                    <option>MAYOR A MENOR PRECIO</option>
+                    <option>MENOR A MAYOR PRECIO</option>
+                    <option>MAYOR A MENOR VENTAS</option>
+                    <option>MENOR A MAYOR VENTAS</option>
+                    <option>MAYOR A MENOR OFERTA</option>
+                    <option>MENOR A MAYOR OFERTA</option>
+                </select>
+            </div>
+
+            <div class="tabla">
+                <table id="tableProductos">
+                    <thead class="theadProductos">
+                        <tr>
+                            <th>IMAGEN</th>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th>%OFERTA</th>
+                            <th>STOCK</th>
+                            <th>DESCRIPCIÓN</th>
+                            <th>TIPO</th>
+                            <th>VENTAS</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+    
+                    <tbody class="tbodyProductos">
+                        <td>IMAGEN</td>
+                        <td>NOMBRE</td>
+                        <td>PRECIO</td>
+                        <td>%OFERTA</td>
+                        <td>STOCK</td>
+                        <td>DESCRIPCIÓN</td>
+                        <td>TIPO</td>
+                        <td>VENTAS</td>
+                        <td></td>
+                        <td></td>
+                    </tbody>
+                </table>
+            </div>
         </div>
         
-        <div class="tabla">
-            <table id="tableProductos">
-                <thead class="theadProductos">
-                    <tr>
-                        <th>IMAGEN</th>
-                        <th>NOMBRE</th>
-                        <th>PRECIO</th>
-                        <th>OFERTA</th>
-                        <th>STOCK</th>
-                        <th>DESCRIPCIÓN</th>
-                        <th>TIPO</th>
-                        <th>VENTAS</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody class="tbodyProductos">
-                    
-                </tbody>
-            </table>
-        </div>
+        
     </main>
 
     <footer class="pie-pagina">
@@ -66,10 +100,10 @@
 
             <div class="nombreGrupo">
                 <h2>INTEGRANTES</h2>
-                    <p>D = Diego Bernardi</p>
-                    <p>I = Ignacio Viazzi</p>
-                    <p>M = Maricela Ruiz</p>
-                    <p>S = Santiago Pérez</p>
+                <p>D = Diego Bernardi</p>
+                <p>I = Ignacio Viazzi</p>
+                <p>M = Maricela Ruiz</p>
+                <p>S = Santiago Pérez</p>
             </div>
         </div>
 

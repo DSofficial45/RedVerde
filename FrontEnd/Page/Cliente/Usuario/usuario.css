@@ -7,7 +7,7 @@ body {
 /*---------------------------------------------------------------------------------------------------------------------------*/
 
 header{
-    height: 20%;
+    height: 168px;
     width: 100%;
 }
 
@@ -191,7 +191,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
+    height: 355px;
     background-color: rgb(20, 35, 0);
 }
 
@@ -202,22 +202,26 @@ main{
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 75%;
-    background-color: rgb(20, 35, 0);
+    height: 355px;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(26, 41, 8);
 }
 
 /*----------------*/
 
 .logoPie {
-    padding: 20px;
     display: flex;
     justify-content: center;
-    width: 45%;
+    width: 25%;
+    height: 150px;
+    margin-top: 75px;
+    margin-right: 12.5%;
 }
 
 .logoPie img{
-    width: 60%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
 }
 
 /*----------------*/
@@ -225,17 +229,21 @@ main{
 .nombreGrupo{
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    padding-left: 5px;
-    width: 30%;
-    height: 100%;
-    color: rgb(255, 255, 255);
+    width: 25%;
+    height: 200px;
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 12.5%;
 }
 
 .nombreGrupo p{
-    margin: 7.5px;
+    margin: 10px;
 }
 
+.nombreGrupo h2{
+    margin: 0px;
+}
 
 /*---------------------------------------*/
 
@@ -244,12 +252,16 @@ main{
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    height: 25%;
+    height: 55px;
+    padding: 0px;
+    margin: 0px;
     background-color: rgb(13, 22, 0);
-    color: white;
-    font-weight: bold;
 }
 
 .grupo-2 p{
-    padding: 10px;
+    padding: 20px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
 }

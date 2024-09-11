@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD Productos</title>
+    <title>Transacciones</title>
     <link rel="stylesheet" href="transacciones.css">
     <script src="transacciones.js" defer></script>
 </head>
@@ -22,10 +22,39 @@
                 <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
             </ul>
 
-            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" id="carritoUsuario"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
             <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
         </div>
     </header>
+
+    <main>
+        <div class="tabla">
+            <table id="tableCarrito">
+                <thead class="theadCarrito">
+                    <tr>
+                        <th>IMAGEN</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO</th>
+                        <th>USUARIO</th>
+                        <th>ESTADO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                        
+                <tbody class="tbodyCarrito">
+                    <td>IMAGEN</td>
+                        <td>NOMBRE</td>
+                        <td>PRECIO</td>
+                        <td>%OFERTA</td>
+                        <td>STOCK</td>
+                        <td>DESCRIPCIÓN</td>
+                </tbody>
+            </table>
+
+            <div class="botones">
+                <button class="confirmarTodos" id="confirmarTodos">CONFIRMAR TODAS</button>
+            </div>
+        </div>
+    </main>
 
     <footer class="pie-pagina">
 
@@ -37,10 +66,10 @@
 
             <div class="nombreGrupo">
                 <h2>INTEGRANTES</h2>
-                    <p>D = Diego Bernardi</p>
-                    <p>I = Ignacio Viazzi</p>
-                    <p>M = Maricela Ruiz</p>
-                    <p>S = Santiago Pérez</p>
+                <p>D = Diego Bernardi</p>
+                <p>I = Ignacio Viazzi</p>
+                <p>M = Maricela Ruiz</p>
+                <p>S = Santiago Pérez</p>
             </div>
         </div>
 

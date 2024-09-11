@@ -46,7 +46,7 @@ require_once __DIR__ . '/../dao/sesionDAO.php';
         
         }
 
-        public function cerrarSesion(){
+        public function cerrarSesion(): Respuesta{
             $_SESSION['sesion'] = null;
             $respuesta = new Respuesta(false,"Error al iniciar", null);
             return $respuesta;
@@ -64,6 +64,8 @@ require_once __DIR__ . '/../dao/sesionDAO.php';
             }
 
         }       
+        public function verUsuario() {
+        }
             
     }
 

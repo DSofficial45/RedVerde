@@ -13,7 +13,12 @@ export default class SesionDAO{
         let respuesta = await respuestaConsulta.json();
     }
 
-    async
+    async registrarUsuario() {
+        let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Registrar"
+        let formData = new FormData();
+        formData.eppend("email", email, "nombre", nombre, "apellido", apellido, "telefono", telefono, "password", password, "isAdmin", isAdmin);
+        let config 
+    }
 
     async obtenerSesion() {
         let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=obtener";

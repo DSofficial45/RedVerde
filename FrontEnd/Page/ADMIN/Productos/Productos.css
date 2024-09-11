@@ -110,7 +110,18 @@ form h2 {
 input {
     width: 80%;
     padding: 17px;
-    background-color: transparent;
+    background-color: rgb(239, 255, 188);
+    border: 2px solid #000000;
+    margin-bottom: 30px;
+    outline: none;
+    color: #000000;
+    font-size: 16px;
+}
+
+.seleccionTipo{
+    width: 89%;
+    padding: 17px;
+    background-color: rgb(239, 255, 188);
     border: 2px solid #000000;
     margin-bottom: 30px;
     outline: none;
@@ -119,7 +130,6 @@ input {
 }
 
 ::placeholder {
-    color: #000000;
 }
 
 form {
@@ -164,7 +174,8 @@ form {
 
 .mainInferior{
     width: 90%;
-    padding: 30px;
+    padding: 20px;
+    padding-top: 10px;
     margin: 50px;
     margin-top: 0px;
     background-color: rgb(175, 205, 77);
@@ -176,14 +187,14 @@ form {
     justify-content: right;
 }
 
-select{
-    margin-top: 5px;
-    margin: 10px;
-    font-family: impact;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(224, 255, 122);
-    border: 5px solid rgb(0, 0, 0);
+.seleccionFiltro{
+    margin-top: 0px;
+    margin: 5px;
+    background-color: rgb(239, 255, 188);
+    border: 2px solid #000000;
+    outline: none;
+    color: #000000;
+    font-size: 16px;
 }
 
 .tableProductos{

@@ -32,17 +32,31 @@
                 <input type="text" placeholder="Nombre">
                 <input type="text" placeholder="Descripción">
                 <input type="number" placeholder="Precio">
-                <input type="number" placeholder="%OFERTA">
+                <input type="number" placeholder="%Oferta">
+                <select class="seleccionTipo">
+                    <option>Aromáticos</option>
+                    <option>Florales</option>
+                    <option>Arbustos</option>
+                    <option>Árboles</option>
+                    <option>Macetas</option>
+                    <option>Tierra</option>
+                    <option>Velas</option>
+                    <option>Inciensos</option>
+                    <option>Perfumados</option>
+                </select>
+                <input type="number" placeholder="Stock">
+                
+                <div class="botones">
+                    <input type="submit" class="btn" id="modificar" value="CREAR">
+                    <input type="submit" class="btn" id="crear" value="MODIFICAR">
+                </div>
             </form>
-            <div class="botones">
-                <button class="btn" id="crear">CREAR</button>
-                <button class="btn" id="modificar">MODIFICAR</button>
-            </div>
+            
         </div>
 
         <div class="mainInferior">
             <div class="filtro">
-                <select>
+                <select class="seleccionFiltro">
                     <option>MAYOR A MENOR STOCK</option>
                     <option>MENOR A MAYOR STOCK</option>
                     <option>MAYOR A MENOR PRECIO</option>
@@ -72,16 +86,6 @@
                     </thead>
     
                     <tbody class="tbodyProductos">
-                        <td>IMAGEN</td>
-                        <td>NOMBRE</td>
-                        <td>PRECIO</td>
-                        <td>%OFERTA</td>
-                        <td>STOCK</td>
-                        <td>DESCRIPCIÓN</td>
-                        <td>TIPO</td>
-                        <td>VENTAS</td>
-                        <td></td>
-                        <td></td>
                     </tbody>
                 </table>
             </div>

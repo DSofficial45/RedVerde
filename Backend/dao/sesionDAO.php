@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../conexion/conexion.php';
-require_once __DIR__ . '/../dao/respuesta.php';
+require_once __DIR__ . '/../dao/sesionDAO.php';
 
 
     session_start();
@@ -17,12 +17,12 @@ require_once __DIR__ . '/../dao/respuesta.php';
             $respuesta = $conection->query($sql);
             $fila = $respuesta->fetch_assoc();
             if ($fila !=null){
-                $respuesta = new Respuesta(true,"Sesion Iniciada", null);
+                $respuesta = new Respuesta(estado: true,mensaje: "Sesion Iniciada", datos: null);
                 $_SESSION['sesion']=["usuario"=>$fila];
                 return $respuesta;
                     
             }else{
-                $respuesta = new Respuesta(false,"Error al iniciar", null);
+                $respuesta = new Respuesta(estado: false,mensaje: "Error al iniciar", datos: null);
                 $_SESSION['sesion']=["usuario"=>$fila];
                 return $respuesta;
                
@@ -46,7 +46,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
         
         }
 
-        public function cerrarSesion(){
+        public function cerrarSesion(): Respuesta{
             $_SESSION['sesion'] = null;
             $respuesta = new Respuesta(false,"Error al iniciar", null);
             return $respuesta;
@@ -63,8 +63,9 @@ require_once __DIR__ . '/../dao/respuesta.php';
                 return new Respuesta(false,"Error al registrar Usuario", null);
             }
 
-
         }       
+        public function verUsuario() {
+        }
             
     }
 

@@ -43,7 +43,6 @@
         $isAdmin = $_POST['isAdmin'];
         $resultado = (new SesionDAO())->registrarUsuario(email: $email, nombre: $nombre, apellido: $apellido, telefono: $telefono, password: $password, isAdmin: $isAdmin);
         echo json_encode($resultado);
-
     }
 
     function iniciarSesion(){

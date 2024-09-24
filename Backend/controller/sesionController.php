@@ -26,12 +26,12 @@
 
     function obtenerSesion(){
         $resultado = (new SesionDAO())->obtenerSesion();
-        echo json_decode($resultado);
+        echo json_encode($resultado);
     }
 
     function verUsuario(){
-        $resultado = (new SesionDAO())->verUsuario();
-        echo json_encode($resultado);
+       // $resultado = (new SesionDAO())->verUsuario();
+        //echo $resultado;
     }
     
     function registrarUsuario(){
@@ -54,7 +54,7 @@
     
     function cerrarSesion(){
         $id = $_POST['id'];
-        $resultado = (new SesionDAO())->cerrarSesion($id);
+        $resultado = (new SesionDAO())->cerrarSesion();
         echo json_encode($resultado);
     }
 

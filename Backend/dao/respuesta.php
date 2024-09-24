@@ -7,7 +7,7 @@
         function __construct($estado,$mensaje,$datos){
             $this->estado = $estado;
             $this->mensaje = $mensaje;
-            $this->datos=$datos;
+            $this->datos = $datos;
         }
 
     }

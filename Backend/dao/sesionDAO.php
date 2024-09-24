@@ -53,20 +53,20 @@ require_once __DIR__ . '/../dao/sesionDAO.php';
 
         }
 
-        public function registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin){
-            $conection = connection();
-            $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) VALUE ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');";
-            try{
+        public function registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin) {
+            try {
+                $conection = connection();
+                $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) 
+                        VALUES ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');";
                 $respuesta = $conection->query($sql);
-                return new Respuesta(true,"Usuario registrado correctamente", null);
-            }catch(Exception $e){
-                return new Respuesta(false,"Error al registrar Usuario", null);
+                return new Respuesta(true, "Usuario registrado correctamente", null);
+            } catch (Exception $e) {
+                return new Respuesta(false, "Error al registrar Usuario: " . $e->getMessage(), null);
             }
-
-        }       
-        public function verUsuario() {
         }
-            
+
+        public function verUsuario() {
     }
 
+}
 ?>

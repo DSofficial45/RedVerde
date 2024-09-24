@@ -3,7 +3,7 @@ function connection()
 {
     try{
         $host = "localhost";
-        $usuario = "";
+        $usuario = "root";
         $password = "";
         $bd = "redVerdeBD";
         $puerto = 3306;

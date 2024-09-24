@@ -63,6 +63,7 @@ require_once __DIR__ . '/../dao/sesionDAO.php';
             } catch (Exception $e) {
                 return new Respuesta(false, "Error al registrar Usuario: " . $e->getMessage(), null);
             }
+            
         }
 
         public function verUsuario() {

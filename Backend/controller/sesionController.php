@@ -3,15 +3,15 @@
 
     $funcion = $_GET['funcion'];
     switch ($funcion) {
-        case "Login":
+        case "login":
             iniciarSesion();
         break;
     
-        case "Registrar":
+        case "registrar":
             registrarUsuario();
         break;
     
-        case "Cerrar":
+        case "cerrar":
             cerrarSesion();
             break;
     
@@ -19,7 +19,7 @@
             obtenerSesion();
             break;
         
-        case "Ver":
+        case "ver":
             verUsuario();
         break;
     }
@@ -30,7 +30,7 @@
     }
 
     function verUsuario(){
-       // $resultado = (new SesionDAO())->verUsuario();
+        //$resultado = (new SesionDAO())->verUsuario();
         //echo $resultado;
     }
     
@@ -53,8 +53,8 @@
     }
     
     function cerrarSesion(){
-        $id = $_POST['id'];
-        $resultado = (new SesionDAO())->cerrarSesion();
+        $email = $_POST['id'];
+        $resultado = (new SesionDAO())->cerrarSesion($email);
         echo json_encode($resultado);
     }
 

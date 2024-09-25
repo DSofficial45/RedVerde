@@ -19,7 +19,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
             if ($fila !=null){
                 $respuesta = new Respuesta(estado: true,mensaje: "Sesion Iniciada", datos: null);
                 $_SESSION['sesion']=["usuario"=>$fila];
-               // return $respuesta;
+                //return $respuesta;
                     
             }else{
                 $respuesta = new Respuesta(estado: false,mensaje: "Error al iniciar", datos: null);
@@ -45,7 +45,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
         
         }
 
-        public function cerrarSesion(): Respuesta{
+        public function cerrarSesion(){
             $_SESSION['sesion'] = null;
             $respuesta = new Respuesta(false,"Error al iniciar", null);
             return $respuesta;
@@ -68,6 +68,18 @@ require_once __DIR__ . '/../dao/respuesta.php';
         }
 
         public function verUsuario() {
+
+                $respuesta = new respuesta(true,"Sesion Iniciada",null);
+                if(isset($_SESSION['sesion'])){
+                    $respuesta = new respuesta(true,"Sesion obtenida",$_SESSION['sesion']);
+                    return $respuesta;
+                    
+                }else{
+                    $respuesta = new respuesta(true,"No se ha encontrado una sesion",null);
+                    return $respuesta;
+    
+                }
+            
     }
 
 }

@@ -11,7 +11,7 @@ window.onload= async()=>{
     dataUsuario.append('telefono', usuario.telefono);
     dataUsuario.append('password', usuario.password);
     dataUsuario.append('isAdmin', usuario.isAdmin);
-    let url = window.location.origin + "/APIMySQL/BackEnd/Controllers/MercadoController.php?function=Registrar";
+    let url = window.location.origin + "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Registrar";
     let config = {
         method: 'POST' ,
         body: dataUsuario

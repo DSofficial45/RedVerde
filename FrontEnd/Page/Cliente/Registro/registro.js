@@ -1,9 +1,9 @@
 window.onload= async()=>{
-    let usuario = await ();
-    mostrarProductos(usuario);
+    let usuarios = await obtenerUsario();
+    mostrarUsarios(usuarios);
   }
  
-  async function guardarProducto(usuario){
+  async function GuardarUsuario(usuario){
     let dataUsuario = new FormData();
     dataUsuario.append('email', usuario.email)
     dataUsuario.append('nombre', usuario.nombre)

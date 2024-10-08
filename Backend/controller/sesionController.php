@@ -18,20 +18,11 @@
         case "obtener":
             obtenerSesion();
             break;
-        
-        case "ver":
-            verUsuario();
-        break;
     }
 
     function obtenerSesion(){
         $resultado = (new SesionDAO())->obtenerSesion();
         echo json_encode($resultado);
-    }
-
-    function verUsuario(){
-        //$resultado = (new SesionDAO())->verUsuario();
-        //echo $resultado;
     }
     
     function registrarUsuario(){
@@ -53,8 +44,7 @@
     }
     
     function cerrarSesion(){
-        $email = $_POST['id'];
-        $resultado = (new SesionDAO())->cerrarSesion($email);
+        $resultado = (new SesionDAO())->cerrarSesion();
         echo json_encode($resultado);
     }
 

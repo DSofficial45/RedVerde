@@ -8,16 +8,15 @@ require_once __DIR__ . '/../dao/respuesta.php';
 
     class SesionDAO{
         public $nombre;
-        public $password;
-        
+        public $password;   
 
         public function iniciarSesion($nombre, $password){
             $conection = connection();
-            $sql = "SELECT * FROM usuario WHERE nombre = 'nombre' AND password = 'password'";
+            $sql = "SELECT * FROM usuario WHERE nombre = '$nombre' AND password = '$password'";
             $respuesta = $conection->query($sql);
             $fila = $respuesta->fetch_assoc();
             if ($fila !=null){
-                $respuesta = new Respuesta(estado: true,mensaje: "Sesion Iniciada", datos: null);
+                $respuesta =  new Respuesta(estado: true,mensaje: "Sesion Iniciada", datos: $_SESSION['sesion']);
                 $_SESSION['sesion']=["usuario"=>$fila];
                 //return $respuesta;
                     
@@ -37,7 +36,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
                 return $respuesta;
                 
             }else{
-                $respuesta = new respuesta(true,"No se ha encontrado una sesion",null);
+                $respuesta = new respuesta(false,"No se ha encontrado una sesion",null);
                 return $respuesta;
 
             }
@@ -46,9 +45,19 @@ require_once __DIR__ . '/../dao/respuesta.php';
         }
 
         public function cerrarSesion(){
-            $_SESSION['sesion'] = null;
-            $respuesta = new Respuesta(false,"Error al iniciar", null);
-            return $respuesta;
+            $conection = connection();
+            $_SESSION['sesion'] = null;     
+            return new Respuesta(false,"Se a cerrado la sesion correctamente", $_SESSION['sesion']);
+            
+            /*if(isset($_SESSION['sesion'])){
+                $respuesta = new respuesta(true,"Usuario cerrado correctamente",$_SESSION['sesion']);
+                return $respuesta;
+                
+            }else{
+                $respuesta = new respuesta(false,"No hay usuario",null);
+                return $respuesta;
+
+            }*/
 
         }
 
@@ -75,7 +84,7 @@ require_once __DIR__ . '/../dao/respuesta.php';
                     return $respuesta;
                     
                 }else{
-                    $respuesta = new respuesta(true,"No se ha encontrado una sesion",null);
+                    $respuesta = new respuesta(false,"No se ha encontrado una sesion",null);
                     return $respuesta;
     
                 }

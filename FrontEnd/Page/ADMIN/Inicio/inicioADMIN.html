@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,57 +7,60 @@
     <link rel="stylesheet" href="inicioADMIN.css">
     <script src="inicioADMIN.js" defer></script>
 </head>
+
+<!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
 <body>
     <header>
-        <div class="cabezeraSuperior">
-            <a href="#">
-                <a href="../../Cliente/Login/login.html"><img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza"></a>
-            </a>
+        <div class="cabezaArriba">
+            <a href="../../Cliente/Login/login.html"><img src="../../../assets/Logo/RedVerde.png" alt="LogoRedVerdeOscuro" class="Logo-Cabeza"></a>
         </div>
-        <div class="cabezeraInferior">
-            <ul class="menuNavegación">
+
+        <nav class="cabezaAbajo">
+            <ul class="menuIzquierda">
                 <li><a href="../Inicio/inicioADMIN.html">INICIO</a></li>
                 <li><a href="../Productos/Productos.html">PRODUCTOS</a></li>
                 <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
             </ul>
 
-            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
-        </div>
+            <ul class="menuDerecha">
+                <li><a href="../../Login/login.html"><img src="../../../assets/Iconos/Usuario.png"></a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <div class="cuerpoArriba">
-            <img src="../../../assets/Logo/RedVerdeClaro.png" class="imgInicio">
-            <p class="MensajeInicio">DIMS TE HA DADO ACCESO AL PROYECTO RED VERDE. ASEGURATE DE ACTUAR BAJO LAS ORDENES DEL GRUPO O SERÁS AMONESTADO POR TU COMPORTAMIENTO</p>
-        </div>
+    <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
 
-        <div class="cuerpoAbajo">
-            <p>INGRESA</p>
-            <a href="../../Cliente/Login/login.html" class="button">LOGIN</a>
+    <main>
+        <div class="cuerpo">
+            <img src="../../../assets/Logo/RedVerde.png" alt="LogoRedVerdeOscuro">
+            <h1>DIMS TE HA DADO ACCESO AL PROYECTO RED VERDE</h1>
+            <p>ASEGÚRESE DE ACTUAR BAJO LAS ÓRDENES DEL EQUIPO DIMS PARA MANTENER SATISFACTORIA LA EXPERIENCIA DE LOS USUARIOS, POR FAVOR</p>
         </div>
     </main>
 
-    <footer class="pie-pagina">
+    <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
 
-        <div class="grupo-1">
-
-            <div class="logoPie">
-                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="Red Verde" class="Logo-Pie">
+    <footer>
+        <div class="pieArriba">
+            <div class="pieArribaIzquierda">
+                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="LogoRedVerdeClaro">
             </div>
-
-            <div class="nombreGrupo">
-                <h2>INTEGRANTES</h2>
-                <p>D = Diego Bernardi</p>
-                <p>I = Ignacio Viazzi</p>
-                <p>M = Maricela Ruiz</p>
-                <p>S = Santiago Pérez</p>
+            
+            <div class="pieArribaDerecha">
+                <div class="grupo">
+                    <h2>INTEGRANTES</h2>
+                    <p>D = Diego Bernardi</p>
+                    <p>I = Ignacio Viazzi</p>
+                    <p>M = Maricela Ruiz</p>
+                    <p>S = Santiago Pérez</p>
+                </div>
             </div>
         </div>
 
-        <div class="grupo-2">
+        <div class="pieAbajo">
             <p>D.I.M.S - EMT Informática 3er AÑO - UTU Tarariras</p>
         </div>
-        
     </footer>
 </body>
 </html>

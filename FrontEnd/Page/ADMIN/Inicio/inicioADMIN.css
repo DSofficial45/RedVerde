@@ -1,231 +1,294 @@
 body {
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
     margin: 0;
-    background-color: rgb(13, 22, 0);
+    padding: 0;
+    height: 100vh;
+    width: 100%;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+}
+
+/*==============================CABEZA==============================*/
 
 header{
-    height: 168px;
-    width: 100%;
-}
-
-.cabezeraSuperior {
-    display: flex;
-    min-height: 70px;
-    background-color: rgb(161, 255, 37);
-    justify-content: left;
-    align-items: center;
-    padding: 10px;
-}
-
-.cabezeraSuperior a{
-    margin: 0px;
-    padding: 0px;
-}
-
-.Logo-Cabeza {
-    width: 40%;
-}
-
-/*---------------------------------------*/
-
-.cabezeraInferior {
-    display: flex;
-    background-color: rgb(186, 255, 96);
-    height: 60px;
-}
-
-.menuNavegación {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background: rgb(186, 255, 96);
-    list-style: none;
-}
-
-.menuNavegación li {
-    margin: 0px;
-    padding: 5px;
-}
-
-.menuNavegación li a {
-    text-decoration: none;
-    color: black;
-    padding: 22.5px;
-    font-size: 15px;
-}
-
-.menuNavegación li a:hover {
-    background: rgb(72, 127, 0);
-    color: white;
-}
-
-.usuarioIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.usuarioIcono img:hover{
-    background: rgb(72, 127, 0);
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-main{
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+/*----------------------------------------------*/
+
+.cabezaArriba{
+    background-color: rgb(187, 255, 98);
+}
+
+.cabezaArriba img{
     width: 100%;
 }
 
-/*---------------------------------------*/
-
-.cuerpoArriba {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Impact;
-    font-size: 50px;
-    color: white;
-    padding: 50px;
-    background: url('../../../assets/Fondo/FondoPlantas-Oscuro.jpg');
-}
-
-.cuerpoArriba img{
-    width: 50%;
-    margin: 0px;
-    margin-bottom: 50px;
-    padding: 0px;
-}
-
-.cuerpoArriba p{
-    width: 80%;
-    margin: 0px;
-    padding: 0px;
-}
-
-/*---------------------------------------*/
-
-.cuerpoAbajo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-    width: 100%;
-    background-color: rgb(78, 137, 0);
-    font-family: Impact;
-    color: white;
-}
-
-.cuerpoAbajo p{
-    display: flex;
-    text-align: center;
-    font-size: 50px;
-    width: 170px;
-    padding: 0px;
-    margin: 25px;
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    padding: 10px 20px;
-    font-size: 30px;
-    margin: 25px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(186, 255, 96);
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: rgb(24, 42, 0);
-    color: white;
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-.pie-pagina {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 355px;
-    background-color: rgb(20, 35, 0);
-}
-
-/*---------------------------------------*/
-
-.grupo-1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 355px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(26, 41, 8);
-}
-
-/*----------------*/
-
-.logoPie {
-    display: flex;
-    justify-content: center;
+.cabezaArriba a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
     width: 25%;
-    height: 150px;
-    margin-top: 75px;
-    margin-right: 12.5%;
+    padding: 1vh;
 }
 
-.logoPie img{
+/*----------------------------------------------*/
+
+.cabezaAbajo{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(206, 255, 142);
+    justify-content: space-between;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuIzquierda{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    height: 100%;
     width: 100%;
+    margin: 0px;
+    color: black;
+    font-size: 2vh;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(95, 118, 66);
+    color: white;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuDerecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
     height: 100%;
 }
 
-/*----------------*/
-
-.nombreGrupo{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 200px;
-    color: white;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-left: 12.5%;
+.menuDerecha li {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
-.nombreGrupo p{
+.menuDerecha a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.menuDerecha img {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CUERPO==============================*/
+
+main{
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+    height: 100%;
+}
+
+.cuerpo{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.75);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.cuerpo h1{
+    text-align: center;
+    font-family: arial;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
     margin: 10px;
 }
 
-.nombreGrupo h2{
-    margin: 0px;
-}
-
-/*---------------------------------------*/
-
-.grupo-2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 55px;
+.cuerpo p{
+    text-align: center;
+    font-family: arial;
+    font-size: 40px;
     padding: 0px;
     margin: 0px;
-    background-color: rgb(13, 22, 0);
 }
 
-.grupo-2 p{
+.cuerpo img{
+    width: 60%;
+    padding-bottom: 25px;
+}
+
+/*==============================PIE==============================*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*----------------------------------------------*/
+
+.pieArriba{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 24, 0);
     padding: 20px;
-    margin: 0px;
-    font-size: 15px;
-    font-weight: bold;
+}
+
+.pieArribaIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.pieArribaIzquierda img{
+    width: 500px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.pieArribaDerecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
     color: white;
+    font-family: arial;
+}
+
+.grupo h2{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.grupo p{
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*----------------------------------------------*/
+
+.pieAbajo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px;
+}
+
+.pieAbajo p{
+    margin: 15px;
+}
+
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+
+/*===============================*/
+
+@media (max-width: 541px){
+    
+    /*==========CABEZA==========*/
+
+    .cabezaArriba a {
+        width: 30%
+    }
+    
+    li a {
+        padding: 1vh;
+        font-size: 1.5vh;
+    }
+    
+    .menuDerecha a {
+        padding: 1vh;
+    }
+    
+    .menuDerecha img {
+        height: 3vh;
+        width: 3vh;
+    }
+    
+    /*===========PIE===========*/
+    
+    .pieArribaIzquierda img{
+        width: 100%;
+    }
+    
+    .grupo h2{
+        font-size: 20px;
+    }
+    
+    .grupo p{
+        font-size: 15px;
+    }
+    
+    .pieAbajo{
+        font-size: 15px;
+    }
+    
+    .pieAbajo p{
+        margin: 15px;
+    }
+    
+    /*lllllllllllllllllllllllllllllllllllllllllllll*/
+    /*===========CUERPO===========*/
+
+    .cuerpo{
+        padding: 5px;
+    }
+    
+    .cuerpo h1{
+        font-size: 25px;
+        padding: 0px;
+    }
+    
+    .cuerpo p{
+        font-size: 15px;
+    }
 }

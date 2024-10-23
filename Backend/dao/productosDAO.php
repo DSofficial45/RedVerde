@@ -13,8 +13,8 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion){
-        $sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion')";
+    public function agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
+        $sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion, urlImg) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion', '$urlImg')";
         $connection = connection();
         try{
             $respuesta = $connection->query($sql);

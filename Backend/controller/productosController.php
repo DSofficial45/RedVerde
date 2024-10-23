@@ -19,7 +19,6 @@
             modificarProducto();
         break;
     
-    }
 
     function verProducto(){
         $resultado = (new productoDAO())->verProductoModelo();
@@ -32,7 +31,8 @@
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
-        $resultado = (new productoDAO())->agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion);
+        $urlImg = $_POST['urlImg'];
+        $resultado = (new productoDAO())->agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion, $urlImg);
         echo json_encode($resultado);
     }
     

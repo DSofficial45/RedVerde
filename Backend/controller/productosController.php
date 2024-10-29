@@ -21,7 +21,7 @@
     
 
     function verProducto(){
-        $resultado = (new productoDAO())->verProductoModelo();
+        $resultado = (new productoDAO())->verProducto();
         echo json_encode($resultado);
     }
     
@@ -32,13 +32,13 @@
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
         $urlImg = $_POST['urlImg'];
-        $resultado = (new productoDAO())->agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion, $urlImg);
+        $resultado = (new productoDAO())->agregarProducto($nombre, $fecha, $precio, $stock, $descripcion, $urlImg);
         echo json_encode($resultado);
     }
     
     function eliminarProducto(){
         $id = $_POST['id'];
-        $resultado = (new productoDAO())->eliminarProductoModelo($id);
+        $resultado = (new productoDAO())->eliminarProducto($id);
         echo json_encode($resultado);
     }
     
@@ -49,7 +49,7 @@
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
-        $resultado = (new productoDAO())->modificarProductoModelo($id, $nombre, $fecha, $precio, $stock, $descripcion);
+        $resultado = (new productoDAO())->modificarProducto($id, $nombre, $fecha, $precio, $stock, $descripcion);
         echo json_encode($resultado);
     }
 ?>

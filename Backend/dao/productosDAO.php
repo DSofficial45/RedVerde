@@ -4,7 +4,7 @@ require_once __DIR__ . '/../conexion/conexion.php';
 
 class productoDAO {
 
-    function verProductoModelo(){
+    function verProducto(){
         $connection = connection();
         $sql = "SELECT * FROM producto";
         $respuesta = $connection->query($sql);
@@ -13,7 +13,7 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
+    public function agregarProducto($nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
         $sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion, urlImg) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion', '$urlImg')";
         $connection = connection();
         try{
@@ -27,7 +27,7 @@ class productoDAO {
         
     }
 
-    public function eliminarProductoModelo($id){
+    public function eliminarProducto($id){
         $sql = "DELETE FROM producto WHERE id ='$id'";
         $connection = connection();
         try{
@@ -39,8 +39,8 @@ class productoDAO {
 
     }
 
-    public function modificarProductoModelo($id, $nombre, $fecha, $precio, $stock, $descripcion){
-        $sql = "UPDATE libro SET nombre='$nombre', fecha='$fecha', precio='$precio', stock='$stock', descripcion='$descripcion' WHERE id=$id";
+    public function modificarProducto($id, $nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
+        $sql = "UPDATE libro SET nombre='$nombre', fecha='$fecha', precio='$precio', stock='$stock', descripcion='$descripcion', urlImg=', $urlImg' WHERE id=$id";
         $connection = connection();
         try{
             $respuesta = $connection->query($sql);

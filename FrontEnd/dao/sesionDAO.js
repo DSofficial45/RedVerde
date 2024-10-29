@@ -1,9 +1,12 @@
+import Origen from "./Origen";
+
 export default class SesionDAO{
 
     async iniciarSesion() {
-        let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Login";
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=Login";
         let formData = new FormData();
-        formData.eppend("password", password);
+        formData.eppend("usuario", nombre);
+        formData.eppend("contraseña", password);
         let config = {
             method: "POST",
             body:formData
@@ -11,23 +14,28 @@ export default class SesionDAO{
 
         let respuestaConsulta = await fetch(url, config);
         let respuesta = await respuestaConsulta.json();
+        return respuesta;
     }
 
     async registrarUsuario() {
-        let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Registrar"
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=Registrar"
         let formData = new FormData();
-        formData.eppend("email", email, "nombre", nombre, "apellido", apellido, "telefono", telefono, "password", password, "isAdmin", isAdmin);
+        formData.eppend("email", email);
+        formData.eppend("nombre", nombre);
+        formData.eppend("apellido", apellido);
+        formData.eppend("telefono", telefono);
+        formData.eppend("password", password);
         let config 
     }
 
     async obtenerSesion() {
-        let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=obtener";
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=obtener";
         let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
     }
 
     async cerrarSesion(){
-        let url = "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Cerrar";
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=Cerrar";
         let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
     }

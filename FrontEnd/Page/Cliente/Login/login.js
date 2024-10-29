@@ -6,7 +6,7 @@ function agregarEvento(){
     let formElement = document.querySelector("#login");
     formElement.onsubmit = (e)=>{
         e.proventDefault();
-        let email = formElement.usuario.value;
+        let nombre = formElement.usuario.value;
         let password = formElement.contraseña.value;
 
         iniciarSesion(email, password);

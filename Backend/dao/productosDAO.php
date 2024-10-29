@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../conexion/conexion.php';
+require_once __DIR__ . '/imagenDAO.php';
 
 class productoDAO {
 
@@ -13,8 +14,21 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProducto($nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
-        $sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion, urlImg) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion', '$urlImg')";
+    public function agregarProducto($nombre, $fecha, $precio, $stock, $descripcion, $Imagen){
+        if(isset($Imagen)){
+            $ImagenDAO = new ImagenDAO();
+            $respuesta = $ImagenDAO->agregarImagen($Imagen);
+            if($respuesta->exito){
+                return $respuesta;
+            }
+            $idImagen = $respuesta->datos;
+        }
+        $sql = "INSERT INTO producto ("
+        
+        
+        
+        
+        /*$sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion, urlImg) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion', '$urlImg')";
         $connection = connection();
         try{
             $respuesta = $connection->query($sql);
@@ -22,9 +36,7 @@ class productoDAO {
             
         }catch(Exception $e){
             return new Respuesta(false,"error al agregar producto",null);
-        }
-        
-        
+        }*/
     }
 
     public function eliminarProducto($id){

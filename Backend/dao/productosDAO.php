@@ -14,29 +14,21 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProducto($nombre, $fecha, $precio, $stock, $descripcion, $Imagen){
+    public function agregarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $imagen){
         if(isset($Imagen)){
             $ImagenDAO = new ImagenDAO();
             $respuesta = $ImagenDAO->agregarImagen($Imagen);
-            if($respuesta->exito){
-                return $respuesta;
-            }
             $idImagen = $respuesta->datos;
         }
-        $sql = "INSERT INTO producto ("
-        
-        
-        
-        
-        /*$sql = "INSERT INTO producto(nombre, fecha, precio, stock, descripcion, urlImg) VALUES ('$nombre', '$fecha', '$precio', '$stock', '$descripcion', '$urlImg')";
+        $sql = "INSERT INTO producto (id, fecha, precio, stock, descripcion, nombre) VALUE (`$id`, `$fecha`, `$precio`, `$descripcion`, `$nombre`)";
         $connection = connection();
         try{
-            $respuesta = $connection->query($sql);
-            return new Respuesta(true,"producto agregado correctamente",null);
-            
+            $connection->query($sql);
+            return new Respuesta(true, "Producto agregado correctamente", null);
         }catch(Exception $e){
-            return new Respuesta(false,"error al agregar producto",null);
-        }*/
+            return new Respuesta(false, "Error al agregar producto", null);
+        }
+       
     }
 
     public function eliminarProducto($id){

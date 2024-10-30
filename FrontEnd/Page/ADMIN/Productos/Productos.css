@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -125,11 +125,12 @@ main {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: rgba(0, 0, 0, 0.2);
-    padding: 20px;
     overflow: hidden;
-    width: 80%;
-    height: 100%;
+    width: 90%;
+    height: 110%;
     max-height: 600px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .mainIzquierdo, .mainDerecho {
@@ -143,8 +144,9 @@ main {
 /*------------- CUERPO IZQUIERDO -------------*/
 
 .mainIzquierdo {
-    width: 45%;
+    width: 25%;
     border-right: 2px solid rgba(95, 118, 66, 0.5);
+    font-family: arial;
 }
 
 .formularioProducto {
@@ -176,6 +178,26 @@ label{
 .formularioProducto .btn:hover {
     background-color: rgb(198, 255, 84);
     color: rgb(0, 0, 0);
+}
+
+#descripcion{
+    height: 200px;
+    resize: none;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid rgb(95, 118, 66);
+    border-radius: 5px;
+}
+
+.precios {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.precios input {
+    width: 49%;
+    margin: 1%;
 }
 
 /*------------- CUERPO DERECHO -------------*/

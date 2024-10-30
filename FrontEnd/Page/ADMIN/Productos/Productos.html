@@ -36,9 +36,11 @@
             <div class="mainIzquierdo">
                 <form class="formularioProducto" id="formularioProducto">
                     <input type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Descripción">
-                    <input type="number" placeholder="Precio">
-                    <input type="number" placeholder="%Oferta">
+                    <textarea placeholder="Descripción" id="descripcion"></textarea>
+                    <div class="precios">
+                        <input type="number" placeholder="Precio" id="precio">
+                        <input type="number" placeholder="%Oferta" id="oferta">
+                    </div>
                     <select class="seleccionTipo">
                         <option>Aromáticos</option>
                         <option>Florales</option>
@@ -50,7 +52,7 @@
                         <option>Inciensos</option>
                         <option>Perfumados</option>
                     </select>
-                    <label>Fotos del producto:</label>
+                    <label>Imágenes del producto:</label>
                     <input type="file">
                     <input type="number" placeholder="Stock">
                     

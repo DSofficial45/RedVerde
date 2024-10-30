@@ -14,13 +14,13 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $imagen){
+    public function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen){
         if(isset($Imagen)){
             $ImagenDAO = new ImagenDAO();
             $respuesta = $ImagenDAO->agregarImagen($Imagen);
             $idImagen = $respuesta->datos;
         }
-        $sql = "INSERT INTO producto (id, fecha, precio, stock, descripcion, nombre) VALUE (`$id`, `$fecha`, `$precio`, `$descripcion`, `$nombre`)";
+        $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre) VALUE (`$fecha`, `$precio`, `$descripcion`, `$nombre`)";
         $connection = connection();
         try{
             $connection->query($sql);

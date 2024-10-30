@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-10-2024 a las 20:35:41
+-- Tiempo de generación: 24-10-2024 a las 18:25:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `comentario` (
   `texto` text NOT NULL,
   `idProducto` int(11) NOT NULL,
   `emailUsuario` varchar(255) NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -56,7 +56,7 @@ CREATE TABLE `compra` (
   `id` int(11) NOT NULL,
   `estado` varchar(255) NOT NULL,
   `emailUsuario` varchar(255) NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -104,8 +104,8 @@ CREATE TABLE `oferta` (
   `id` int(11) NOT NULL,
   `descuento` int(11) NOT NULL,
   `idProducto` int(11) NOT NULL,
-  `fechaInicio` date NOT NULL,
-  `fechaFin` date NOT NULL
+  `fechaInicio` datetime NOT NULL,
+  `fechaFin` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -116,12 +116,12 @@ CREATE TABLE `oferta` (
 
 CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` datetime NOT NULL,
   `precio` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `urlImg` varchar(255) NOT NULL
+  `imagen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -170,7 +170,7 @@ CREATE TABLE `usuariocomentariousuario` (
   `id` int(11) NOT NULL,
   `idComentario` int(11) NOT NULL,
   `emailUsuario` varchar(255) NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -229,7 +229,7 @@ ALTER TABLE `oferta`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `urlImg` (`urlImg`);
+  ADD KEY `urlImg` (`imagen`);
 
 --
 -- Indices de la tabla `productocategoria`
@@ -293,7 +293,7 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`urlImg`) REFERENCES `imagen` (`url`);
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`imagen`) REFERENCES `imagen` (`url`);
 
 --
 -- Filtros para la tabla `productocategoria`

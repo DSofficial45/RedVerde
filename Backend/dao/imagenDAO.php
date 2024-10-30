@@ -16,9 +16,9 @@
                 $id = $connection->insert_id;
                 $url = __DIR__ . "../imagenes/$id.$extension";
                 move_uploaded_file($ruta, $url);
-                return new Respuesta(false, "Imagen agregada correctamente", $id)
+                return new Respuesta(false, "Imagen agregada correctamente", $id);
             }catch(Exception $e){
-                return new Respuesta(false, "Error al agregar la imagen", null)
+                return new Respuesta(false, "Error al agregar la imagen", null);
             }
 
         }

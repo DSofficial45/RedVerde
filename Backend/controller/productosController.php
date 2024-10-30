@@ -19,37 +19,39 @@
             modificarProducto();
         break;
     
+    }
 
     function verProducto(){
-        $resultado = (new productoDAO())->verProductoModelo();
+        $resultado = (new productoDAO())->verProducto();
         echo json_encode($resultado);
     }
     
     function agregarProducto(){
-        $nombre = $_POST['nombre'];
         $fecha = $_POST['fecha'];
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
-        $urlImg = $_POST['urlImg'];
-        $resultado = (new productoDAO())->agregarProductoModelo($nombre, $fecha, $precio, $stock, $descripcion, $urlImg);
+        $nombre = $_POST['nombre'];
+        $imagen = $_POST['imagen'];
+        $resultado = (new productoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen);
         echo json_encode($resultado);
     }
     
     function eliminarProducto(){
         $id = $_POST['id'];
-        $resultado = (new productoDAO())->eliminarProductoModelo($id);
+        $resultado = (new productoDAO())->eliminarProducto($id);
         echo json_encode($resultado);
     }
     
     function modificarProducto(){
         $id = $_POST['id'];
-        $nombre = $_POST['nombre'];
         $fecha = $_POST['fecha'];
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
-        $resultado = (new productoDAO())->modificarProductoModelo($id, $nombre, $fecha, $precio, $stock, $descripcion);
+        $nombre = $_POST['nombre'];
+        $imagen = $_POST['imagen'];
+        $resultado = (new productoDAO())->modificarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $imagen);
         echo json_encode($resultado);
     }
 ?>

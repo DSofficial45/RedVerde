@@ -20,7 +20,7 @@ class productoDAO {
             $respuesta = $ImagenDAO->agregarImagen($Imagen);
             $idImagen = $respuesta->datos;
         }
-        $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre) VALUE (`$fecha`, `$precio`, `$descripcion`, `$nombre`)";
+        $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre, imagen) VALUE (`$fecha`, `$precio`, `$stock`, `$descripcion`, `$nombre`, `$imagen`)";
         $connection = connection();
         try{
             $connection->query($sql);

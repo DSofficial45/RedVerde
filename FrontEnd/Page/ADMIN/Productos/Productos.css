@@ -1,317 +1,399 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: rgb(13, 22, 0);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CABEZA==============================*/
 
 header{
-    height: 168px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------------------------------------------*/
+
+.cabezaArriba{
+    background-color: rgb(187, 255, 98);
+}
+
+.cabezaArriba img{
     width: 100%;
 }
 
-.cabezeraSuperior {
-    display: flex;
-    min-height: 70px;
-    background-color: rgb(161, 255, 37);
-    justify-content: left;
-    align-items: center;
-    padding: 10px;
+.cabezaArriba a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    width: 15%;
+    padding: 1vh;
 }
 
-.cabezeraSuperior a{
+/*----------------------------------------------*/
+
+.cabezaAbajo{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(206, 255, 142);
+    justify-content: space-between;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuIzquierda{
+    display: flex;
+    list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
-.Logo-Cabeza {
-    width: 40%;
-}
-
-/*---------------------------------------*/
-
-.cabezeraInferior {
+li a {
     display: flex;
-    background-color: rgb(186, 255, 96);
-    height: 60px;
-}
-
-.menuNavegación {
-    display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    height: 100%;
     width: 100%;
-    background: rgb(186, 255, 96);
-    list-style: none;
-}
-
-.menuNavegación li {
     margin: 0px;
-    padding: 5px;
-}
-
-.menuNavegación li a {
-    text-decoration: none;
     color: black;
-    padding: 22.5px;
-    font-size: 15px;
+    font-size: 2vh;
+    font-family: Arial;
+    text-decoration: none;
 }
 
-.menuNavegación li a:hover {
-    background: rgb(72, 127, 0);
+li a:hover {
+    background-color: rgb(95, 118, 66);
     color: white;
 }
 
-.usuarioIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuDerecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
 }
 
-.usuarioIcono img:hover{
-    background: rgb(72, 127, 0);
+.menuDerecha li {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
+.menuDerecha a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
 
-main{
+.menuDerecha img {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CUERPO==============================*/
+
+
+main {
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
     display: flex;
-    flex-direction: column;
     align-items: center;
-}
-
-/*---------------------------------------*/
-
-.mainSuperior{
-    width: 30%;
-    padding: 30px;
-    margin: 50px;
-    margin-bottom: 0px;
-    background-color: rgb(224, 255, 122);
-}
-
-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
+    justify-content: center;
     height: 100%;
-    text-align: center;
 }
 
-form h2 {
-    font-size: 30px;
-    color: #000000;
-    margin-bottom: 35px;
-}
-
-input {
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow: hidden;
     width: 80%;
-    padding: 17px;
-    background-color: rgb(239, 255, 188);
-    border: 2px solid #000000;
-    margin-bottom: 30px;
-    outline: none;
-    color: #000000;
-    font-size: 16px;
-}
-
-.seleccionTipo{
-    width: 89%;
-    padding: 17px;
-    background-color: rgb(239, 255, 188);
-    border: 2px solid #000000;
-    margin-bottom: 30px;
-    outline: none;
-    color: #000000;
-    font-size: 16px;
-}
-
-::placeholder {
-}
-
-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
     height: 100%;
-    text-align: center;
+    max-height: 600px;
 }
 
-.botones{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-}
-
-.btn {
+.mainIzquierdo, .mainDerecho {
     width: 50%;
-    padding: 20px;
-    margin: 10px;
-    background-color: transparent;
-    border: 2px solid #000000;
-    margin-bottom: 30px;
-    color: #000000;
-    font-size: 16px;
-    display: inline-block;
-    text-decoration: none;
-    font-family: impact;
-    font-size: 30px;
-    max-width: 80%;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #000000;
-    color: #80ff00;
-}
-
-/*---------------------------------------*/
-
-.mainInferior{
-    width: 90%;
-    padding: 20px;
-    padding-top: 10px;
-    margin: 50px;
-    margin-top: 0px;
-    background-color: rgb(175, 205, 77);
-}
-
-.filtro{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-}
-
-.seleccionFiltro{
-    margin-top: 0px;
-    margin: 5px;
-    background-color: rgb(239, 255, 188);
-    border: 2px solid #000000;
-    outline: none;
-    color: #000000;
-    font-size: 16px;
-}
-
-.tableProductos{
-
-}
-
-.tabla{
-
-}
-
-table{
-    border-collapse: collapse;
-    width: 100%;
-}
-
-thead{
-
-}
-
-tr{
-    
-}
-
-th{
-    font-size: 25px;
-    background-color: rgb(73, 89, 20);
-    color: rgb(255, 255, 255);
-}
-
-tbody{
-}
-
-td{
-    background-color: rgb(239, 255, 185);
-}
-
-td img{
-
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-.pie-pagina {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 355px;
-    background-color: rgb(20, 35, 0);
-}
-
-/*---------------------------------------*/
-
-.grupo-1{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    width: 100%;
-    height: 355px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(26, 41, 8);
+    padding: 20px;
 }
 
-/*----------------*/
+/*------------- CUERPO IZQUIERDO -------------*/
 
-.logoPie {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    height: 150px;
-    margin-top: 75px;
-    margin-right: 12.5%;
+.mainIzquierdo {
+    width: 45%;
+    border-right: 2px solid rgba(95, 118, 66, 0.5);
 }
 
-.logoPie img{
-    width: 100%;
-    height: 100%;
-}
-
-/*----------------*/
-
-.nombreGrupo{
+.formularioProducto {
     display: flex;
     flex-direction: column;
-    width: 25%;
-    height: 200px;
-    color: white;
+    gap: 15px;
+}
+
+label{
     font-size: 20px;
-    margin-top: 50px;
-    margin-left: 12.5%;
 }
 
-.nombreGrupo p{
-    margin: 10px;
+.formularioProducto input, .formularioProducto select {
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid rgb(95, 118, 66);
+    border-radius: 5px;
 }
 
-.nombreGrupo h2{
-    margin: 0px;
+.formularioProducto .btn {
+    background-color: rgb(75, 98, 56);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/*---------------------------------------*/
+.formularioProducto .btn:hover {
+    background-color: rgb(198, 255, 84);
+    color: rgb(0, 0, 0);
+}
 
-.grupo-2{
+/*------------- CUERPO DERECHO -------------*/
+
+.mainDerecho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.mainDerecho .filtro {
+    margin-bottom: 20px;
+}
+
+.mainDerecho .seleccionFiltro {
+    padding: 5px;
+    font-size: 20px;
+    border: 1px solid rgb(95, 118, 66);
+    border-radius: 5px;
+}
+
+.tabla {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla th, .tabla td {
+    padding: 15px;
+    border: 1px solid rgba(95, 118, 66, 0.5);
+    text-align: left;
+}
+
+.tabla th {
+    background-color: rgb(95, 118, 66);
+    color: white;
+    font-weight: normal;
+}
+
+.tabla td {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/*==============================PIE==============================*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*------------- PIE ARRIBA -------------*/
+
+.pieArriba{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 55px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(13, 22, 0);
+    background-color: rgb(13, 24, 0);
+    padding: 20px;
 }
 
-.grupo-2 p{
-    padding: 20px;
-    margin: 0px;
-    font-size: 15px;
-    font-weight: bold;
+/* >>> PIE ARRIBA IZQUIERDA <<<*/
+
+.pieArribaIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.pieArribaIzquierda img{
+    width: 500px;
+}
+
+/* >>> PIE ARRIBA DERECHA <<<*/
+
+.pieArribaDerecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
     color: white;
+    font-family: arial;
+}
+
+.grupo h2{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.grupo p{
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*------------- PIE ABAJO -------------*/
+
+.pieAbajo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px;
+}
+
+.pieAbajo p{
+    margin: 15px;
+}
+
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+
+/*===============================*/
+
+@media (max-width: 1000px){
+    
+    /*==========CABEZA==========*/
+
+    .cabezaArriba a {
+        width: 30%
+    }
+    
+    li a {
+        padding: 1vh;
+        font-size: 1.5vh;
+    }
+    
+    .menuDerecha a {
+        padding: 1vh;
+    }
+    
+    .menuDerecha img {
+        height: 3vh;
+        width: 3vh;
+    }
+    
+    /*===========PIE===========*/
+    
+    .pieArribaIzquierda img{
+        width: 100%;
+    }
+    
+    .grupo h2{
+        font-size: 20px;
+    }
+    
+    .grupo p{
+        font-size: 15px;
+    }
+    
+    .pieAbajo{
+        font-size: 10px;
+    }
+    
+    .pieAbajo p{
+        margin: 15px;
+    }
+    
+    /*lllllllllllllllllllllllllllllllllllllllllllll*/
+
+    /*===========CUERPO===========*/
+
+    .cuerpo {
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+    }
+
+    .mainIzquierdo {
+        width: 100%;
+        height: 40%;
+        border-right: none;
+        border-bottom: 2px solid rgba(95, 118, 66, 0.5);
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .mainDerecho {
+        width: 100%;
+        height: 60%;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .formularioProducto input,
+    .formularioProducto select,
+    .formularioProducto .btn {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .mainDerecho .seleccionFiltro {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .tabla th,
+    .tabla td {
+        padding: 10px;
+    }
+
+
 }

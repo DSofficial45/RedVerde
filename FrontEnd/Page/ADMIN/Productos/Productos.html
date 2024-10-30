@@ -8,115 +8,121 @@
     <script src="Productos.js" defer></script>
 </head>
 
+<!-- llllllllllllllllllllllllllllllllllllllllllll CABEZA llllllllllllllllllllllllllllllllllllllllllll -->
+
 <body>
     <header>
-        <div class="cabezeraSuperior">
-            <a href="#">
-                <a href="../Inicio/inicioADMIN.html"><img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza"></a>
-            </a>
+        <div class="cabezaArriba">
+            <a href="../../ADMIN/Inicio/inicioADMIN.html"><img src="../../../assets/Logo/RedVerdeAdmin.png" alt="LogoRedVerdeOscuro" class="Logo-Cabeza"></a>
         </div>
-        <div class="cabezeraInferior">
-            <ul class="menuNavegación">
+
+        <nav class="cabezaAbajo">
+            <ul class="menuIzquierda">
                 <li><a href="../Inicio/inicioADMIN.html">INICIO</a></li>
                 <li><a href="../Productos/Productos.html">PRODUCTOS</a></li>
                 <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
             </ul>
 
-            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
-        </div>
+            <ul class="menuDerecha">
+                <li><a href="../../Login/login.html"><img src="../../../assets/Iconos/Usuario.png"></a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- llllllllllllllllllllllllllllllllllllllllllll CUERPO llllllllllllllllllllllllllllllllllllllllllll -->
+
     <main>
-        <div class="mainSuperior">
-            <form class="formularioProducto" id="formularioProducto">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Descripción">
-                <input type="number" placeholder="Precio">
-                <input type="number" placeholder="%Oferta">
-                <select class="seleccionTipo">
-                    <option>Aromáticos</option>
-                    <option>Florales</option>
-                    <option>Arbustos</option>
-                    <option>Árboles</option>
-                    <option>Macetas</option>
-                    <option>Tierra</option>
-                    <option>Velas</option>
-                    <option>Inciensos</option>
-                    <option>Perfumados</option>
-                </select>
-                <input type="number" placeholder="Stock">
-                
-                <div class="botones">
-                    <input type="submit" class="btn" id="modificar" value="CREAR">
-                    <input type="submit" class="btn" id="crear" value="MODIFICAR">
-                </div>
-            </form>
-            
-        </div>
-
-        <div class="mainInferior">
-            <div class="filtro">
-                <select class="seleccionFiltro">
-                    <option>MAYOR A MENOR STOCK</option>
-                    <option>MENOR A MAYOR STOCK</option>
-                    <option>MAYOR A MENOR PRECIO</option>
-                    <option>MENOR A MAYOR PRECIO</option>
-                    <option>MAYOR A MENOR VENTAS</option>
-                    <option>MENOR A MAYOR VENTAS</option>
-                    <option>MAYOR A MENOR OFERTA</option>
-                    <option>MENOR A MAYOR OFERTA</option>
-                </select>
+        <div class="cuerpo">
+            <div class="mainIzquierdo">
+                <form class="formularioProducto" id="formularioProducto">
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Descripción">
+                    <input type="number" placeholder="Precio">
+                    <input type="number" placeholder="%Oferta">
+                    <select class="seleccionTipo">
+                        <option>Aromáticos</option>
+                        <option>Florales</option>
+                        <option>Arbustos</option>
+                        <option>Árboles</option>
+                        <option>Macetas</option>
+                        <option>Tierra</option>
+                        <option>Velas</option>
+                        <option>Inciensos</option>
+                        <option>Perfumados</option>
+                    </select>
+                    <label>Fotos del producto:</label>
+                    <input type="file">
+                    <input type="number" placeholder="Stock">
+                    
+                    <div class="botones">
+                        <button type="submit" class="btn" id="modificar">CREAR</button>
+                        <button type="submit" class="btn" id="crear">MODIFICAR</button>
+                    </div>
+                </form>
             </div>
-
-            <div class="tabla">
-                <table id="tableProductos">
-                    <thead class="theadProductos">
-                        <tr>
-                            <th>IMAGEN</th>
-                            <th>NOMBRE</th>
-                            <th>PRECIO</th>
-                            <th>%OFERTA</th>
-                            <th>STOCK</th>
-                            <th>DESCRIPCIÓN</th>
-                            <th>TIPO</th>
-                            <th>VENTAS</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
     
-                    <tbody class="tbodyProductos">
-                    </tbody>
-                </table>
+            <div class="mainDerecho">
+                <div class="filtro">
+                    <select class="seleccionFiltro">
+                        <option>MAYOR A MENOR STOCK</option>
+                        <option>MENOR A MAYOR STOCK</option>
+                        <option>MAYOR A MENOR PRECIO</option>
+                        <option>MENOR A MAYOR PRECIO</option>
+                        <option>MAYOR A MENOR VENTAS</option>
+                        <option>MENOR A MAYOR VENTAS</option>
+                        <option>MAYOR A MENOR OFERTA</option>
+                        <option>MENOR A MAYOR OFERTA</option>
+                    </select>
+                </div>
+    
+                <div class="tabla">
+                    <table id="tableProductos">
+                        <thead class="theadProductos">
+                            <tr>
+                                <th>IMAGEN</th>
+                                <th>NOMBRE</th>
+                                <th>PRECIO</th>
+                                <th>%OFERTA</th>
+                                <th>STOCK</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>TIPO</th>
+                                <th>VENTAS</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+        
+                        <tbody class="tbodyProductos">
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        
-        
     </main>
 
-    <footer class="pie-pagina">
+    <!-- llllllllllllllllllllllllllllllllllllllllllll PIE llllllllllllllllllllllllllllllllllllllllllll -->
 
-        <div class="grupo-1">
-
-            <div class="logoPie">
-                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="Red Verde" class="Logo-Pie">
+    <footer>
+        <div class="pieArriba">
+            <div class="pieArribaIzquierda">
+                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="LogoRedVerdeClaro">
             </div>
-
-            <div class="nombreGrupo">
-                <h2>INTEGRANTES</h2>
-                <p>D = Diego Bernardi</p>
-                <p>I = Ignacio Viazzi</p>
-                <p>M = Maricela Ruiz</p>
-                <p>S = Santiago Pérez</p>
+            
+            <div class="pieArribaDerecha">
+                <div class="grupo">
+                    <h2>INTEGRANTES</h2>
+                    <p>D = Diego Bernardi</p>
+                    <p>I = Ignacio Viazzi</p>
+                    <p>M = Maricela Ruiz</p>
+                    <p>S = Santiago Pérez</p>
+                </div>
             </div>
         </div>
 
-        <div class="grupo-2">
+        <div class="pieAbajo">
             <p>D.I.M.S - EMT Informática 3er AÑO - UTU Tarariras</p>
         </div>
-        
     </footer>
-
 </body>
-
 </html>

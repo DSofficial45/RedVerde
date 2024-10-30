@@ -1,14 +1,14 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
     height: 100vh;
     width: 100%;
 }
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /*==============================CABEZA==============================*/
@@ -32,7 +32,7 @@ header{
     display: block;
     width: fit-content;
     height: fit-content;
-    width: 25%;
+    width: 15%;
     padding: 1vh;
 }
 
@@ -100,7 +100,6 @@ li a:hover {
     margin: 0px;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .menuDerecha img {
@@ -149,7 +148,7 @@ main{
 }
 
 .cuerpo img{
-    width: 60%;
+    width: 50%;
     padding-bottom: 25px;
 }
 
@@ -232,7 +231,7 @@ footer {
 
 /*===============================*/
 
-@media (max-width: 541px){
+@media (max-width: 1000px){
     
     /*==========CABEZA==========*/
 
@@ -269,7 +268,7 @@ footer {
     }
     
     .pieAbajo{
-        font-size: 15px;
+        font-size: 10px;
     }
     
     .pieAbajo p{
@@ -277,6 +276,7 @@ footer {
     }
     
     /*lllllllllllllllllllllllllllllllllllllllllllll*/
+
     /*===========CUERPO===========*/
 
     .cuerpo{
@@ -290,5 +290,9 @@ footer {
     
     .cuerpo p{
         font-size: 15px;
+    }
+
+    .cuerpo img{
+        width: 75%;
     }
 }

@@ -113,25 +113,24 @@ li a:hover {
 
 
 main {
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
-.cuerpo {
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 90%;
-    height: 110%;
-    max-height: 600px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
+        min-height: 100vh;
+        background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .cuerpo {
+        width: 90%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.85);
+        overflow: hidden;
+        max-height: 600px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 
 .mainIzquierdo, .mainDerecho {
     width: 50%;
@@ -152,11 +151,23 @@ main {
 .formularioProducto {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    font-size: 20px;
 }
 
-label{
-    font-size: 20px;
+.formularioProducto label{
+    margin: 5px;
+}
+
+.formularioProducto input{
+    margin: 5px;
+}
+
+.formularioProducto select{
+    margin: 5px;
+}
+
+.formularioProducto textarea{
+    margin: 5px;
 }
 
 .formularioProducto input, .formularioProducto select {

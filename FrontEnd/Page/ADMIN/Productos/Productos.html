@@ -34,11 +34,11 @@
         <div class="cuerpo">
             <div class="mainIzquierdo">
                 <form class="formularioProducto" id="formularioProducto">
-                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Nombre" name="nombre">
                     <textarea placeholder="Descripción" id="descripcion"></textarea>
                     <div class="precios">
-                        <input type="number" placeholder="Precio" id="precio">
-                        <input type="number" placeholder="%Oferta" id="oferta">
+                        <input type="number" placeholder="Precio" id="precio" name="precio">
+                        <input type="number" placeholder="%Oferta" id="oferta" name="oferta">
                     </div>
                     <select class="seleccionTipo">
                         <option>Aromáticos</option>
@@ -52,8 +52,8 @@
                         <option>Perfumados</option>
                     </select>
                     <label>Imágenes del producto:</label>
-                    <input type="file" id="productoImagen" name="productoImagen">
-                    <input type="number" placeholder="Stock">
+                    <input type="file" id="pImagen" name="pImagen">
+                    <input type="number" placeholder="stock" name="stock">
                     
                     <div class="botones">
                         <button type="submit" class="btn" id="modificar">CREAR</button>

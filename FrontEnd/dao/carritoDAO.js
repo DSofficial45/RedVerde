@@ -44,19 +44,55 @@ export default class CarritoDAo {
         // Implementación pendiente
     }
 
+    aumentarCantidadCarrito(idProducto,talle) {
+        let carrito = this.obtenerCarrito();
+        let nuevoCarrito = carrito.map(producto => {
+            if (producto.productId == idProducto) {
+                producto.quantity++;
+            }
+            return producto;
+        });
+        this.guardarCarrito(nuevoCarrito);
+    }
+
+    disminuirCantidadCarrito(idProducto , talle) {
+        let carrito = this.obtenerCarrito();
+        let nuevoCarrito = carrito.map(producto => {
+            if (producto.productId == idProducto && producto.quantity > 1) {
+                producto.quantity--;
+            }
+            return producto;
+        });
+        this.guardarCarrito(nuevoCarrito);
+    }
+
     // Función para agregar un producto al carrito
     agregarProductoCarrito(product) {
         let carrito = this.obtenerCarrito();
-        carrito.push(product);
-        this.guardarCarrito(carrito);
+        let productoExistente = carrito.find(producto => producto.productId == product.productId);
+        if (productoExistente == null) {
+            carrito.push(product);
+            this.guardarCarrito(carrito);
+            
+        }else{
+            this.eliminarProductoCarrito(product.productId,product);
+            productoExistente.quantity += product.quantity;
+            let carritoSinExistente = this.obtenerCarrito();
+            carritoSinExistente.push(productoExistente);
+            this.guardarCarrito(carritoSinExistente);
+
+        }
+       
+       
 
         /*    [
                     {
                         productId: 1,
                         quantity: 2,
+                        name: "Remera",
                         talle: "M",
                         price: 2000
-                        idOffer: 1
+                        offert
                     },
                    {
                         productId: 2,

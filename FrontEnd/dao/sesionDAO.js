@@ -1,4 +1,5 @@
-import Origen from "./Origen";
+import Origen from "./Origen.js";
+
 
 export default class SesionDAO{
 
@@ -17,15 +18,23 @@ export default class SesionDAO{
         return respuesta;
     }
 
-    async registrarUsuario() {
-        let url = Origen+"/Backend/controller/sesionController.php?funcion=Registrar"
+    async registrarUsuario(email, nombre, password, apellido, telefono) {
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=registrar";
         let formData = new FormData();
-        formData.eppend("email", email);
-        formData.eppend("nombre", nombre);
-        formData.eppend("apellido", apellido);
-        formData.eppend("telefono", telefono);
-        formData.eppend("password", password);
-        let config 
+        formData.append("email", email);
+        formData.append("nombre", nombre);
+        formData.append("apellido", apellido);
+        formData.append("telefono", telefono);
+        formData.append("isAdmin", 0);
+        formData.append("password", password);
+        let config = {
+            method: "POST",
+            body:formData
+        }
+
+        let respuestaConsulta = await fetch(url, config);
+        let respuesta = await respuestaConsulta.json();
+        return respuesta;
     }
 
     async obtenerSesion() {

@@ -1,3 +1,4 @@
+import productoDAO from "../../../dao/productoDAO.js";
 import ProductosDAO from "../../dao/productoDAO.js";
 import productos from "../../dao/ProductoDao.js";
 
@@ -14,7 +15,7 @@ window.onload = async () => {
 }
 
 async function obtenerProductos() {
-    let respuesta = await new ProductosDAO().obtenerProductos();
+    let respuesta = await new productoDAO().obtenerProducto();
     return respuesta.datos;
 }
 
@@ -24,16 +25,19 @@ function mostrarProductos(productos) {
     console.log(productos);
     productos.forEach(producto => {
         datosElement.innerHTML += `
-        <div class="producto">
-        <img src="${producto.imagen != null ? producto.imagen : "../../image/banner1.jpg"}" alt="${producto.nombre}" class="producto-imagen">
-        <div class="producto-info">
-            <p>Nombre: ${producto.nombre}</p>
-            <p>Precio: $${producto.precio}</p>
-            <p>Stock: ${producto.stock}</p>
-            <button class="btn-add">Agregar</button>
-        </div>
-    </div>
-    `;
+        <tr>
+            <td><img src="path/to/image1.jpg" alt="Producto 1" width="50"></td>
+            <td>${producto.nombre}</td>
+            <td>${producto.precio}</td>
+            <td>...</td>
+            <td>${producto.stock}</td>
+            <td>${producto.descripcion}</td>
+            <td>${producto.categorias}</td>
+            <td>35</td>
+            <button>Modificar</button>
+            <button>Eliminar</button>
+        </tr>
+    `
     });
 }
 

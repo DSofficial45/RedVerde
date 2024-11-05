@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="Productos.css">
-    <script src="Productos.js" defer></script>
+    <script type="module" src="Productos.js"></script>
 </head>
 
 <body>
@@ -35,12 +35,12 @@
             <div class="mainIzquierdo">
                 <form class="formularioProducto" id="formularioProducto">
                     <input type="text" placeholder="Nombre" name="nombre">
-                    <textarea placeholder="Descripción" id="descripcion"></textarea>
+                    <textarea placeholder="Descripción" id="descripcion" name="descripcion"></textarea>
                     <div class="precios">
                         <input type="number" placeholder="Precio" id="precio" name="precio">
                         <input type="number" placeholder="%Oferta" id="oferta" name="oferta">
                     </div>
-                    <select class="seleccionTipo">
+                    <select class="seleccionTipo" name="categoria">
                         <option>Aromáticos</option>
                         <option>Florales</option>
                         <option>Arbustos</option>
@@ -56,8 +56,8 @@
                     <input type="number" placeholder="stock" name="stock">
                     
                     <div class="botones">
-                        <button type="submit" class="btn" id="modificar">CREAR</button>
-                        <button type="submit" class="btn" id="crear">MODIFICAR</button>
+                        <button type="submit" class="btncrear" id="modificar">CREAR</button>
+                        <button type="submit" class="btnmodficar" id="crear">MODIFICAR</button>
                     </div>
                 </form>
             </div>
@@ -93,7 +93,7 @@
                             </tr>
                         </thead>
         
-                        <tbody class="tbodyProductos">
+                        <tbody class="tbodyProductos" id="datos">
                             
                         </tbody>
                     </table>

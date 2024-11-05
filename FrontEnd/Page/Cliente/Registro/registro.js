@@ -1,28 +1,31 @@
-window.onload= async()=>{
-    let usuarios = await obtenerUsario();
-    mostrarUsarios(usuarios);
+import SesionDAO from "../../../dao/sesionDAO.js";
+
+window.onload= ()=>{
+   agregarEvento()
   }
+
  
-  async function GuardarUsuario(usuario){
-    let dataUsuario = new FormData();
-    dataUsuario.append('email', usuario.email)
-    dataUsuario.append('nombre', usuario.nombre)
-    dataUsuario.append('apellido', usuario.apellido);
-    dataUsuario.append('telefono', usuario.telefono);
-    dataUsuario.append('password', usuario.password);
-    dataUsuario.append('isAdmin', usuario.isAdmin);
-    let url = window.location.origin + "http://localhost/RedVerde-2/Backend/controller/sesionController.php?funcion=Registrar";
-    let config = {
-        method: 'POST' ,
-        body: dataUsuario
+  async function guardarUsuario(nombre, apellido, email, password, telefono){
+    let sesionDAO = new SesionDAO();
+    let respuesta = await sesionDAO.registrarUsuario(email, nombre, password, apellido, telefono);
+    if (respuesta.estado){
+        alert("usuario registrado correctamente");
     }
-    let respuesta = await fetch(url, config);
-    let datosRespuesta = await respuesta.json();
-    console.log(datosRespuesta);
-    if(datosRespuesta){
-        alert("Usuario registrado con exito");
+    else
+        alert("usuario registrado correctamente");
     }
-    else{
-        alert("Error al registrar el usuario");
+
+ function agregarEvento(){ 
+    let formulario = document.querySelector("#registro");
+    console.log(formulario);
+    formulario.onsubmit =(e)=>{
+        e.preventDefault();
+        let nombre = formulario.nombre.value;
+        let apellido = formulario.apellido.value;
+        let email = formulario.email.value;
+        let password = formulario.password.value;
+        let telefono = formulario.telefono.value;
+        guardarUsuario(nombre, apellido, email, password, telefono);
+
     }
  }

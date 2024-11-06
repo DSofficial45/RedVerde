@@ -3,11 +3,11 @@ import Origen from "./Origen.js";
 
 export default class SesionDAO{
 
-    async iniciarSesion() {
-        let url = Origen+"/Backend/controller/sesionController.php?funcion=Login";
+    async iniciarSesion(email,password) {
+        let url = Origen+"/Backend/controller/sesionController.php?funcion=login";
         let formData = new FormData();
-        formData.eppend("email", email);
-        formData.eppend("password", password);
+        formData.append("email", email);
+        formData.append("password", password);
         let config = {
             method: "POST",
             body:formData
@@ -15,6 +15,8 @@ export default class SesionDAO{
 
         let respuestaConsulta = await fetch(url, config);
         let respuesta = await respuestaConsulta.json();
+        console.log(respuesta);
+        
         return respuesta;
     }
 
@@ -40,11 +42,13 @@ export default class SesionDAO{
         let url = Origen+"/Backend/controller/sesionController.php?funcion=obtener";
         let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
+        return respuesta;
     }
 
     async cerrarSesion(){
         let url = Origen+"/Backend/controller/sesionController.php?funcion=Cerrar";
         let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
+        return respuesta;
     }
 }

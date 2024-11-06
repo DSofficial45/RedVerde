@@ -8,9 +8,8 @@ window.onload= ()=>{
   async function guardarUsuario(nombre, apellido, email, password, telefono){
     let sesionDAO = new SesionDAO();
     let respuesta = await sesionDAO.registrarUsuario(email, nombre, password, apellido, telefono);
-    if (respuesta.estado == trues){
-        alert("usuario registrado correctamente");
-        window.location.herf = "../Login/login.html";
+    if (respuesta.estado == true){
+        window.location.href = "../Login/login.html";
     }
     else
         alert("Error al registrar");

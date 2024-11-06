@@ -1,4 +1,4 @@
-import SesionDAO from "../../../dao/sesionDAO";
+import SesionDAO from "../../../dao/sesionDAO.js";
 
 window.onload = () => {
     agregarEvento();
@@ -7,8 +7,8 @@ window.onload = () => {
 function agregarEvento(){
     let formElement = document.querySelector("#login");
     formElement.onsubmit = (e)=>{
-        e.proventDefault();
-        let email = formElement.email.value;
+        e.preventDefault();
+        let email = formElement.email.value;    
         let password = formElement.password.value;
 
         iniciarSesion(email, password);
@@ -18,10 +18,12 @@ function agregarEvento(){
 async function iniciarSesion(email, password) {
     let respuesta = await new SesionDAO().iniciarSesion(email, password);
     if (respuesta.estado) {
-        alert("Sesion iniciada correctamente");
-        window.location.href = "../PagInicio/index.html";  
+        if(respuesta.datos.usuario.isAdmin == "0"){
+            window.location.href = "../PagInicial/index.html";  
+        }else{
+            window.location.href = "../../ADMIN/Inicio/inicioADMIN.html";  
+        }
     } else {
         alert("Error al iniciar sesion");
-        window.location.href = "../registro/registro.html"; 
     }
 }

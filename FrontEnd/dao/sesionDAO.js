@@ -6,8 +6,8 @@ export default class SesionDAO{
     async iniciarSesion() {
         let url = Origen+"/Backend/controller/sesionController.php?funcion=Login";
         let formData = new FormData();
-        formData.eppend("usuario", nombre);
-        formData.eppend("contraseña", password);
+        formData.eppend("email", email);
+        formData.eppend("password", password);
         let config = {
             method: "POST",
             body:formData
@@ -25,7 +25,6 @@ export default class SesionDAO{
         formData.append("nombre", nombre);
         formData.append("apellido", apellido);
         formData.append("telefono", telefono);
-        formData.append("isAdmin", 0);
         formData.append("password", password);
         let config = {
             method: "POST",

@@ -160,7 +160,7 @@ footer {
     width: 100%;
 }
 
-/*----------------------------------------------*/
+/*------------- PIE ARRIBA -------------*/
 
 .pieArriba{
     display: flex;
@@ -168,6 +168,8 @@ footer {
     background-color: rgb(13, 24, 0);
     padding: 20px;
 }
+
+/* >>> PIE ARRIBA IZQUIERDA <<<*/
 
 .pieArribaIzquierda{
     display: flex;
@@ -178,10 +180,10 @@ footer {
 }
 
 .pieArribaIzquierda img{
-    width: 500px;
+    width: 300px;
 }
 
-/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/* >>> PIE ARRIBA DERECHA <<<*/
 
 .pieArribaDerecha{
     display: flex;
@@ -208,7 +210,7 @@ footer {
     margin: 5px;
 }
 
-/*----------------------------------------------*/
+/*------------- PIE ABAJO -------------*/
 
 .pieAbajo{
     display: flex;

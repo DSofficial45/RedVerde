@@ -31,15 +31,14 @@
         $apellido = $_POST['apellido'];
         $telefono = $_POST['telefono'];
         $password = $_POST['password'];
-        $isAdmin = $_POST['isAdmin'];
-        $resultado = (new SesionDAO())->registrarUsuario(email: $email, nombre: $nombre, apellido: $apellido, telefono: $telefono, password: $password, isAdmin: $isAdmin);
+        $resultado = (new SesionDAO())->registrarUsuario($email, $nombre, $apellido, $telefono, $password);
         echo json_encode($resultado);
     }
 
     function iniciarSesion(){
-        $nombre = $_POST['nombre'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
-        $resultado = (new SesionDAO())->iniciarSesion($nombre, $password);
+        $resultado = (new SesionDAO())->iniciarSesion($email, $password);
         echo json_encode($resultado);
     }
     

@@ -7,12 +7,12 @@ require_once __DIR__ . '/../dao/respuesta.php';
     session_start();
 
     class SesionDAO{
-        public $nombre;
+        public $email;
         public $password;   
 
-        public function iniciarSesion($nombre, $password){
+        public function iniciarSesion($email, $password){
             $conection = connection();
-            $sql = "SELECT * FROM usuario WHERE nombre = '$nombre' AND password = '$password'";
+            $sql = "SELECT * FROM usuario WHERE email = '$email' AND password = '$password'";
             $respuesta = $conection->query($sql);
             $fila = $respuesta->fetch_assoc();
             if ($fila !=null){
@@ -61,11 +61,11 @@ require_once __DIR__ . '/../dao/respuesta.php';
 
         }
 
-        public function registrarUsuario($email, $nombre, $apellido, $telefono, $password, $isAdmin) {
+        public function registrarUsuario($email, $nombre, $apellido, $telefono, $password) {
             try {
                 $conection = connection();
-                $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password, isAdmin) 
-                        VALUES ('$email', '$nombre', '$apellido', '$telefono', '$password', '$isAdmin');";
+                $sql = "INSERT INTO usuario(email, nombre, apellido, telefono, password) 
+                        VALUES ('$email', '$nombre', '$apellido', '$telefono', '$password');";
                 $respuesta = $conection->query($sql);
                return new Respuesta(true, "Usuario registrado correctamente", $respuesta);
               // return "usuario A";

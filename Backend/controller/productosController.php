@@ -4,7 +4,7 @@
     switch ($funcion) {
     
         case "agregar":
-            agregarProducto();
+            agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria);
         break;
     
         case "eliminar":
@@ -26,14 +26,15 @@
         echo json_encode($resultado);
     }
     
-    function agregarProducto(){
+    function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria){
         $fecha = $_POST['fecha'];
         $precio = $_POST['precio'];
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
         $nombre = $_POST['nombre'];
         $imagen = $_POST['imagen'];
-        $resultado = (new productoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen);
+        $categoria = $_POST['categoria'];
+        $resultado = (new productoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria);
         echo json_encode($resultado);
     }
     

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2024 a las 18:25:14
+-- Tiempo de generación: 07-11-2024 a las 17:34:58
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -155,10 +155,26 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email`, `nombre`, `apellido`, `telefono`, `password`, `isAdmin`) VALUES
+('bernardid047|@gmail.com', 'tilin', 'perez', '094602457', '094602457Ee', 0),
+('dckckc@gmail.com', 'gtgtfr', 'jujh', '0987654', '7777', 0),
+('dfgdfhfg', 'gdfg', 'dfgd', '356867335', 'hffrtdfg', 0),
+('dfghdghjd', 'fgfd7kuk7', 'djhfjhgjf', '675352088', 'n454564', 0),
+('dfghrt', 'dfgdfg', 'dfgdfg', '23476549', 'etrtt', 0),
+('dkjlfgkldfg', 'jlkjdflkgj', 'dfkgjdflkjg', '435539083', 'dfgdfhd', 0),
+('ffcfnjfcnj@gmail.com', 'jjjj', 'kkkk', '9999998765', '777', 0),
+('ffrrf@gmail.com', 'nhnh', 'iikik', '7766', '888', 0),
+('fghfgjyt', 'ghfghdf', 'gdfgfjj', '549875240', 'e4543yhgfh', 0),
+('fvf@gmail.com', 'hh', 'llll', '0987654', '8888', 0),
+('gfgdfdh', 'gfdgdfg', 'hrtklfdf', '236094834', 'dfglkdfk', 0),
+('ghjghj', 'fghgj', 'ghjgh', '435456653', 'ghjghj', 0),
 ('hola300@gmail.com', 'Mati', 'Rivero', '084236952', '123456789', 1),
 ('hola@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
+('quetupapaes@gmail.com', 'negro', 'josé', '911695354', 'Quepena3.', 0),
 ('sasdasd@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
-('viazziignasio@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1);
+('sdfsdf', 'afsd', 'sdfsd', '2323424', 'sdfsdf', 0),
+('viazziignasio@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
+('vuihvihfi', 'buebuov', 'eiovhiehv', '894908395', '87756396593', 0),
+('xksdc@gmail.com', 'uuuu', 'oooo', '', '9990987', 0);
 
 -- --------------------------------------------------------
 

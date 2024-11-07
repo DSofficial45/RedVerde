@@ -1,7 +1,7 @@
 <?php
 
 function getOrigen(){
-    return "http://localhost/RedVerde-1";
+    return "http://localhost/RedVerde-2";
 }
 
 ?>

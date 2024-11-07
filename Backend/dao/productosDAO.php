@@ -5,7 +5,7 @@ require_once __DIR__ . '/imagenDAO.php';
 
 class productoDAO {
 
-    function verProducto(){
+    function obtenerProductos(){
         $connection = connection();
         $sql = "SELECT * FROM producto";
         $respuesta = $connection->query($sql);

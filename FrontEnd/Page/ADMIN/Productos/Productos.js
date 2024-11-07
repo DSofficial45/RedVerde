@@ -1,6 +1,4 @@
 import productoDAO from "../../../dao/productoDAO.js";
-import ProductosDAO from "../../dao/productoDAO.js";
-import productos from "../../dao/ProductoDao.js";
 
 let nombreFiltro = "";
 let precioFiltro = "";

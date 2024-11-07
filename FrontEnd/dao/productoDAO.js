@@ -2,8 +2,8 @@ import Origen from "./Origen.js";
 
 export default class productoDAO{
    
-    async verProducto(){
-        let url = Origen+"/Backend/controller/productosController.php?funcion=ver";
+    async obtenerProductos(){
+        let url = Origen+"/Backend/controller/productosController.php?funcion=obtener";
         let respuestaConsulta = await fetch(url, config);
         let respuesta = await respuestaConsulta.json();
         return respuesta;
@@ -38,10 +38,4 @@ export default class productoDAO{
        return respuesta;
     }
 
-    async obtenerProducto(){
-       let url = Origen+"/Backend/controller/productosController.php?funcion=obtener";
-       let respuestaConsulta = await fetch(url, config);
-       let respuesta = await respuestaConsulta.json();
-       return respuesta;
-    }
 }

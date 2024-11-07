@@ -11,8 +11,8 @@
             eliminarProducto();
         break;
     
-        case "ver":
-            verProducto();
+        case "obtener":
+            obtenerProducto();
         break;
     
         case "modificar":
@@ -21,8 +21,8 @@
     
     }
 
-    function verProducto(){
-        $resultado = (new productoDAO())->verProducto();
+    function obtenerProducto(){
+        $resultado = (new productoDAO())->obtenerProductos();
         echo json_encode($resultado);
     }
     

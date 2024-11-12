@@ -17,8 +17,9 @@ function agregarEvento(){
 
 async function iniciarSesion(email, password) {
     let respuesta = await new SesionDAO().iniciarSesion(email, password);
+  //  alert(respuesta.datos);
     if (respuesta.estado) {
-        if(respuesta.datos.usuario.isAdmin == "0"){
+        if(respuesta.datos === "0"){
             window.location.href = "../PagInicial/index.html";  
         }else{
             window.location.href = "../../ADMIN/Inicio/inicioADMIN.html";  

@@ -26,13 +26,8 @@ function mostrarProductos(productos) {
         <tr>
             <td><img src="${producto.imagen}" alt="Producto 1" width="50"></td>
             <td>${producto.nombre}</td>
-<<<<<<< HEAD
             <td>$${producto.precio}</td>
             <td>${producto.oferta}</td>
-=======
-            <td>${producto.precio}</td>
-            <td>${producto.descripcion}</td>
->>>>>>> ad3d948923bee1dbe077f65b9cd0de8ed78441c6
             <td>${producto.stock}</td>
             <td>${producto.descripcion}</td>
             <td>${producto.categorias}</td>

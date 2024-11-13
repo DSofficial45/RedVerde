@@ -85,5 +85,5 @@ function filtrarProductos() {
         return nombreCoincide && precioCoincide; 
     });
 
-    mostrarProductos(productosFiltrados); 
+    mostrarProductos(productosFiltrados); 
 }*/

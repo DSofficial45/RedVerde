@@ -5,137 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
     <link rel="stylesheet" href="Productos.css">
-    <script src="Produtos.js" defer></script>
+    <script type="module" src="Productos.js"></script>
 </head>
 
 <body>
-
+    <!-- ||||||||||||||||||||||||||||||||||||||||||||||| > > > Encabezado < < < ||||||||||||||||||||||||||||||||||||||||||||||| -->
     <header>
-        <div class="cabezeraSuperior">
-            <a href="#">
-                <a href="../PagInicial/index.html"><img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza"></a>
-            </a>
+        <div class="cabezaArriba">
+            <a href="../../ADMIN/Inicio/inicioADMIN.html"><img src="../../../assets/Logo/RedVerdeAdmin.png" alt="LogoRedVerdeOscuro" class="Logo-Cabeza"></a>
         </div>
-        <div class="cabezeraInferior">
-            <ul class="menuNavegación">
-                <li><a href="../PagInicial/index.html">INICIO</a></li>
+
+        <nav class="cabezaAbajo">
+            <ul class="menuIzquierda">
+                <li><a href="../Inicio/inicioADMIN.html">INICIO</a></li>
                 <li><a href="../Productos/Productos.html">PRODUCTOS</a></li>
-                <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
+                <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
             </ul>
 
-            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" id="carritoUsuario"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
-            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
-        </div>
+            <ul class="menuDerecha">
+                <li><a href="../../Login/login.html"><img src="../../../assets/Iconos/Usuario.png"></a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- ||||||||||||||||||||||||||||||||||||||||||||||| > > > Cuerpo < < < ||||||||||||||||||||||||||||||||||||||||||||||| -->
+     
     <main>
-        <div class="busqueda">
-            <input type="text" class="barraBusqueda" placeholder="Buscar..." id="barraBusqueda">
-            <img src="../../../assets/Iconos/LupaClaro.png">
-        </div>
-
-        <div class="productos">
-
-            <div class="todo">
-                <div class="ofertas">
-                    <h1>OFERTAS ACTUALES</h1>
-                    <div id="ofertas">
-    
+        <div class="cuerpo">
+            <div class="mainIzquierdo">
+                <form class="formularioProducto" id="formularioProducto">
+                    <input type="text" placeholder="Nombre" name="nombre">
+                    <textarea placeholder="Descripción" id="descripcion" name="descripcion"></textarea>
+                    <div class="precios">
+                        <input type="number" placeholder="Precio" id="precio" name="precio">
+                        <input type="number" placeholder="%Oferta" id="oferta" name="oferta">
                     </div>
-                </div>
-    
-                <div class="general">
-                    <div id="productos">
-                        
+                    <select class="seleccionTipo" name="categoria">
+                        <option>Aromáticos</option>
+                        <option>Florales</option>
+                        <option>Arbustos</option>
+                        <option>Árboles</option>
+                        <option>Macetas</option>
+                        <option>Tierra</option>
+                        <option>Velas</option>
+                        <option>Inciensos</option>
+                        <option>Perfumados</option>
+                    </select>
+                    <label>Imágenes del producto:</label>
+                    <input type="file" id="pImagen" name="pImagen">
+                    <input type="number" placeholder="stock" name="stock">
+                    
+                    <div class="botones">
+                        <button type="submit" class="btncrear" id="crear">CREAR</button>
+                        <button type="submit" class="btnmodficar" id="modificar">MODIFICAR</button>
                     </div>
-                </div>
+                </form>
             </div>
-
-            <div class="filtros">
-                <h1>FILTROS</h1>
-
-                <h3>PRECIO</h3>
-                <div class="precio">
-                        <a>De</a>
-                        <input type="number" class="minimo" placeholder="Min." id="minimo">
-                        <a>a</a>
-                    <input type="number" class="maximo" placeholder="Max." id="maximo">
+    
+            <div class="mainDerecho">
+                <div class="filtro">
+                    <select class="seleccionFiltro">
+                        <option>MAYOR A MENOR STOCK</option>
+                        <option>MENOR A MAYOR STOCK</option>
+                        <option>MAYOR A MENOR PRECIO</option>
+                        <option>MENOR A MAYOR PRECIO</option>
+                        <option>MAYOR A MENOR VENTAS</option>
+                        <option>MENOR A MAYOR VENTAS</option>
+                        <option>MAYOR A MENOR OFERTA</option>
+                        <option>MENOR A MAYOR OFERTA</option>
+                    </select>
                 </div>
-                
-                <h3>ORDEN DE PRODUCTOS</h3>
-                
-                <select>
-                    <option>MENOR A MAYOR PRECIO</option>
-                    <option>MAYOR A MENOR PRECIO</option>
-                </select>
-
-                <h3>TIPO DE PRODUCTO</h3>
-
-                <div class="checkboxs">
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="aromáticos">
-                        <a>Aromáticos</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="florales">
-                        <a>Florales</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="arbustos">
-                        <a>Arbustos</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="arboles">
-                        <a>Árboles</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="macetas">
-                        <a>Macetas</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="tierra">
-                        <a>Tierra</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="velas">
-                        <a>Velas</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="inciensos">
-                        <a>Inciensos</a>
-                    </div>
-                    <div class="checkbox">
-                        <input type="checkbox" class="check" id="perfumados">
-                        <a>Perfumados</a>
-                    </div>
-                </div>    
-
+    
+                <div class="tabla">
+                    <table id="tableProductos">
+                        <thead class="theadProductos">
+                            <tr>
+                                <th>IMAGEN</th>
+                                <th>NOMBRE</th>
+                                <th>PRECIO</th>
+                                <th>%OFERTA</th>
+                                <th>STOCK</th>
+                                <th>DESCRIPCIÓN</th>
+                                <th>FECHA</th>
+                                <th>TIPO</th>
+                                <th>VENTAS</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+        
+                        <tbody class="tbodyProductos" id="datos">
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="pie-pagina">
+    <!-- llllllllllllllllllllllllllllllllllllllllllll PIE llllllllllllllllllllllllllllllllllllllllllll -->
 
-        <div class="grupo-1">
-
-            <div class="logoPie">
-                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="Red Verde" class="Logo-Pie">
+    <footer>
+        <div class="pieArriba">
+            <div class="pieArribaIzquierda">
+                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="LogoRedVerdeClaro">
             </div>
-
-            <div class="nombreGrupo">
-                <h2>INTEGRANTES</h2>
-                <p>D = Diego Bernardi</p>
-                <p>I = Ignacio Viazzi</p>
-                <p>M = Maricela Ruiz</p>
-                <p>S = Santiago Pérez</p>
+            
+            <div class="pieArribaDerecha">
+                <div class="grupo">
+                    <h2>INTEGRANTES</h2>
+                    <p>D = Diego Bernardi</p>
+                    <p>I = Ignacio Viazzi</p>
+                    <p>M = Maricela Ruiz</p>
+                    <p>S = Santiago Pérez</p>
+                </div>
             </div>
         </div>
 
-        <div class="grupo-2">
+        <div class="pieAbajo">
             <p>D.I.M.S - EMT Informática 3er AÑO - UTU Tarariras</p>
         </div>
-        
     </footer>
-
 </body>
 </html>

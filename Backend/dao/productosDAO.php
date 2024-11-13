@@ -15,15 +15,31 @@ class productoDAO {
     }
 
     public function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria){
+<<<<<<< HEAD
         if(isset($Imagen)){
             $ImagenDAO = new ImagenDAO();
             $respuesta = $ImagenDAO->agregarImagen($Imagen);
             $idImagen = $respuesta->datos;
         }
         $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre, imagen) VALUE (`$fecha`, `$precio`, `$stock`, `$descripcion`, `$nombre`, `$imagen`, `$categoria`)";
+=======
+       /* if(isset($Imagen)){
+            $ImagenDAO = new ImagenDAO();
+            $respuesta = $ImagenDAO->agregarImagen($Imagen);
+            $idImagen = $respuesta->datos;
+        }*/
+       
+>>>>>>> ad3d948923bee1dbe077f65b9cd0de8ed78441c6
         $connection = connection();
+        $nomImg = $imagen['name'];
+        $extension = pathinfo($nomImg, PATHINFO_EXTENSION);
+        $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre, extension, nombreCategoria) VALUE ('$fecha', $precio, $stock, '$descripcion', '$nombre', '$extension', '$categoria')";
+       
         try{
             $connection->query($sql);
+            $id= $connection -> insert_id;
+            $ruta_temp = $imagen["tmp_name"];
+             move_uploaded_file($ruta_temp, "./imgBack/$id.$extension");
             return new Respuesta(true, "Producto agregado correctamente", null);
         }catch(Exception $e){
             return new Respuesta(false, "Error al agregar producto", null);

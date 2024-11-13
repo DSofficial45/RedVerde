@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2024 a las 17:34:58
+-- Tiempo de generación: 13-11-2024 a las 19:09:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,6 +31,13 @@ CREATE TABLE `categoria` (
   `nombre` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`nombre`, `descripcion`) VALUES
+('Tierra', 'djvduhlaknjahfankjfbeffs');
 
 -- --------------------------------------------------------
 
@@ -120,9 +127,20 @@ CREATE TABLE `producto` (
   `precio` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `descripcion` varchar(250) NOT NULL,
+  `nombreCategoria` varchar(45) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `imagen` varchar(255) NOT NULL
+  `extension` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `fecha`, `precio`, `stock`, `descripcion`, `nombreCategoria`, `nombre`, `extension`) VALUES
+(6, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
+(7, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
+(8, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
+(9, '2024-12-10 00:00:00', 340, 30, 'maceta', 'Tierra', 'Maceta1', 'jpg');
 
 -- --------------------------------------------------------
 
@@ -155,26 +173,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`email`, `nombre`, `apellido`, `telefono`, `password`, `isAdmin`) VALUES
-('bernardid047|@gmail.com', 'tilin', 'perez', '094602457', '094602457Ee', 0),
-('dckckc@gmail.com', 'gtgtfr', 'jujh', '0987654', '7777', 0),
-('dfgdfhfg', 'gdfg', 'dfgd', '356867335', 'hffrtdfg', 0),
-('dfghdghjd', 'fgfd7kuk7', 'djhfjhgjf', '675352088', 'n454564', 0),
-('dfghrt', 'dfgdfg', 'dfgdfg', '23476549', 'etrtt', 0),
-('dkjlfgkldfg', 'jlkjdflkgj', 'dfkgjdflkjg', '435539083', 'dfgdfhd', 0),
-('ffcfnjfcnj@gmail.com', 'jjjj', 'kkkk', '9999998765', '777', 0),
-('ffrrf@gmail.com', 'nhnh', 'iikik', '7766', '888', 0),
-('fghfgjyt', 'ghfghdf', 'gdfgfjj', '549875240', 'e4543yhgfh', 0),
-('fvf@gmail.com', 'hh', 'llll', '0987654', '8888', 0),
-('gfgdfdh', 'gfdgdfg', 'hrtklfdf', '236094834', 'dfglkdfk', 0),
-('ghjghj', 'fghgj', 'ghjgh', '435456653', 'ghjghj', 0),
-('hola300@gmail.com', 'Mati', 'Rivero', '084236952', '123456789', 1),
-('hola@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
-('quetupapaes@gmail.com', 'negro', 'josé', '911695354', 'Quepena3.', 0),
-('sasdasd@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
-('sdfsdf', 'afsd', 'sdfsd', '2323424', 'sdfsdf', 0),
-('viazziignasio@gmail.com', 'jose', 'deldiabo', '084236952', '123456789', 1),
-('vuihvihfi', 'buebuov', 'eiovhiehv', '894908395', '87756396593', 0),
-('xksdc@gmail.com', 'uuuu', 'oooo', '', '9990987', 0);
+('djiodjdjjsf', 'dosifjsldjflksj', 'fshhdfjkdkljd', '384573877', 'kcjvxhkv', 0),
+('RAID_SHADOW_LEGEND@gmail.com', 'RAID', 'SHADOW_LEGEND', '098765432', 'RAID69L', 1);
 
 -- --------------------------------------------------------
 
@@ -245,7 +245,7 @@ ALTER TABLE `oferta`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `urlImg` (`imagen`);
+  ADD KEY `nombreCategoria` (`nombreCategoria`);
 
 --
 -- Indices de la tabla `productocategoria`
@@ -299,7 +299,7 @@ ALTER TABLE `oferta`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
@@ -309,7 +309,7 @@ ALTER TABLE `producto`
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`imagen`) REFERENCES `imagen` (`url`);
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`nombreCategoria`) REFERENCES `categoria` (`nombre`);
 
 --
 -- Filtros para la tabla `productocategoria`

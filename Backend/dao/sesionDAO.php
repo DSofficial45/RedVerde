@@ -4,19 +4,21 @@ require_once __DIR__ . '/../conexion/conexion.php';
 require_once __DIR__ . '/../dao/sesionDAO.php';
 require_once __DIR__ . '/../dao/respuesta.php';
 
-    session_start();
+    
 
     class SesionDAO{
         public $email;
         public $password;   
 
         public function iniciarSesion($email, $password){
+            session_start();
             $conection = connection();
             $sql = "SELECT * FROM usuario WHERE email = '$email' AND password = '$password'";
             $respuesta = $conection->query($sql);
             $fila = $respuesta->fetch_assoc();
             if ($fila !=null){
-                $respuesta =  new Respuesta(estado: true,mensaje: "Sesion Iniciada", datos: $_SESSION['sesion']);
+                //$_SESSION['sesion']
+                $respuesta =  new Respuesta(true, "Sesion Iniciada", $fila["isAdmin"]);
                 $_SESSION['sesion']=["usuario"=>$fila];
                 //return $respuesta;
                     

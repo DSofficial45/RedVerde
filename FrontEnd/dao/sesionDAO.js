@@ -3,7 +3,7 @@ import Origen from "./Origen.js";
 
 export default class SesionDAO{
 
-    async iniciarSesion(email,password) {
+    async iniciarSesion(email, password) {
         let url = Origen+"/Backend/controller/sesionController.php?funcion=login";
         let formData = new FormData();
         formData.append("email", email);
@@ -15,7 +15,6 @@ export default class SesionDAO{
 
         let respuestaConsulta = await fetch(url, config);
         let respuesta = await respuestaConsulta.json();
-        console.log(respuesta);
         
         return respuesta;
     }

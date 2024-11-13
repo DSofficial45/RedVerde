@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2024 a las 19:09:06
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 13, 2024 at 08:54 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,31 +18,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `redverdebd`
+-- Database: `redverdebd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria`
+-- Table structure for table `categoria`
 --
 
 CREATE TABLE `categoria` (
-  `nombre` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL
+  `nombre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `categoria`
+-- Dumping data for table `categoria`
 --
 
-INSERT INTO `categoria` (`nombre`, `descripcion`) VALUES
-('Tierra', 'djvduhlaknjahfankjfbeffs');
+INSERT INTO `categoria` (`nombre`) VALUES
+('Árboles'),
+('Arbustos'),
+('Aromáticos'),
+('Florales'),
+('Inciensos'),
+('Macetas'),
+('Perfumados'),
+('Tierra'),
+('Velas');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentario`
+-- Table structure for table `comentario`
 --
 
 CREATE TABLE `comentario` (
@@ -56,7 +63,7 @@ CREATE TABLE `comentario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compra`
+-- Table structure for table `compra`
 --
 
 CREATE TABLE `compra` (
@@ -69,7 +76,7 @@ CREATE TABLE `compra` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `compraproducto`
+-- Table structure for table `compraproducto`
 --
 
 CREATE TABLE `compraproducto` (
@@ -81,7 +88,7 @@ CREATE TABLE `compraproducto` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `factura`
+-- Table structure for table `factura`
 --
 
 CREATE TABLE `factura` (
@@ -92,7 +99,7 @@ CREATE TABLE `factura` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagen`
+-- Table structure for table `imagen`
 --
 
 CREATE TABLE `imagen` (
@@ -104,7 +111,7 @@ CREATE TABLE `imagen` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `oferta`
+-- Table structure for table `oferta`
 --
 
 CREATE TABLE `oferta` (
@@ -118,7 +125,7 @@ CREATE TABLE `oferta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
+-- Table structure for table `producto`
 --
 
 CREATE TABLE `producto` (
@@ -133,30 +140,18 @@ CREATE TABLE `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `producto`
+-- Dumping data for table `producto`
 --
 
 INSERT INTO `producto` (`id`, `fecha`, `precio`, `stock`, `descripcion`, `nombreCategoria`, `nombre`, `extension`) VALUES
-(6, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
-(7, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
-(8, '2024-12-10 00:00:00', 300, 2, 'Planta', 'Tierra', 'Planta1', 'jpg'),
-(9, '2024-12-10 00:00:00', 340, 30, 'maceta', 'Tierra', 'Maceta1', 'jpg');
+(11, '0000-00-00 00:00:00', 2000, 10, 'El real GOAT del manga (y anime, solo que aun no lo animan)', 'Árboles', 'Seiichi Samura', 'png'),
+(12, '0000-00-00 00:00:00', 1000, 5, 'PROCEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEED!!!', 'Macetas', 'Kyora Sazanami', 'png'),
+(14, '0000-00-00 00:00:00', 500, 1, 'Lee Kagurabachi', 'Inciensos', 'Lee Kagurabachi', 'png');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productocategoria`
---
-
-CREATE TABLE `productocategoria` (
-  `idProducto` int(11) NOT NULL,
-  `nombreCategoria` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -169,7 +164,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`email`, `nombre`, `apellido`, `telefono`, `password`, `isAdmin`) VALUES
@@ -179,7 +174,7 @@ INSERT INTO `usuario` (`email`, `nombre`, `apellido`, `telefono`, `password`, `i
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuariocomentariousuario`
+-- Table structure for table `usuariocomentariousuario`
 --
 
 CREATE TABLE `usuariocomentariousuario` (
@@ -190,17 +185,17 @@ CREATE TABLE `usuariocomentariousuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categoria`
+-- Indexes for table `categoria`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`nombre`);
 
 --
--- Indices de la tabla `comentario`
+-- Indexes for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`id`),
@@ -208,59 +203,53 @@ ALTER TABLE `comentario`
   ADD KEY `emailUsuario` (`emailUsuario`);
 
 --
--- Indices de la tabla `compra`
+-- Indexes for table `compra`
 --
 ALTER TABLE `compra`
   ADD PRIMARY KEY (`id`),
   ADD KEY `emailUsuario` (`emailUsuario`);
 
 --
--- Indices de la tabla `compraproducto`
+-- Indexes for table `compraproducto`
 --
 ALTER TABLE `compraproducto`
   ADD PRIMARY KEY (`idCompra`,`idProducto`);
 
 --
--- Indices de la tabla `factura`
+-- Indexes for table `factura`
 --
 ALTER TABLE `factura`
   ADD PRIMARY KEY (`idFactura`);
 
 --
--- Indices de la tabla `imagen`
+-- Indexes for table `imagen`
 --
 ALTER TABLE `imagen`
   ADD PRIMARY KEY (`id`),
   ADD KEY `url` (`url`);
 
 --
--- Indices de la tabla `oferta`
+-- Indexes for table `oferta`
 --
 ALTER TABLE `oferta`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idProducto` (`idProducto`);
 
 --
--- Indices de la tabla `producto`
+-- Indexes for table `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nombreCategoria` (`nombreCategoria`);
 
 --
--- Indices de la tabla `productocategoria`
---
-ALTER TABLE `productocategoria`
-  ADD PRIMARY KEY (`idProducto`,`nombreCategoria`);
-
---
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indices de la tabla `usuariocomentariousuario`
+-- Indexes for table `usuariocomentariousuario`
 --
 ALTER TABLE `usuariocomentariousuario`
   ADD PRIMARY KEY (`id`),
@@ -268,54 +257,48 @@ ALTER TABLE `usuariocomentariousuario`
   ADD KEY `emailUsuario` (`emailUsuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `comentario`
+-- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `compra`
+-- AUTO_INCREMENT for table `compra`
 --
 ALTER TABLE `compra`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `imagen`
+-- AUTO_INCREMENT for table `imagen`
 --
 ALTER TABLE `imagen`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `oferta`
+-- AUTO_INCREMENT for table `oferta`
 --
 ALTER TABLE `oferta`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `producto`
+-- AUTO_INCREMENT for table `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `producto`
+-- Constraints for table `producto`
 --
 ALTER TABLE `producto`
   ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`nombreCategoria`) REFERENCES `categoria` (`nombre`);
-
---
--- Filtros para la tabla `productocategoria`
---
-ALTER TABLE `productocategoria`
-  ADD CONSTRAINT `productocategoria_ibfk_1` FOREIGN KEY (`idProducto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

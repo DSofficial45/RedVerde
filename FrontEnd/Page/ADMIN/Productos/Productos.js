@@ -25,9 +25,9 @@ function mostrarProductos(productos) {
         datosElement.innerHTML += `
         <tr>
             <td><img src="${producto.urlImg}" alt="Producto 1" width="50"></td>
-            <td>${producto.nombre}</td>
+            <td>"$" + ${producto.nombre}</td>
             <td>${producto.precio}</td>
-            <td>${producto.descripcion}</td>
+            <td>${producto.oferta}</td>
             <td>${producto.stock}</td>
             <td>${producto.descripcion}</td>
             <td>${producto.categorias}</td>

@@ -4,7 +4,7 @@ export default class productoDAO{
    
     async obtenerProductos(){
         let url = Origen+"/Backend/controller/productosController.php?funcion=obtener";
-        let respuestaConsulta = await fetch(url, config);
+        let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
         return respuesta;
     }

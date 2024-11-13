@@ -24,7 +24,7 @@ function mostrarProductos(productos) {
     productos.forEach(producto => {
         datosElement.innerHTML += `
         <tr>
-            <td><img src="${producto.imagen}" alt="Producto 1" width="50"></td>
+            <td><img src="${producto.urlImg}" alt="Producto 1" width="50"></td>
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
             <td>${producto.descripcion}</td>
@@ -39,7 +39,7 @@ function mostrarProductos(productos) {
 }
 
 function agregarEvento(){
-    let formElement = document.querySelector("#crear");
+    let formElement = document.querySelector("#formularioProducto");
     formElement.onsubmit = (e)=>{
         e.preventDefault();
         let nombre = formElement.nombre.value;    
@@ -47,7 +47,7 @@ function agregarEvento(){
         let precio = formElement.precio.value;    
         let oferta = formElement.oferta.value;
         let categoria = formElement.categoria.value;    
-        let imagen = formElement.imagen.value;
+        let imagen = formElement.pImagen.files[0];
         let stock = formElement.stock.value;
 
         agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);
@@ -56,7 +56,9 @@ function agregarEvento(){
 
 async function agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock) {
     let respuesta = await new productoDAO().agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);
-    return respuesta.datos;
+    let productos = await obtenerProductos();
+    mostrarProductos(productos);
+  
 }
 
 /*function agregarEventosFiltro() {

@@ -1,2 +1,2 @@
-let Origen = "http://localhost/RedVerde-2";
+let Origen = "http://localhost/RedVerde";
 export default Origen;

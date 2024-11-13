@@ -6,6 +6,7 @@ export default class productoDAO{
         let url = Origen+"/Backend/controller/productosController.php?funcion=obtener";
         let respuestaConsulta = await fetch(url);
         let respuesta = await respuestaConsulta.json();
+        console.log("respuesta", respuesta);
         return respuesta;
     }
 
@@ -24,8 +25,10 @@ export default class productoDAO{
         formData.append("precio", precio);
         formData.append("categoria", categoria);
         formData.append("oferta", oferta);
-        formData.append("pImagen", imagen);
+        formData.append("imagen", imagen);
         formData.append("stock", stock);
+        let fecha = new Date().toLocaleDateString();
+        formData.append("fecha", fecha);
 
 
         let config = {
@@ -36,6 +39,7 @@ export default class productoDAO{
 
        let respuestaConsulta = await fetch(url, config);
        let respuesta = await respuestaConsulta.json();
+       console.log("jjdsfvscsadfcv", respuesta);
        return respuesta;
     }
 

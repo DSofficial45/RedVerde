@@ -201,6 +201,10 @@ main{
     border-radius: 5px;
 }
 
+p{
+    font-size: 15px;
+}
+
 .precios {
     display: flex;
     flex-direction: row;
@@ -248,6 +252,10 @@ main{
     border-collapse: collapse;
 }
 
+.tabla tr{
+    border-bottom: 2px solid rgb(95, 118, 66);
+}
+
 .tabla th, .tabla td {
     padding: 10px;
     text-align: left;
@@ -258,6 +266,7 @@ main{
     background-color: rgb(95, 118, 66);
     color: white;
     font-weight: normal;
+    text-align: center;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -267,7 +276,7 @@ main{
     padding: 10px;
     background-color: white;
     text-align: center;
-    vertical-align: middle; /* Asegura que el contenido esté centrado verticalmente */
+    vertical-align: middle;
 }
 
 .botonAccion {
@@ -278,7 +287,7 @@ main{
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    width: 80px; /* Ajusta el ancho para que quepan bien en la celda */
+    width: 80px;
 }
 
 .botonAccion:hover {

@@ -24,7 +24,7 @@ function mostrarProductos(productos) {
     productos.forEach(producto => {
         datosElement.innerHTML += `
         <tr>
-            <td><img src="${producto.urlImg}" alt="Producto 1" width="50"></td>
+            <td><img src="${producto.urlImg}" alt="Producto 1" width="100px" height="100px"></td>
             <td>${producto.nombre}</td>
             <td>$${producto.precio}</td>
             <td>%${producto.oferta}</td>

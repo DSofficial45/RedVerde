@@ -236,10 +236,11 @@ main{
 }
 
 .tabla {
+    display: flex;
     flex-grow: 1;
     max-height: 70vh;
     overflow-y: auto;
-    font-size: arial;
+    font-family: Arial, sans-serif;
 }
 
 .tabla table {
@@ -248,20 +249,38 @@ main{
 }
 
 .tabla th, .tabla td {
-    padding: 15px;
+    padding: 10px;
     border: 1px solid rgba(95, 118, 66, 0.5);
     text-align: left;
-    font-size: arial;
+    font-size: 14px;
 }
 
 .tabla th {
     background-color: rgb(95, 118, 66);
     color: white;
     font-weight: normal;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .tabla td {
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+.tabla .descripcion {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+tbody .descripcion {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 /*==============================PIE==============================*/

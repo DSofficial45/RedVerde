@@ -29,7 +29,7 @@ function mostrarProductos(productos) {
             <td>$${producto.precio}</td>
             <td>%${producto.oferta}</td>
             <td>${producto.stock}</td>
-            <td>${producto.descripcion}</td>
+            <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categorias}</td>
             <button>Modificar</button>
             <button>Eliminar</button>

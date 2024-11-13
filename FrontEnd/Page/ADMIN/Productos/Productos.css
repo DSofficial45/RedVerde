@@ -240,7 +240,7 @@ main{
     flex-grow: 1;
     max-height: 70vh;
     overflow-y: auto;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
 }
 
 .tabla table {
@@ -250,7 +250,6 @@ main{
 
 .tabla th, .tabla td {
     padding: 10px;
-    border: 1px solid rgba(95, 118, 66, 0.5);
     text-align: left;
     font-size: 14px;
 }
@@ -265,7 +264,26 @@ main{
 }
 
 .tabla td {
-    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle; /* Asegura que el contenido esté centrado verticalmente */
+}
+
+.botonAccion {
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    background-color: rgb(75, 98, 56);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px; /* Ajusta el ancho para que quepan bien en la celda */
+}
+
+.botonAccion:hover {
+    background-color: rgb(198, 255, 84);
+    color: black;
 }
 
 .tabla .descripcion {
@@ -279,8 +297,15 @@ main{
 tbody .descripcion {
     max-width: 200px;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+tbody .descripcion, .tabla .descripcion {
+    max-width: 200px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: visible; 
 }
 
 /*==============================PIE==============================*/

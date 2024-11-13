@@ -31,8 +31,8 @@ function mostrarProductos(productos) {
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categorias}</td>
-            <button>Modificar</button>
-            <button>Eliminar</button>
+            <td><button class="botonAccion">Modificar</button></td>
+            <td><button class="botonAccion">Eliminar</button></td>
         </tr>
     `
     });

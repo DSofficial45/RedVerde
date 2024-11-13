@@ -24,15 +24,15 @@ function mostrarProductos(productos) {
     productos.forEach(producto => {
         datosElement.innerHTML += `
         <tr>
-            <td><img src="${producto.urlImg}" alt="Producto 1" width="50"></td>
+            <td><img src="${producto.urlImg}" alt="Producto 1" width="100px" height="100px"></td>
             <td>${producto.nombre}</td>
             <td>$${producto.precio}</td>
             <td>%${producto.oferta}</td>
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categorias}</td>
-            <button>Modificar</button>
-            <button>Eliminar</button>
+            <td><button class="botonAccion">Modificar</button></td>
+            <td><button class="botonAccion">Eliminar</button></td>
         </tr>
     `
     });

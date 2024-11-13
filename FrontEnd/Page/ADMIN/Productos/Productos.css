@@ -201,6 +201,10 @@ main{
     border-radius: 5px;
 }
 
+p{
+    font-size: 15px;
+}
+
 .precios {
     display: flex;
     flex-direction: row;
@@ -240,7 +244,11 @@ main{
     flex-grow: 1;
     max-height: 70vh;
     overflow-y: auto;
+<<<<<<< HEAD
     font-family: Arial, sans-serif;
+=======
+    font-family: Arial;
+>>>>>>> b70a0549511745f7396038acb4b2f2dc745085d7
 }
 
 .tabla table {
@@ -248,9 +256,16 @@ main{
     border-collapse: collapse;
 }
 
+.tabla tr{
+    border-bottom: 2px solid rgb(95, 118, 66);
+}
+
 .tabla th, .tabla td {
     padding: 10px;
+<<<<<<< HEAD
     border: 1px solid rgba(95, 118, 66, 0.5);
+=======
+>>>>>>> b70a0549511745f7396038acb4b2f2dc745085d7
     text-align: left;
     font-size: 14px;
 }
@@ -259,13 +274,58 @@ main{
     background-color: rgb(95, 118, 66);
     color: white;
     font-weight: normal;
+<<<<<<< HEAD
+=======
+    text-align: center;
+>>>>>>> b70a0549511745f7396038acb4b2f2dc745085d7
     position: sticky;
     top: 0;
     z-index: 1;
 }
 
 .tabla td {
-    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.botonAccion {
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    background-color: rgb(75, 98, 56);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+}
+
+.botonAccion:hover {
+    background-color: rgb(198, 255, 84);
+    color: black;
+}
+
+.tabla .descripcion {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+tbody .descripcion {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+tbody .descripcion, .tabla .descripcion {
+    max-width: 200px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: visible; 
 }
 
 .tabla .descripcion {

@@ -1,0 +1,256 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: rgb(13, 22, 0);
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+header{
+    height: 168px;
+    width: 100%;
+}
+
+.cabezeraSuperior {
+    display: flex;
+    min-height: 70px;
+    background-color: rgb(161, 255, 37);
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+}
+
+.cabezeraSuperior a{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Logo-Cabeza {
+    width: 40%;
+}
+
+/*---------------------------------------*/
+
+.cabezeraInferior {
+    display: flex;
+    background-color: rgb(186, 255, 96);
+    height: 60px;
+}
+
+.menuNavegación {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: rgb(186, 255, 96);
+    list-style: none;
+}
+
+.menuNavegación li {
+    margin: 0px;
+    padding: 5px;
+}
+
+.menuNavegación li a {
+    text-decoration: none;
+    color: black;
+    padding: 22.5px;
+    font-size: 15px;
+}
+
+.menuNavegación li a:hover {
+    background: rgb(72, 127, 0);
+    color: white;
+}
+
+.carritoIcono img{
+    width: 35px;
+    height: 35px;
+    padding: 12.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.carritoIcono img:hover{
+    background: rgb(72, 127, 0);
+}
+
+.usuarioIcono img{
+    width: 35px;
+    height: 35px;
+    padding: 12.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.usuarioIcono img:hover{
+    background: rgb(72, 127, 0);
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+}
+
+/*---------------------------------------*/
+
+.todo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 100px;
+}
+
+/*----------------*/
+
+.contactosIzquierda {
+    background-color: rgb(186, 255, 96);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactosIzquierda img{
+    width: 80%;
+    padding: 50px;
+}
+
+.contactosIzquierda a{
+    font-size: 20px;
+}
+
+/*----------------*/
+
+.contactosDerecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 30%;
+    background-color: rgb(145, 199, 73);
+}
+
+.contacto{
+    width: 80%;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    width: 100%;
+}
+
+.contenedor div {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(186, 255, 96);
+    border: 5px solid black;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.contenedor a {
+    font-size: 20px;
+    font-family: arial;
+    padding: 1px;
+    color: black;
+}
+
+.contenedor img{
+    display: flex;
+    margin: 10px;
+    padding: 0px;
+    width: 40px;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+.pie-pagina {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 355px;
+    background-color: rgb(20, 35, 0);
+}
+
+/*---------------------------------------*/
+
+.grupo-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 355px;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(26, 41, 8);
+}
+
+/*----------------*/
+
+.logoPie {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    height: 150px;
+    margin-top: 75px;
+    margin-right: 12.5%;
+}
+
+.logoPie img{
+    width: 100%;
+    height: 100%;
+}
+
+/*----------------*/
+
+.nombreGrupo{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 200px;
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 12.5%;
+}
+
+.nombreGrupo p{
+    margin: 10px;
+}
+
+.nombreGrupo h2{
+    margin: 0px;
+}
+
+/*---------------------------------------*/
+
+.grupo-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 55px;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(13, 22, 0);
+}
+
+.grupo-2 p{
+    padding: 20px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}

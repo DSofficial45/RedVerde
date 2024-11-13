@@ -1,0 +1,298 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CABEZA==============================*/
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------------------------------------------*/
+
+.cabezaArriba{
+    background-color: rgb(187, 255, 98);
+}
+
+.cabezaArriba img{
+    width: 100%;
+}
+
+.cabezaArriba a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    width: 15%;
+    padding: 1vh;
+}
+
+/*----------------------------------------------*/
+
+.cabezaAbajo{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(206, 255, 142);
+    justify-content: space-between;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuIzquierda{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    color: black;
+    font-size: 2vh;
+    font-family: Arial;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(95, 118, 66);
+    color: white;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>*/
+
+.menuDerecha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.menuDerecha li {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menuDerecha a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.menuDerecha img {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CUERPO==============================*/
+
+main{
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+    height: 100%;
+}
+
+.cuerpo{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.85);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    color: rgb(0, 0, 0);
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.cuerpo h1{
+    text-align: center;
+    font-family: arial;
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 20px;
+    margin: 10px;
+}
+
+.cuerpo p{
+    text-align: center;
+    font-family: arial;
+    font-size: 40px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cuerpo img{
+    width: 50%;
+    padding-bottom: 25px;
+}
+
+/*==============================PIE==============================*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*----------------------------------------------*/
+
+.pieArriba{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 24, 0);
+    padding: 20px;
+}
+
+.pieArribaIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.pieArribaIzquierda img{
+    width: 500px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+.pieArribaDerecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: arial;
+}
+
+.grupo h2{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.grupo p{
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*----------------------------------------------*/
+
+.pieAbajo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 0px;
+}
+
+.pieAbajo p{
+    margin: 15px;
+}
+
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+/**************************************************************************************************************************************/
+
+/*===============================*/
+
+@media (max-width: 1000px){
+    
+    /*==========CABEZA==========*/
+
+    .cabezaArriba a {
+        width: 30%
+    }
+    
+    li a {
+        padding: 1vh;
+        font-size: 1.5vh;
+    }
+    
+    .menuDerecha a {
+        padding: 1vh;
+    }
+    
+    .menuDerecha img {
+        height: 3vh;
+        width: 3vh;
+    }
+    
+    /*===========PIE===========*/
+    
+    .pieArribaIzquierda img{
+        width: 100%;
+    }
+    
+    .grupo h2{
+        font-size: 20px;
+    }
+    
+    .grupo p{
+        font-size: 15px;
+    }
+    
+    .pieAbajo{
+        font-size: 10px;
+    }
+    
+    .pieAbajo p{
+        margin: 15px;
+    }
+    
+    /*lllllllllllllllllllllllllllllllllllllllllllll*/
+
+    /*===========CUERPO===========*/
+
+    .cuerpo{
+        padding: 5px;
+    }
+    
+    .cuerpo h1{
+        font-size: 25px;
+        padding: 0px;
+    }
+    
+    .cuerpo p{
+        font-size: 15px;
+    }
+
+    .cuerpo img{
+        width: 75%;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link rel="stylesheet" href="VisualProducto.css">
+    <script src="VisualProducto.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="cabezeraSuperior">
+            <a href="../PagInicial/index.html"><img src="../../../assets/Logo/RedVerde.png" alt="Red Verde" class="Logo-Cabeza"></a>
+        </div>
+        <div class="cabezeraInferior">
+            <ul class="menuNavegación">
+                <li><a href="../PagInicial/index.html">INICIO</a></li>
+                <li><a href="../Productos/Productos.html">PRODUCTOS</a></li>
+                <li><a href="../Contacto/contacto.html">CONTACTO</a></li>
+            </ul>
+
+            <a class="carritoIcono" href="../../Cliente/Carrito/carrito.html" id="carritoUsuario"><img src="../../../assets/Iconos/CarroDeCompras.png"></a>
+            <a class="usuarioIcono" href="../../Cliente/Usuario/usuario.html" id="usuario"><img src="../../../assets/Iconos/Usuario.png"></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="todo">
+            <div class="producto">
+                <div class="selectorImagen">
+                    <button class="anterior" id="anterior"><
+    
+                    <div class="imagen" id="imagen">
+                    </div>
+    
+                    <a class="siguiente" id="siguiente">></a>
+                </div>
+    
+                <div class="info">
+    
+                    <div class="nombre" id="nombre">
+                    </div>
+    
+                    <div class="precio" id="precio">
+                    </div>
+    
+                    <div class="descripcion" id="descripcion">
+                        <a>Descripción: </a>
+                    </div>
+    
+                    <div class="stock" id="stock">
+                        <a>Unidades disponibles: </a>
+                    </div>
+    
+                    <div class="compra">
+                        <input type='number' value='0' id="numero">
+                        <button id='agregar'>AGREGAR AL CARRITO</button>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="comentariosGeneral">
+                <div class="comentar">
+                    <div id="usuarioNombre">
+                        <a>Tú</a>
+                    </div>
+                    <input id="escribirComentario" type="text" placeholder="Escribir comentario...">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+
+        <div class="grupo-1">
+
+            <div class="logoPie">
+                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="Red Verde" class="Logo-Pie">
+            </div>
+
+            <div class="nombreGrupo">
+                <h2>INTEGRANTES</h2>
+                <p>D = Diego Bernardi</p>
+                <p>I = Ignacio Viazzi</p>
+                <p>M = Maricela Ruiz</p>
+                <p>S = Santiago Pérez</p>
+            </div>
+        </div>
+
+        <div class="grupo-2">
+            <p>D.I.M.S - EMT Informática 3er AÑO - UTU Tarariras</p>
+        </div>
+        
+    </footer>
+
+</body>
+
+</html>

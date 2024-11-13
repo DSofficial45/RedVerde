@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transacciones</title>
+    <link rel="stylesheet" href="transacciones.css">
+    <script src="transacciones.js" defer></script>
+</head>
+
+<!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+<body>
+    <header>
+        <div class="cabezaArriba">
+            <a href="../../Cliente/Login/login.html">
+                <img src="../../../assets/Logo/RedVerdeAdmin.png" alt="LogoRedVerdeOscuro" class="Logo-Cabeza">
+            </a>
+        </div>
+
+        <nav class="cabezaAbajo">
+            <ul class="menuIzquierda">
+                <li><a href="../Inicio/inicioADMIN.html">INICIO</a></li>
+                <li><a href="../Productos/Productos.html">PRODUCTOS</a></li>
+                <li><a href="../Transacciones/transacciones.html">TRANSACCIONES</a></li>
+            </ul>
+
+            <ul class="menuDerecha">
+                <li><a href="../../Cliente/Login/login.html"><img src="../../../assets/Iconos/Usuario.png"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+    <main>
+        <div class="cuerpo">
+            <div class="tabla">
+                <table id="tableCarrito">
+                    <thead class="theadCarrito">
+                        <tr>
+                            <th>IMAGEN</th>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th>USUARIO</th>
+                            <th>ESTADO</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                            
+                    <tbody class="tbodyCarrito">
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto1.png" alt="Producto 1" class="imgProducto"></td>
+                            <td>Producto 1</td>
+                            <td>$10.00</td>
+                            <td>Usuario 1</td>
+                            <td>Confirmado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto2.png" alt="Producto 2" class="imgProducto"></td>
+                            <td>Producto 2</td>
+                            <td>$15.00</td>
+                            <td>Usuario 2</td>
+                            <td>Pendiente</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto3.png" alt="Producto 3" class="imgProducto"></td>
+                            <td>Producto 3</td>
+                            <td>$8.50</td>
+                            <td>Usuario 3</td>
+                            <td>Cancelado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto4.png" alt="Producto 4" class="imgProducto"></td>
+                            <td>Producto 4</td>
+                            <td>$20.00</td>
+                            <td>Usuario 4</td>
+                            <td>Confirmado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto5.png" alt="Producto 5" class="imgProducto"></td>
+                            <td>Producto 5</td>
+                            <td>$12.75</td>
+                            <td>Usuario 5</td>
+                            <td>Pendiente</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto6.png" alt="Producto 6" class="imgProducto"></td>
+                            <td>Producto 6</td>
+                            <td>$18.99</td>
+                            <td>Usuario 6</td>
+                            <td>Confirmado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto7.png" alt="Producto 7" class="imgProducto"></td>
+                            <td>Producto 7</td>
+                            <td>$9.50</td>
+                            <td>Usuario 7</td>
+                            <td>Cancelado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto8.png" alt="Producto 8" class="imgProducto"></td>
+                            <td>Producto 8</td>
+                            <td>$22.00</td>
+                            <td>Usuario 8</td>
+                            <td>Pendiente</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto9.png" alt="Producto 9" class="imgProducto"></td>
+                            <td>Producto 9</td>
+                            <td>$5.99</td>
+                            <td>Usuario 9</td>
+                            <td>Confirmado</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                        <tr>
+                            <td><img src="../../../assets/Imagenes/producto10.png" alt="Producto 10" class="imgProducto"></td>
+                            <td>Producto 10</td>
+                            <td>$30.00</td>
+                            <td>Usuario 10</td>
+                            <td>Pendiente</td>
+                            <td><button class="accion">Acción</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <div class="botones">
+                    <button class="confirmarTodos" id="confirmarTodos">CONFIRMAR TODAS</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll -->
+
+    <footer>
+        <div class="pieArriba">
+            <div class="pieArribaIzquierda">
+                <img src="../../../assets/Logo/RedVerdeClaro.png" alt="LogoRedVerdeClaro">
+            </div>
+            
+            <div class="pieArribaDerecha">
+                <div class="grupo">
+                    <h2>INTEGRANTES</h2>
+                    <p>D = Diego Bernardi</p>
+                    <p>I = Ignacio Viazzi</p>
+                    <p>M = Maricela Ruiz</p>
+                    <p>S = Santiago Pérez</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pieAbajo">
+            <p>D.I.M.S - EMT Informática 3er AÑO - UTU Tarariras</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -34,7 +34,8 @@
         $nombre = $_POST['nombre'];
         $imagen = $_FILES['imagen'];
         $categoria = $_POST['categoria'];
-        $resultado = (new productoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria);
+        $oferta = $_POST['oferta'];      
+        $resultado = (new productoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta);
         echo json_encode($resultado);
     }
     

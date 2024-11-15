@@ -21,20 +21,23 @@ function mostrarProductos(productos) {
     let datosElement = document.querySelector("#datos");
     datosElement.innerHTML = "";
     console.log(productos);
+    
     productos.forEach(producto => {
+        const ofertaTexto = producto.oferta === 0 ? "Sin oferta" : `%${producto.oferta}`;
+        
         datosElement.innerHTML += `
         <tr>
             <td><img src="${producto.urlImg}" alt="Producto 1" width="100px" height="100px"></td>
             <td>${producto.nombre}</td>
             <td>$${producto.precio}</td>
-            <td>%${producto.oferta}</td>
+            <td>${ofertaTexto}</td>
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categorias}</td>
             <td><button class="botonAccion">Modificar</button></td>
             <td><button class="botonAccion">Eliminar</button></td>
         </tr>
-    `
+    `;
     });
 }
 
@@ -55,7 +58,7 @@ function agregarEvento(){
 }
 
 async function agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock) {
-    let respuesta = await new productoDAO().agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);
+    let respuesta = await new productoDAO().agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock, oferta, fecha);
     let productos = await obtenerProductos();
     mostrarProductos(productos);
   

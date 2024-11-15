@@ -17,7 +17,7 @@ export default class productoDAO{
         return respuesta;
     }
 
-    async agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock){
+    async agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock, oferta, fecha){
         let url = Origen+"/Backend/controller/productosController.php?funcion=agregar";
         let formData = new FormData();
         formData.append("nombre", nombre);

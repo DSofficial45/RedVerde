@@ -31,75 +31,16 @@
     <!-- ||||||||||||||||||||||||||||||||||||||||||||||| > > > Cuerpo < < < ||||||||||||||||||||||||||||||||||||||||||||||| -->
      
     <main>
-        <div class="cuerpo">
-            <div class="mainIzquierdo">
-                <form class="formularioProducto" id="formularioProducto">
-                    <input type="text" placeholder="Nombre" name="nombre">
-                    <textarea placeholder="Descripción" id="descripcion" name="descripcion"></textarea>
-                    <div class="precios">
-                        <input type="number" placeholder="Precio" id="precio" name="precio">
-                        <input type="number" placeholder="%Oferta" id="oferta" name="oferta">
-                    </div>
-                    <select class="seleccionTipo" name="categoria">
-                        <option>Aromáticos</option>
-                        <option>Florales</option>
-                        <option>Arbustos</option>
-                        <option>Árboles</option>
-                        <option>Macetas</option>
-                        <option>Tierra</option>
-                        <option>Velas</option>
-                        <option>Inciensos</option>
-                        <option>Perfumados</option>
-                    </select>
-                    <label>Imágenes del producto:</label>
-                    <input type="file" id="pImagen" name="pImagen">
-                    <input type="number" placeholder="stock" name="stock">
-                    
-                    <div class="botones">
-                        <button type="submit" class="btncrear" id="crear">CREAR</button>
-                        <button type="submit" class="btnmodficar" id="modificar">MODIFICAR</button>
-                    </div>
-                </form>
+        <div class="mainIzquierdo">
+            <div class="Ofertas">
+                <h2>OFERTAS</h2>
             </div>
-    
-            <div class="mainDerecho">
-                <div class="filtro">
-                    <select class="seleccionFiltro">
-                        <option>MAYOR A MENOR STOCK</option>
-                        <option>MENOR A MAYOR STOCK</option>
-                        <option>MAYOR A MENOR PRECIO</option>
-                        <option>MENOR A MAYOR PRECIO</option>
-                        <option>MAYOR A MENOR VENTAS</option>
-                        <option>MENOR A MAYOR VENTAS</option>
-                        <option>MAYOR A MENOR OFERTA</option>
-                        <option>MENOR A MAYOR OFERTA</option>
-                    </select>
-                </div>
-    
-                <div class="tabla">
-                    <table id="tableProductos">
-                        <thead class="theadProductos">
-                            <tr>
-                                <th>IMAGEN</th>
-                                <th>NOMBRE</th>
-                                <th>PRECIO</th>
-                                <th>%OFERTA</th>
-                                <th>STOCK</th>
-                                <th>DESCRIPCIÓN</th>
-                                <th>FECHA</th>
-                                <th>TIPO</th>
-                                <th>VENTAS</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-        
-                        <tbody class="tbodyProductos" id="datos">
-                            
-                        </tbody>
-                    </table>
-                </div>
+            <div class="General">
+                
             </div>
+        </div>
+        <div class="mainDerecho">
+            <h2>Filtros</h2>
         </div>
     </main>
 

@@ -1,331 +1,238 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: rgb(13, 22, 0);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CABEZA==============================*/
 
 header{
-    height: 168px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------- CABEZA ARRIBA -------------*/
+
+.cabezaArriba{
+    background-color: rgb(187, 255, 98);
+}
+
+.cabezaArriba img{
     width: 100%;
 }
 
-.cabezeraSuperior {
-    display: flex;
-    min-height: 70px;
-    background-color: rgb(161, 255, 37);
-    justify-content: left;
-    align-items: center;
-    padding: 10px;
+.cabezaArriba a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    width: 15%;
+    padding: 1vh;
 }
 
-.cabezeraSuperior a{
-    margin: 0px;
-    padding: 0px;
-}
+/*------------- CABEZA ABAJO -------------*/
 
-.Logo-Cabeza {
-    width: 40%;
-}
-
-/*---------------------------------------*/
-
-.cabezeraInferior {
-    display: flex;
-    background-color: rgb(186, 255, 96);
-    height: 60px;
-}
-
-.menuNavegación {
+.cabezaAbajo{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    background: rgb(186, 255, 96);
+    background-color: rgb(206, 255, 142);
+    justify-content: space-between;
+}
+
+/* >>> CABEZA MENÚ IZQUIERDO <<<*/
+
+.menuIzquierda{
+    display: flex;
     list-style: none;
-}
-
-.menuNavegación li {
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
 }
 
-.menuNavegación li a {
+li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    color: black;
+    font-size: 2vh;
+    font-family: Arial;
     text-decoration: none;
-    color: black;
-    padding: 22.5px;
-    font-size: 15px;
 }
 
-.menuNavegación li a:hover {
-    background: rgb(72, 127, 0);
+li a:hover {
+    background-color: rgb(95, 118, 66);
     color: white;
 }
 
-.carritoIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* >>> CABEZA MENÚ DERECHO <<<*/
 
-.carritoIcono img:hover{
-    background: rgb(72, 127, 0);
-}
-
-.usuarioIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.usuarioIcono img:hover{
-    background: rgb(72, 127, 0);
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-main{
+.menuDerecha{
     display: flex;
-    flex-direction: column;
-    height: 60%;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.menuDerecha li {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menuDerecha a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.menuDerecha img {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CUERPO==============================*/
+
+main {
+    min-height: 100vh;
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-}
-
-/*---------------------------------------*/
-
-.busqueda{
     display: flex;
-    flex-direction: row;
-    justify-content: right;
-    background-color: rgb(10, 18, 0);
-    color: rgb(174, 255, 0);
-    height: 100%;
-
-}
-
-.busqueda img{
-    width: 40px;
-    height: 40px;
-    margin: 10px;
-
-}
-
-.barraBusqueda{
-    background-color: rgb(10, 18, 0);;
-    border: 2px solid #80ff00;
-    font-size: 20px;
-    width: 60%;
-    border-radius: 20px;
-    color: #80ff00;
-    padding: 10px;
-    margin: 10px;
-}
-
-input {
-    padding: 17px;
-    margin-bottom: 30px;
-    outline: none;
-    color: #80ff00;
-    font-size: 16px;
-}
-
-/*---------------------------------------*/
-
-.productos{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-}
-
-/*----------------*/
-
-.todo{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-}
-
-.ofertas{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(24, 42, 0);
-    padding: 20px;
-}
-
-.ofertas h1{
-    font-size: 60px;
-    font-family: impact;
-    color: rgb(255, 255, 255);
-}
-
-.general{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(195, 255, 121);
-    padding: 20px;
-}
-
-/*----------------*/
-
-.filtros{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(154, 172, 130);
-    padding: 20px;
-    height: 100%;
-    width: 20%;
-}
-
-.filtros{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(165, 196, 72);
-    padding: 20px;
-    height: 100%;
-    width: 20%;
-}
-
-.precio{
-    color: black;
-    display: flex;
-    flex-direction: row;
-}
-
-.minimo{
-    background-color: rgb(224, 255, 122);
-    border: 5px solid rgb(0, 0, 0);
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px;
-    width: 50px;
-    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.maximo{
-    background-color: rgb(224, 255, 122);
-    border: 5px solid rgb(0, 0, 0);
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 5px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.precio a{
-    margin-top: 10px;
-}
-
-select{
-    margin: 10px;
-    font-family: impact;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    background-color: rgb(224, 255, 122);
-    border: 5px solid rgb(0, 0, 0);
-}
-
-h1{
-    font-family: impact;
-}
-
-.checkboxs{
+.mainIzquierdo, .mainDerecho {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.checkbox{
-    display: flex;
-    flex-direction: row;
-    font-size: 20px;
-}
-
-.check{
-    margin-top: 5px;
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-.pie-pagina {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 355px;
-    background-color: rgb(20, 35, 0);
-}
-
-/*---------------------------------------*/
-
-.grupo-1{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    width: 100%;
-    height: 355px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(26, 41, 8);
-}
-
-/*----------------*/
-
-.logoPie {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    height: 150px;
-    margin-top: 75px;
-    margin-right: 12.5%;
-}
-
-.logoPie img{
-    width: 100%;
-    height: 100%;
-}
-
-/*----------------*/
-
-.nombreGrupo{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 200px;
-    color: white;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-left: 12.5%;
-}
-
-.nombreGrupo p{
-    margin: 10px;
-}
-
-.nombreGrupo h2{
-    margin: 0px;
-}
-
-/*---------------------------------------*/
-
-.grupo-2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 55px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(13, 22, 0);
-}
-
-.grupo-2 p{
     padding: 20px;
-    margin: 0px;
-    font-size: 15px;
+}
+
+/*------------- CUERPO IZQUIERDO -------------*/
+
+.mainIzquierdo {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 75%;
+    font-family: Arial;
+}
+
+.Ofertas {
+    height: 10vh;
     font-weight: bold;
+    color: rgb(75, 98, 56);
+    margin-bottom: 20px;
+}
+
+.Ofertas, .General, .mainDerecho {
+    margin-top: 20px;
+}
+
+.Ofertas h2, .General h2 {
+    font-size: 24px;
+}
+
+/*------------- CUERPO DERECHO -------------*/
+
+.mainDerecho {
+    padding: 20px;
+    width: 25%;
+    color: rgb(75, 98, 56);
+}
+
+
+
+/*==============================PIE==============================*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*------------- PIE ARRIBA -------------*/
+
+.pieArriba{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(13, 24, 0);
+    padding: 20px;
+}
+
+/* >>> PIE ARRIBA IZQUIERDA <<<*/
+
+.pieArribaIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.pieArribaIzquierda img{
+    width: 300px;
+}
+
+/* >>> PIE ARRIBA DERECHA <<<*/
+
+.pieArribaDerecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
     color: white;
+    font-family: arial;
+}
+
+.grupo h2{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.grupo p{
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*------------- PIE ABAJO -------------*/
+
+.pieAbajo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.pieAbajo p{
+   margin: 15px;
 }

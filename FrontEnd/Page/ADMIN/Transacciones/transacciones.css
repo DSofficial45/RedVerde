@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -18,7 +18,7 @@ header{
     flex-direction: column;
 }
 
-/*----------------------------------------------*/
+/*------------- CABEZA ARRIBA -------------*/
 
 .cabezaArriba{
     background-color: rgb(187, 255, 98);
@@ -36,7 +36,7 @@ header{
     padding: 1vh;
 }
 
-/*----------------------------------------------*/
+/*------------- CABEZA ABAJO -------------*/
 
 .cabezaAbajo{
     display: flex;
@@ -45,7 +45,7 @@ header{
     justify-content: space-between;
 }
 
-/*>>>>>>>>>>>>>>>>>>>>*/
+/* >>> CABEZA MENÚ IZQUIERDO <<<*/
 
 .menuIzquierda{
     display: flex;
@@ -73,7 +73,7 @@ li a:hover {
     color: white;
 }
 
-/*>>>>>>>>>>>>>>>>>>>>*/
+/* >>> CABEZA MENÚ DERECHO <<<*/
 
 .menuDerecha{
     display: flex;
@@ -111,33 +111,33 @@ li a:hover {
 
 /*==============================CUERPO==============================*/
 
-main{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-    height: 100%;
-}
+/*------------------------------CUERPO SECCIÓN------------------------------*/
 
-.cuerpo{
+main{
+    min-height: 100vh;
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
     display: flex;
-    background-color: rgba(255, 255, 255, 0.85);
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-items: center;
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    width: 80%;
-    height: 100%;
-    text-align: center;
 }
 
+.cuerpo {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 50px;
+    text-align: center;
+    width: 80%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/*------------------------------TABLA------------------------------*/
+
 .tabla {
+    display: flex;
     flex-grow: 1;
+    max-height: 80vh;
     overflow-y: auto;
-    font-size: 20px;
-    margin: 10px;
+    font-family: Arial;
 }
 
 .tabla table {
@@ -145,39 +145,100 @@ main{
     border-collapse: collapse;
 }
 
+.tabla tr{
+    border-bottom: 2px solid rgb(95, 118, 66);
+}
+
 .tabla th, .tabla td {
-    padding: 15px;
-    border: 1px solid rgba(95, 118, 66, 0.5);
+    padding: 10px;
     text-align: left;
+    font-size: 14px;
 }
 
 .tabla th {
     background-color: rgb(95, 118, 66);
     color: white;
     font-weight: normal;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .tabla td {
-    background-color: rgba(255, 255, 255, 0.9);
-}
-
-.botones{
-    margin: 10px;
-}
-
-.confirmarTodos {
-    background-color: rgb(75, 98, 56);
-    color: rgb(255, 255, 255);
     padding: 10px;
-    font-size: 20px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*------------------------------BOTONES------------------------------*/
+
+.botonAccion {
+    padding: 5px 10px;
+    font-size: 12px;
     border: none;
+    background-color: rgb(75, 98, 56);
+    color: white;
     border-radius: 5px;
+    cursor: pointer;
+    width: 80px;
+}
+
+.botonAccion:hover {
+    background-color: rgb(198, 255, 84);
+    color: black;
+}
+
+.tabla .descripcion {
+    max-width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+tbody .descripcion {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+tbody .descripcion, .tabla .descripcion {
+    max-width: 200px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: visible; 
+}
+
+.imgProducto {
+    width: 100px;
+}
+
+.accion {
+    padding: 10px 15px;
+    background-color: rgb(95, 118, 66);
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
+.accion:hover {
+    background-color: rgb(60, 90, 45);
+}
+
+.confirmarTodos {
+    background-color: rgb(187, 255, 98);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
 .confirmarTodos:hover {
-    background-color: rgb(198, 255, 84);
-    color: rgb(0, 0, 0);
+    background-color: rgb(95, 118, 66);
+    color: white;
 }
 
 /*==============================PIE==============================*/
@@ -248,11 +309,11 @@ footer {
     font-family: arial;
     font-weight: bold;
     font-size: 20px;
-    padding: 0px;
+    padding: 10px;
 }
 
 .pieAbajo p{
-    margin: 15px;
+    margin: 15px;
 }
 
 /**************************************************************************************************************************************/
@@ -308,4 +369,21 @@ footer {
     /*lllllllllllllllllllllllllllllllllllllllllllll*/
 
     /*===========CUERPO===========*/
+
+    .cuerpo{
+        padding: 5px;
+    }
+    
+    .cuerpo h1{
+        font-size: 25px;
+        padding: 0px;
+    }
+    
+    .cuerpo p{
+        font-size: 15px;
+    }
+
+    .cuerpo img{
+        width: 75%;
+    }
 }

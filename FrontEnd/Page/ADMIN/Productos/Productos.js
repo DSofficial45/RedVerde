@@ -31,7 +31,7 @@ function mostrarProductos(productos) {
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categoria}</td> 
-            <td><button class="botonAccion modificar" data-index="${index}">Modificar</button></td>
+            <td><button class="botonAccion modificar">Modificar</button></td>
             <td><button class="botonAccion eliminar">Eliminar</button></td> </tr> `;
         
         datosElement.innerHTML += filaHTML; 

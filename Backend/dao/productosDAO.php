@@ -20,7 +20,7 @@ class productoDAO {
         return new Respuesta(true,"productos obtenidos",$producto);
     }
 
-    public function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta){
+    /*public function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta){
 
        
         $connection = connection();
@@ -38,7 +38,25 @@ class productoDAO {
             return new Respuesta(false, $e->getMessage(), null);
         }
        
-    }
+    }*/
+
+    public function agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta) {
+        $connection = connection();
+        $nomImg = $imagen['name'];
+        $extension = pathinfo($nomImg, PATHINFO_EXTENSION);
+        $sql = "INSERT INTO producto (fecha, precio, stock, descripcion, nombre, extension, nombreCategoria, oferta) 
+                VALUES ('$fecha', $precio, $stock, '$descripcion', '$nombre', '$extension', '$categoria', '$oferta')";
+    
+        try {
+            $connection->query($sql);
+            $id = $connection->insert_id;
+            $ruta_temp = $imagen["tmp_name"];
+            move_uploaded_file($ruta_temp, "../imgBack/$id.$extension");
+            return new Respuesta(true, "Producto agregado correctamente", null);
+        } catch (Exception $e) {
+            return new Respuesta(false, $e->getMessage(), null);
+        }
+    }    
 
     public function eliminarProducto($id){
         $sql = "DELETE FROM producto WHERE id ='$id'";

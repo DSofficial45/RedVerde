@@ -17,8 +17,11 @@ export default class productoDAO{
         return respuesta;
     }
 
-    async agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock, oferta, fecha){
-        let url = Origen+"/Backend/controller/productosController.php?funcion=agregar";
+    async agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock) {
+        let url = `${Origen}/Backend/controller/productosController.php?funcion=agregar`;
+    
+        const fecha = new Date().toLocaleDateString();
+    
         let formData = new FormData();
         formData.append("nombre", nombre);
         formData.append("descripcion", descripcion);
@@ -27,20 +30,18 @@ export default class productoDAO{
         formData.append("oferta", oferta);
         formData.append("imagen", imagen);
         formData.append("stock", stock);
-        let fecha = new Date().toLocaleDateString();
         formData.append("fecha", fecha);
-
-
+    
         let config = {
-
             method: "POST",
-            body:formData
-        }
-
-       let respuestaConsulta = await fetch(url, config);
-       let respuesta = await respuestaConsulta.json();
-       console.log("jjdsfvscsadfcv", respuesta);
-       return respuesta;
-    }
+            body: formData
+        };
+    
+        let respuestaConsulta = await fetch(url, config);
+        let respuesta = await respuestaConsulta.json();
+        console.log("Respuesta agregarProducto:", respuesta);
+        return respuesta;
+    }    
+    
 
 }

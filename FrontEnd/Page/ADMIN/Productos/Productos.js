@@ -2,9 +2,7 @@ import productoDAO from "../../../dao/productoDAO.js";
 
 window.onload = async () => {
     let productos = await obtenerProductos();
-    //allProductos = productos;
     mostrarProductos(productos);
-    //agregarEventosFiltro();
     agregarEvento();
 }
 
@@ -26,20 +24,41 @@ function mostrarProductos(productos) {
     let filaHTML = `
         <tr> 
             <td><img src="${producto.urlImg}" alt="Producto ${producto.nombre}" width="100px" height="100px"></td>
-            <td>${producto.nombre}</td> 
-            <td>${producto.fecha}</td> 
-            <td>$${producto.precio}</td> 
+            <td>${producto.nombre}</td>
+            <td>${producto.fecha}</td>
+            <td>$${producto.precio}</td>
             <td>${ofertaTexto}</td>
-            <td>${producto.stock}</td> 
-            <td class="descripcion">${producto.descripcion}</td> 
-            <td>${producto.categoria}</td>
-            <td><button class="botonAccion">Modificar</button></td>
-            <td><button class="botonAccion">Eliminar</button></td>
-        </tr> `; 
+            <td>${producto.stock}</td>
+            <td class="descripcion">${producto.descripcion}</td>
+            <td>${producto.categoria}</td> 
+            <td><button class="botonAccion modificar" data-index="${index}">Modificar</button></td>
+            <td><button class="botonAccion eliminar">Eliminar</button></td> </tr> `;
         
         datosElement.innerHTML += filaHTML; 
     });
+
+    /*  Modificar   */
+
+    /*document.querySelectorAll(".modificar").forEach(button => {
+        button.addEventListener("click", function() {
+            let index = this.getAttribute("data-index");
+            rellenarFormulario(productos[index]); });
+        });*/
 }
+
+    /*  Funcion Modificar   */
+
+/*function rellenarFormulario(producto) {
+    let formElement = document.querySelector("#formularioProducto");
+
+    formElement.nombre.value = producto.nombre;
+    formElement.descripcion.value = producto.descripcion;
+    formElement.precio.value = producto.precio;
+    formElement.oferta.value = producto.oferta;
+    formElement.categoria.value = producto.categoria;
+    formElement.stock.value = producto.stock;
+}*/
+
     
 function agregarEvento(){
     let formElement = document.querySelector("#formularioProducto");
@@ -64,6 +83,8 @@ async function agregarProducto(nombre, descripcion, precio, categoria, oferta, i
     mostrarProductos(productos);
   
 }
+
+
 
 /*function agregarEventoFiltro() { document.querySelector("#filtroSelect").addEventListener("change", function() { filtrarProductos(this.value); }); }
 

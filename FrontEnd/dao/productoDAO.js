@@ -41,7 +41,6 @@ export default class productoDAO{
         let respuesta = await respuestaConsulta.json();
         console.log("Respuesta agregarProducto:", respuesta);
         return respuesta;
-    }    
-    
+    }
 
 }

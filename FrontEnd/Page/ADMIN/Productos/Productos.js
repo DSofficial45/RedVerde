@@ -1,4 +1,5 @@
 import productoDAO from "../../../dao/productoDAO.js";
+let idSelected = null;
 
 window.onload = async () => {
     let productos = await obtenerProductos();
@@ -21,8 +22,8 @@ function mostrarProductos(productos) {
      if (producto.oferta && producto.oferta > 0) {
         ofertaTexto = `${producto.oferta}%`; }
         
-    let filaHTML = `
-        <tr> 
+    let filaHTML = document.createElement("tr");
+    filaHTML.innerHTML = `
             <td><img src="${producto.urlImg}" alt="Producto ${producto.nombre}" width="100px" height="100px"></td>
             <td>${producto.nombre}</td>
             <td>${producto.fecha}</td>
@@ -31,11 +32,54 @@ function mostrarProductos(productos) {
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
             <td>${producto.categoria}</td> 
-            <td><button class="botonAccion modificar">Modificar</button></td>
-            <td><button class="botonAccion eliminar">Eliminar</button></td> </tr> `;
-        
-        datosElement.innerHTML += filaHTML; 
+             `;
+        let tdModificar = document.createElement("td");
+        let tdEliminar = document.createElement("td");
+        let botonModificar = document.createElement("button");
+        let botonEliminar = document.createElement("button");
+        botonModificar.classList.add("botonAccion");
+        botonModificar.classList.add("modificar");
+        botonModificar.textContent = "Modificar";
+        botonModificar.addEventListener("click", function() {
+            idSelected = producto.id;
+            console.log(idSelected);
+            rellenarFormulario(producto);
+        });
+        botonEliminar.classList.add("botonAccion");
+        botonEliminar.classList.add("eliminar");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.addEventListener("click", async function() {
+            eliminarProducto(producto.id);
+    
+        });
+    filaHTML.appendChild(tdModificar);
+    filaHTML.appendChild(tdEliminar);
+    tdModificar.appendChild(botonModificar);
+    tdEliminar.appendChild(botonEliminar);
+    datosElement.appendChild(filaHTML);
     });
+
+}
+
+async function eliminarProducto(id) {
+    console.log("eliminar", id);
+   let respuesta = await new productoDAO().eliminarProducto(id);
+   let productos = await obtenerProductos();
+   mostrarProductos(productos);
+  
+}
+
+
+function rellenarFormulario(producto) {
+    let formElement = document.querySelector("#formularioProducto");
+    formElement.nombre.value = producto.nombre;
+    formElement.descripcion.value = producto.descripcion;
+    formElement.precio.value = producto.precio;
+    formElement.oferta.value = producto.oferta;
+    formElement.categoria.value = producto.nombreCategoria;
+    formElement.stock.value = producto.stock;
+    formElement.fecha.value = new Date(producto.fecha).toISOString().split("T")[0];
+}
 
     /*  Modificar   */
 
@@ -44,7 +88,7 @@ function mostrarProductos(productos) {
             let index = this.getAttribute("data-index");
             rellenarFormulario(productos[index]); });
         });*/
-}
+
 
     /*  Funcion Modificar   */
 
@@ -71,10 +115,28 @@ function agregarEvento(){
         let categoria = formElement.categoria.value;    
         let imagen = formElement.pImagen.files[0];
         let stock = formElement.stock.value;
+        let fecha = formElement.fecha.value;
+        console.log(formElement.accion);
 
-        agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);
+        let accion = e.submitter.value; 
+        if(accion == "Agregar"){
+            agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);
+        }else{
+            if(idSelected != null){
+            modicarProducto(nombre, descripcion, precio, categoria, oferta, fecha, stock,idSelected);
+            }
+        }
+      
+       // 
     }
 
+}
+
+async function modicarProducto(nombre, descripcion, precio, categoria, oferta, fecha, stock,idSelected) {
+    let respuesta = await new productoDAO().modicarProducto(nombre, descripcion, precio, categoria, oferta, fecha, stock,idSelected);
+    let productos = await obtenerProductos();
+    mostrarProductos(productos);
+    
 }
 
 async function agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock) {

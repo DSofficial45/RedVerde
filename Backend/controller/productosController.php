@@ -25,7 +25,7 @@
         $resultado = (new productoDAO())->obtenerProductos();
         echo json_encode($resultado);
     }
-    
+
     function agregarProducto() {
         $fecha = $_POST['fecha'];
         $precio = $_POST['precio'];
@@ -35,11 +35,11 @@
         $imagen = $_FILES['imagen'];
         $categoria = $_POST['categoria'];  
         $oferta = $_POST['oferta'];
+    
         $resultado = (new ProductoDAO())->agregarProducto($fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta);
         
         echo json_encode($resultado);
     }
-    
     
     function eliminarProducto(){
         $id = $_POST['id'];

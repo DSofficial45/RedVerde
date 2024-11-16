@@ -4,6 +4,8 @@ import productoDAO from "../../../dao/productoDAO.js";
 let precioFiltro = "";
 let allProductos = [];*/
 
+let productos = []; // Declarar productos como variable global
+
 window.onload = async () => {
     let productos = await obtenerProductos();
     //allProductos = productos;
@@ -21,23 +23,29 @@ function mostrarProductos(productos) {
     let datosElement = document.querySelector("#datos");
     datosElement.innerHTML = "";
     console.log(productos);
-    
+
     productos.forEach(producto => {
-        const ofertaTexto = producto.oferta === 0 ? "Sin oferta" : `%${producto.oferta}`;
-        
-        datosElement.innerHTML += `
+        let ofertaTexto = "Sin oferta";
+        if (producto.oferta && producto.oferta > 0) {
+            ofertaTexto = `${producto.oferta}%`;
+        }
+
+        let filaHTML = `
         <tr>
-            <td><img src="${producto.urlImg}" alt="Producto 1" width="100px" height="100px"></td>
+            <td><img src="${producto.urlImg}" alt="Producto ${producto.nombre}" width="100px" height="100px"></td>
             <td>${producto.nombre}</td>
+            <td>${producto.fecha}</td>
             <td>$${producto.precio}</td>
             <td>${ofertaTexto}</td>
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
-            <td>${producto.categorias}</td>
+            <td>${producto.nombreCategoria}</td>
             <td><button class="botonAccion">Modificar</button></td>
             <td><button class="botonAccion">Eliminar</button></td>
         </tr>
-    `;
+        `;
+
+        datosElement.innerHTML += filaHTML;
     });
 }
 
@@ -58,35 +66,8 @@ function agregarEvento(){
 }
 
 async function agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock) {
-    let respuesta = await new productoDAO().agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock, oferta, fecha);
+    let respuesta = await new productoDAO().agregarProducto(nombre, descripcion, precio, categoria, oferta, imagen, stock);    
     let productos = await obtenerProductos();
     mostrarProductos(productos);
   
 }
-
-/*function agregarEventosFiltro() {
-    let inputNombre = document.querySelector("#filtroNombre");
-    let inputPrecio = document.querySelector("#filtroPrecio");
-
-    inputNombre.onkeyup = () => {
-        nombreFiltro = inputNombre.value.toLowerCase();
-        filtrarProductos();
-    }
-    
-    inputPrecio.oninput = () => {
-        precioFiltro = parseFloat(inputPrecio.value);
-        document.querySelector("#precioValor").textContent = $${precioFiltro}; // Actualiza el texto que muestra el valor
-        filtrarProductos();
-    }
-}
-
-function filtrarProductos() {
-    let productosFiltrados = allProductos.filter(producto => {
-        let nombreCoincide = producto.nombre.toLowerCase().startsWith(nombreFiltro);
-        let precioCoincide = producto.precio <= precioFiltro;
-
-        return nombreCoincide && precioCoincide; 
-    });
-
-    mostrarProductos(productosFiltrados); 
-}*/

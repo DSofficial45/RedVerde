@@ -30,7 +30,7 @@ function mostrarProductos(productos) {
             <td>${ofertaTexto}</td>
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
-            <td>${producto.categoria}</td> 
+            <td>${producto.nombreCategoria}</td> 
             <td><button class="botonAccion modificar">Modificar</button></td>
             <td><button class="botonAccion eliminar">Eliminar</button></td> </tr> `;
         

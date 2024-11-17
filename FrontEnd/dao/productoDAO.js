@@ -10,8 +10,35 @@ export default class productoDAO{
         return respuesta;
     }
 
-    async eliminarProducto(){
+    async modicarProducto(nombre, descripcion, precio, categoria, oferta, fecha, stock,idSelected){
+        let url = `${Origen}/Backend/controller/productosController.php?funcion=modificar`;
+        let formData = new FormData();
+        formData.append("nombre", nombre);
+        formData.append("descripcion", descripcion);
+        formData.append("precio", precio);
+        formData.append("categoria", categoria);
+        formData.append("oferta", oferta);
+        formData.append("fecha", fecha);
+        formData.append("stock", stock);
+        formData.append("id", idSelected);
+        let config = {
+            method: "POST",
+            body: formData
+        };
+        let respuestaConsulta = await fetch(url, config);
+        let respuesta = await respuestaConsulta.json();
+        return respuesta;
+ 
+    }
+
+    async eliminarProducto(id){
         let url = Origen+"/Backend/controller/productosController.php?funcion=eliminar";
+        let formData = new FormData();
+        formData.append("id", id);
+        let config = {
+            method: "POST",
+            body: formData
+        };
         let respuestaConsulta = await fetch(url, config);
         let respuesta = await respuestaConsulta.json();
         return respuesta;

@@ -70,8 +70,8 @@ class productoDAO {
 
     }
 
-    public function modificarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $imagen, $categoria, $oferta){
-        $sql = "UPDATE libro SET fecha='$fecha', precio='$precio', stock='$stock', descripcion='$descripcion', nombreCategoria='$categoria', nombre='$nombre', nombre='$nombre' WHERE id=$id";
+    public function modificarProducto($id, $nombre, $fecha, $precio, $stock, $descripcion, $urlImg){
+        $sql = "UPDATE libro SET nombre='$nombre', fecha='$fecha', precio='$precio', stock='$stock', descripcion='$descripcion', urlImg=', $urlImg' WHERE id=$id";
         $connection = connection();
         try{
             $respuesta = $connection->query($sql);

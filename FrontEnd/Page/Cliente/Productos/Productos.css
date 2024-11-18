@@ -113,17 +113,11 @@ li a:hover {
 
 main {
     min-height: 100vh;
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg) no-repeat center center;
+    background-size: cover;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.mainIzquierdo, .mainDerecho {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -132,35 +126,158 @@ main {
 .mainIzquierdo {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    width: 75%;
-    font-family: Arial;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 70%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.Ofertas {
-    height: 10vh;
+.ofertas {
+    height: auto;
+    padding: 20px;
+    color: rgb(34, 85, 45);
     font-weight: bold;
-    color: rgb(75, 98, 56);
-    margin-bottom: 20px;
-}
-
-.Ofertas, .General, .mainDerecho {
-    margin-top: 20px;
-}
-
-.Ofertas h2, .General h2 {
     font-size: 24px;
+    font-family: arial;
+    background-color: rgb(208, 237, 171);
+    border-bottom: 3px solid rgb(34, 85, 45);
+    text-align: center;
+}
+
+#ofertas {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que los elementos salten a una nueva línea */
+    overflow-x: auto; /* Genera la barra desplazadora horizontal */
+    white-space: nowrap; /* Asegura que los elementos estén en una sola línea */
+    gap: 10px; /* Espaciado entre los productos */
+    scrollbar-width: thin; /* Ajusta el ancho de la barra desplazadora en navegadores compatibles */
+}
+
+#ofertas::-webkit-scrollbar {
+    height: 10px; /* Altura de la barra desplazadora */
+}
+
+#ofertas::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 118, 66); /* Color de la barra desplazadora */
+    border-radius: 5px; /* Redondeo de la barra */
+}
+
+#ofertas::-webkit-scrollbar-track {
+    background-color: rgb(208, 237, 171); /* Color de fondo de la barra desplazadora */
+}
+
+.general {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 20px;
+    color: rgb(34, 85, 45);
+    font-family: arial;
+    background-color: rgb(255, 255, 255);
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.producto .precios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.original {
+    font-size: 10px;
+    color: rgb(119, 119, 119);
+    text-decoration: line-through;
+    margin-right: 0px;
+}
+
+.offPorcen {
+    font-size: 10px;
+    color: rgb(34, 139, 34); /* Dark green color */
+}
+
+.producto img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    margin: 5px;
+    font-size: 14px;
+    color: rgb(34, 85, 45);
+}
+.botonAccion {
+    margin-top: 10px;
+    padding: 7px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(34, 85, 45);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonAccion:hover {
+    background-color: rgb(140, 255, 0);
+    color: black;
+}
+
+.botonAccionNoOff {
+    margin-top: auto;
+    padding: 7px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(34, 85, 45);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botonAccionNoOff:hover {
+    background-color: rgb(140, 255, 0);
+    color: black;
 }
 
 /*------------- CUERPO DERECHO -------------*/
 
 .mainDerecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(208, 237, 171);
     padding: 20px;
     width: 25%;
-    color: rgb(75, 98, 56);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: rgb(34, 85, 45);
+    font-family: Arial;
 }
 
-
+.mainDerecho h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(34, 85, 45);
+}
 
 /*==============================PIE==============================*/
 
@@ -234,5 +351,5 @@ footer {
 }
 
 .pieAbajo p{
-   margin: 15px;
+    margin: 15px;
 }

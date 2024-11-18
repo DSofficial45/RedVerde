@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -18,7 +18,7 @@ header{
     flex-direction: column;
 }
 
-/*----------------------------------------------*/
+/*------------- CABEZA ARRIBA -------------*/
 
 .cabezaArriba{
     background-color: rgb(187, 255, 98);
@@ -36,7 +36,7 @@ header{
     padding: 1vh;
 }
 
-/*----------------------------------------------*/
+/*------------- CABEZA ABAJO -------------*/
 
 .cabezaAbajo{
     display: flex;
@@ -45,7 +45,7 @@ header{
     justify-content: space-between;
 }
 
-/*>>>>>>>>>>>>>>>>>>>>*/
+/* >>> CABEZA MENÚ IZQUIERDO <<<*/
 
 .menuIzquierda{
     display: flex;
@@ -73,7 +73,7 @@ li a:hover {
     color: white;
 }
 
-/*>>>>>>>>>>>>>>>>>>>>*/
+/* >>> CABEZA MENÚ DERECHO <<<*/
 
 .menuDerecha{
     display: flex;
@@ -111,45 +111,74 @@ li a:hover {
 
 /*==============================CUERPO==============================*/
 
-main{
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+main {
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg) no-repeat center center fixed;
+    background-size: cover;
     height: 100%;
 }
 
-.cuerpo{
+/* ------------- CUERPO ARRIBA ------------- */
+.cuerpoArriba {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.75);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    justify-items: center;
-    color: rgb(0, 0, 0);
-    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 80px 30px;
     width: 100%;
-    height: 100%;
+    height: 75vh;
     text-align: center;
 }
 
-.cuerpo h1{
-    text-align: center;
-    font-family: arial;
+.cuerpoArriba img {
+    min-width: 90vh;
+    margin-bottom: 30px;
+}
+
+.cuerpoArriba h1 {
+    font-family: 'Arial';
     font-size: 50px;
-    font-weight: bold;
-    padding-top: 20px;
-    margin: 10px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
 }
 
-.cuerpo p{
+.cuerpoArriba p {
+    font-family: 'Arial';
+    font-size: 30px;
+    color: rgb(0, 0, 0);
+}
+
+/* ------------- CUERPO ABAJO ------------- */
+.cuerpoAbajo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(175, 205, 77);
+    padding: 30px;
+    width: 100%;
+    height: 25vh;
     text-align: center;
-    font-family: arial;
-    font-size: 40px;
-    padding: 0px;
-    margin: 0px;
+    border-top: 3px solid #000000;
 }
 
-.cuerpo img{
-    width: 50%;
-    padding-bottom: 25px;
+.cuerpoAbajo a {
+    color: white;
+    font-size: 20px;
+    font-family: arial;
+    background-color: rgb(34, 85, 45);
+    padding: 20px 40px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cuerpoAbajo a:hover {
+    background-color: rgb(140, 255, 0);
+    color: #000000;
+    transform: translateY(-5px);
 }
 
 /*==============================PIE==============================*/
@@ -220,81 +249,9 @@ footer {
     font-family: arial;
     font-weight: bold;
     font-size: 20px;
-    padding: 0px;
+    padding: 10px;
 }
 
 .pieAbajo p{
-    margin: 15px;
-}
-
-/**************************************************************************************************************************************/
-/**************************************************************************************************************************************/
-/**************************************************************************************************************************************/
-
-/*===============================*/
-
-@media (max-width: 1000px){
-    
-    /*==========CABEZA==========*/
-
-    .cabezaArriba a {
-        width: 30%
-    }
-    
-    li a {
-        padding: 1vh;
-        font-size: 1.5vh;
-    }
-    
-    .menuDerecha a {
-        padding: 1vh;
-    }
-    
-    .menuDerecha img {
-        height: 3vh;
-        width: 3vh;
-    }
-    
-    /*===========PIE===========*/
-    
-    .pieArribaIzquierda img{
-        width: 100%;
-    }
-    
-    .grupo h2{
-        font-size: 20px;
-    }
-    
-    .grupo p{
-        font-size: 15px;
-    }
-    
-    .pieAbajo{
-        font-size: 10px;
-    }
-    
-    .pieAbajo p{
-        margin: 15px;
-    }
-    
-    /*lllllllllllllllllllllllllllllllllllllllllllll*/
-
-    /*===========CUERPO===========*/
-
-    .cuerpo{
-        padding: 5px;
-    }
-    
-    .cuerpo h1{
-        font-size: 25px;
-        padding: 0px;
-    }
-    
-    .cuerpo p{
-        font-size: 15px;
-    }
-
-    .cuerpo img{
-        width: 75%;
-    }
+    margin: 15px;
 }

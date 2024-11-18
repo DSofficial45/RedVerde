@@ -17,8 +17,8 @@ function agregarEvento(){
 
 async function iniciarSesion(email, password) {
     let respuesta = await new SesionDAO().iniciarSesion(email, password);
-  //  alert(respuesta.datos);
     if (respuesta.estado) {
+        localStorage.setItem("usuario", JSON.stringify(respuesta.datos));
         if(respuesta.datos === "0"){
             window.location.href = "../PagInicial/index.html";  
         }else{
@@ -26,5 +26,5 @@ async function iniciarSesion(email, password) {
         }
     } else {
         alert("Error al iniciar sesion");
-    }
+    }
 }

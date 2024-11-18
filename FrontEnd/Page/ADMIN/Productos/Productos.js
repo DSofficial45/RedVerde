@@ -31,7 +31,7 @@ function mostrarProductos(productos) {
             <td>${ofertaTexto}</td>
             <td>${producto.stock}</td>
             <td class="descripcion">${producto.descripcion}</td>
-            <td>${producto.categoria}</td> 
+            <td>${producto.nombreCategoria}</td> 
              `;
         let tdModificar = document.createElement("td");
         let tdEliminar = document.createElement("td");

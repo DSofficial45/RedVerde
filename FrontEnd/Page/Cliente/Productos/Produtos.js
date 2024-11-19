@@ -27,7 +27,6 @@ function mostrarProductos(productos) {
             productoHTML = `
             <div class="producto">
                 <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
-                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${precioConDescuento} </p>
                 <p class="comparativaPrecio">

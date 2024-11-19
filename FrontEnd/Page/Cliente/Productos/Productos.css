@@ -132,9 +132,7 @@ main {
     overflow: hidden;
 }
 
-.ofertaTitle{  
-
-    
+.ofertaTitle{                       
     padding: 20px;
     color: rgb(34, 85, 45);
     font-weight: bold;
@@ -185,7 +183,7 @@ main {
     margin: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
-}
+    }
 
 .producto:hover {
     transform: translateY(-5px);

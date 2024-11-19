@@ -117,8 +117,8 @@ main {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg) no-repeat center center/cover;
-    min-height: 80vh; /* Asegura que ocupe suficiente espacio vertical */
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+    min-height: 80vh;
 }
 
 .info {
@@ -128,7 +128,7 @@ main {
     justify-content: space-between;
     width: 80%;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -146,7 +146,7 @@ main {
 .icono img {
     width: 80%;
     height: auto;
-    border-radius: 50%; /* Icono circular */
+    border-radius: 50%; 
     border: 2px solid rgb(175, 205, 77);
 }
 
@@ -170,7 +170,7 @@ main {
 .botones {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Espacio entre botones */
+    gap: 20px;
     width: 80%;
     max-width: 800px;
 }

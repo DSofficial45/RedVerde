@@ -116,7 +116,7 @@ main {
     justify-content: center;
     align-items: center;
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-    min-height: 80vh; /* Ajuste para evitar espacios vacíos */
+    min-height: 80vh;
     padding: 50px 0;
 }
 

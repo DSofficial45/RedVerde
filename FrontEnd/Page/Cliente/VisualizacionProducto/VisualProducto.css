@@ -1,343 +1,291 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: rgb(13, 22, 0);
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-header{
-    height: 168px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     width: 100%;
 }
 
-.cabezeraSuperior {
-    display: flex;
-    min-height: 70px;
-    background-color: rgb(161, 255, 37);
-    justify-content: left;
-    align-items: center;
-    padding: 10px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.cabezeraSuperior a{
+/*==============================CABEZA==============================*/
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------- CABEZA ARRIBA -------------*/
+
+.cabezaArriba{
+    background-color: rgb(187, 255, 98);
+}
+
+.cabezaArriba img{
+    width: 100%;
+}
+
+.cabezaArriba a {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    width: 15%;
+    padding: 1vh;
+}
+
+/*------------- CABEZA ABAJO -------------*/
+
+.cabezaAbajo{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(206, 255, 142);
+    justify-content: space-between;
+}
+
+/* >>> CABEZA MENÚ IZQUIERDO <<<*/
+
+.menuIzquierda{
+    display: flex;
+    list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
-.Logo-Cabeza {
-    width: 40%;
-}
-
-/*---------------------------------------*/
-
-.cabezeraInferior {
+li a {
     display: flex;
-    background-color: rgb(186, 255, 96);
-    height: 60px;
-}
-
-.menuNavegación {
-    display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+    height: 100%;
     width: 100%;
-    background: rgb(186, 255, 96);
-    list-style: none;
-}
-
-.menuNavegación li {
     margin: 0px;
-    padding: 5px;
-}
-
-.menuNavegación li a {
-    text-decoration: none;
     color: black;
-    padding: 22.5px;
-    font-size: 15px;
+    font-size: 2vh;
+    font-family: Arial;
+    text-decoration: none;
 }
 
-.menuNavegación li a:hover {
-    background: rgb(72, 127, 0);
+li a:hover {
+    background-color: rgb(95, 118, 66);
     color: white;
 }
 
-.carritoIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* >>> CABEZA MENÚ DERECHO <<<*/
 
-.carritoIcono img:hover{
-    background: rgb(72, 127, 0);
-}
-
-.usuarioIcono img{
-    width: 35px;
-    height: 35px;
-    padding: 12.5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.usuarioIcono img:hover{
-    background: rgb(72, 127, 0);
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------*/
-
-main{
+.menuDerecha{
     display: flex;
     align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.menuDerecha li {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menuDerecha a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.menuDerecha img {
+    height: 7vh;
+    width: 7vh;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============================CUERPO==============================*/
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    padding: 2rem;
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
+    min-height: 70vh;
 }
 
-/*---------------------------------------*/
-
-.todo{
+.todo {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin-bottom: 0px;
+    width: 80%;
+    max-width: 1200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.producto{
+.producto {
     display: flex;
     flex-direction: row;
-    background-color: rgb(145, 199, 73);
-    width: 100%;
-    height: 100%;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    border-bottom: 2px solid rgb(206, 255, 142);
 }
 
-.selectorImagen{
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-    height: 80%;
-    padding: 10px;
-}
-
-.selectorImagen img{
-    width: 100%;
-    height: 100%;
-}
-
-.anterior{
+.selectorImagen {
+    flex: 1;
     display: flex;
     justify-content: center;
-    font-family: impact;
-    font-size: 40px;
-    margin: 5px;
-    margin-top: 32.5%;
-    width: 15%;
-    height: 15%;
-    padding: 11x;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    align-items: center;
+    padding: 1rem;
 }
 
-.anterior:hover{
-    color: rgb(157, 255, 0);
-    background-color: black;
+.imagen {
+    width: 400px;
+    height: 400px;
+    background: url('../../../assets/Fondo/PlantaFondo-1.jpg');
+    background-size: cover;
+    border-radius: 10px;
 }
 
-.siguiente{
-    display: flex;
-    justify-content: center;
-    font-family: impact;
-    font-size: 40px;
-    margin: 5px;
-    margin-top: 32.5%;
-    width: 15%;
-    height: 15%;
-    padding: 11x;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.siguiente:hover{
-    color: rgb(157, 255, 0);
-    background-color: black;
-}
-
-/*---------------------------------------*/
-
-.info{
+.info {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    width: 70%;
-    height: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.info .compra button {
+    background-color: rgb(95, 118, 66);
+    color: white;
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 20px;
-}
-
-.nombre{
-    font-family: impact;
-    font-size: 40px;
-}
-
-.compra{
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    height: 20%;
-}
-
-#agregar{
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    border: 5px solid rgb(0, 0, 0);
-    padding: 5px;
-    font-family: impact;
-    font-size: 60px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-#agregar:hover{
-    border: 5px solid rgb(0, 0, 0);
-    background-color: rgb(0, 0, 0);
-    color: rgb(170, 255, 0);
+.info .compra button:hover {
+    background-color: rgb(50, 90, 35);
 }
 
-#numero{
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    border: 5px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    padding: 5px;
-    margin-right: 20px;
-    font-size: 60px;
-    font-family: impact;
-    width: 75px;
-    height: 75px;
-}
-
-/*---------------------------------------*/
-
-.comentariosGeneral{
+.comentariosGeneral {
     display: flex;
     flex-direction: column;
-    background-color: rgb(186, 255, 96);
-    width: 100%;
-    height: 100%;
-    padding: 10px;
+    padding: 1.5rem;
+    background-color: rgb(240, 248, 233);
 }
 
-.comentar{
+.comentar {
     display: flex;
-    flex-direction: row;
-    width: 100%;
+    gap: 1rem;
+    align-items: center;
 }
 
-#usuarioNombre{
-    color:#000000;
-    padding-top: 5px;
-    padding-right: 20px;
-    font-size: 25px;
+#usuarioNombre a {
     font-weight: bold;
+    color: rgb(95, 118, 66);
+    font-size: 1.2rem;
+    text-decoration: none;
 }
 
-#escribirComentario{
-    background-color: transparent;
-    outline: none;
-    width: 100%;
-    height: 30px;
-    border: 5px solid rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    border: 0px;
-    border-bottom: 5px solid rgb(0, 0, 0);
+#escribirComentario {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid rgb(206, 255, 142);
     border-radius: 5px;
 }
 
-::placeholder{
-    color: rgb(0, 0, 0);
+#escribirComentario:focus {
+    outline: none;
+    border-color: rgb(95, 118, 66);
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------*/
+/*==============================PIE==============================*/
 
-.pie-pagina {
+footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 355px;
-    background-color: rgb(20, 35, 0);
 }
 
-/*---------------------------------------*/
+/*------------- PIE ARRIBA -------------*/
 
-.grupo-1{
+.pieArriba{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 355px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(26, 41, 8);
-}
-
-/*----------------*/
-
-.logoPie {
-    display: flex;
-    justify-content: center;
-    width: 25%;
-    height: 150px;
-    margin-top: 75px;
-    margin-right: 12.5%;
-}
-
-.logoPie img{
-    width: 100%;
-    height: 100%;
-}
-
-/*----------------*/
-
-.nombreGrupo{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: 200px;
-    color: white;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-left: 12.5%;
-}
-
-.nombreGrupo p{
-    margin: 10px;
-}
-
-.nombreGrupo h2{
-    margin: 0px;
-}
-
-/*---------------------------------------*/
-
-.grupo-2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 55px;
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(13, 22, 0);
-}
-
-.grupo-2 p{
+    background-color: rgb(13, 24, 0);
     padding: 20px;
-    margin: 0px;
-    font-size: 15px;
-    font-weight: bold;
+}
+
+/* >>> PIE ARRIBA IZQUIERDA <<<*/
+
+.pieArribaIzquierda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.pieArribaIzquierda img{
+    width: 300px;
+}
+
+/* >>> PIE ARRIBA DERECHA <<<*/
+
+.pieArribaDerecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
     color: white;
+    font-family: arial;
+}
+
+.grupo h2{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.grupo p{
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*------------- PIE ABAJO -------------*/
+
+.pieAbajo{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: arial;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.pieAbajo p{
+    margin: 15px;
 }

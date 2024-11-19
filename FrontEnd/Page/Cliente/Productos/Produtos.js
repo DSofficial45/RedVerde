@@ -26,7 +26,8 @@ function mostrarProductos(productos) {
         if (producto.oferta > 0) {
             productoHTML = `
             <div class="producto">
-                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px">
+                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
+                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${precioConDescuento} </p>
                 <p class="comparativaPrecio">
@@ -43,13 +44,14 @@ function mostrarProductos(productos) {
             // Producto sin oferta
             productoHTML = `
             <div class="producto">
-                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px">
+                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
+                     onerror="this.onerror=null; this.src='/ruta/a/imagen/predeterminada.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${producto.precio} </p>
                 <p>Stock: ${producto.stock}</p>
                 <button class="botonAccion">Agregar al carrito</button>
             </div>`;
-            // Agregar el producto solo a la secciÃ³n general
+            // Agregar el producto solo a la sección general
             contenedorGeneral.innerHTML += productoHTML;
         }
     });

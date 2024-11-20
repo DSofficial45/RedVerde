@@ -132,6 +132,16 @@ main {
     overflow: hidden;
 }
 
+.ofertaTitle{                       
+    padding: 20px;
+    color: rgb(34, 85, 45);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: arial;
+    background-color: rgb(208, 237, 171);
+    text-align: center;
+}
+
 .ofertas {
     height: auto;
     padding: 20px;
@@ -146,24 +156,11 @@ main {
 
 #ofertas {
     display: flex;
-    flex-wrap: nowrap; /* Evita que los elementos salten a una nueva línea */
-    overflow-x: auto; /* Genera la barra desplazadora horizontal */
-    white-space: nowrap; /* Asegura que los elementos estén en una sola línea */
-    gap: 10px; /* Espaciado entre los productos */
-    scrollbar-width: thin; /* Ajusta el ancho de la barra desplazadora en navegadores compatibles */
-}
-
-#ofertas::-webkit-scrollbar {
-    height: 10px; /* Altura de la barra desplazadora */
-}
-
-#ofertas::-webkit-scrollbar-thumb {
-    background-color: rgb(95, 118, 66); /* Color de la barra desplazadora */
-    border-radius: 5px; /* Redondeo de la barra */
-}
-
-#ofertas::-webkit-scrollbar-track {
-    background-color: rgb(208, 237, 171); /* Color de fondo de la barra desplazadora */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+    scrollbar-width: thin;
 }
 
 .general {
@@ -186,7 +183,7 @@ main {
     margin: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
-}
+    }
 
 .producto:hover {
     transform: translateY(-5px);
@@ -209,7 +206,7 @@ main {
 
 .offPorcen {
     font-size: 10px;
-    color: rgb(34, 139, 34); /* Dark green color */
+    color: rgb(34, 139, 34);
 }
 
 .producto img {
@@ -235,7 +232,7 @@ main {
 }
 
 .botonAccion:hover {
-    background-color: rgb(140, 255, 0);
+    background-color: rgb(163, 194, 79);
     color: black;
 }
 

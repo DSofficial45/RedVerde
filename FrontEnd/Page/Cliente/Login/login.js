@@ -17,14 +17,14 @@ function agregarEvento(){
 
 async function iniciarSesion(email, password) {
     let respuesta = await new SesionDAO().iniciarSesion(email, password);
-    if (respuesta.estado) {
+    if (respuesta.estado && respuesta.datos) {
+        console.log("Datos de usuario:", respuesta.datos);
+        const isAdmin = Number(respuesta.datos.isAdmin);
         localStorage.setItem("usuario", JSON.stringify(respuesta.datos));
-        if(respuesta.datos === "0"){
-            window.location.href = "../PagInicial/index.html";  
-        }else{
-            window.location.href = "../../ADMIN/Inicio/inicioADMIN.html";  
-        }
+        window.location.href = isAdmin === 1
+            ? "../../ADMIN/Inicio/inicioADMIN.html"
+            : "../PagInicial/index.html";
     } else {
-        alert("Error al iniciar sesion");
+        alert("Error al iniciar sesión. Verifique sus credenciales.");
     }
 }

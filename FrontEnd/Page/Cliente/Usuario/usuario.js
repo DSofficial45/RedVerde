@@ -5,18 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     agregarEventoCerrarSesion();
 });
 
-function mostrarDatosUsuario() {
-    let datosUsuario = JSON.parse(localStorage.getItem('usuario'));
-    if (datosUsuario) {
+async function mostrarDatosUsuario() {
+    let respuesta = await new SesionDAO().obtenerSesion();
+    if (respuesta.estado) {
+        let datosUsuario = respuesta.datos.usuario;
         let datosDiv = document.getElementById('datos');
         datosDiv.innerHTML = `
-            <p>Nombre: ${datosUsuario.nombre}</p>
-            <p>Apellido: ${datosUsuario.apellido}</p>
-            <p>Email: ${datosUsuario.email}</p>
-            <p>Teléfono: ${datosUsuario.telefono}</p>
+                <p class="indicador">Nombre: </p> <p>${datosUsuario.nombre}</p>
+                <p class="indicador">Apellido: </p> <p>${datosUsuario.apellido}</p>
+                <p class="indicador">Email: </p> <p>${datosUsuario.email}</p>
+                <p class="indicador">Teléfono: </p> <p>${datosUsuario.telefono}</p>
         `;
     } else {
-        alert("No se encontraron datos del usuario. Por favor, inicia sesión.");
+        alert("No se ha encontrado una sesión activa.");
         window.location.href = "../Login/login.html";
     }
 }

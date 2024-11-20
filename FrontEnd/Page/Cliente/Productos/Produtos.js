@@ -21,11 +21,13 @@ function mostrarProductos(productos) {
 
     productos.forEach(producto => {
         let precioConDescuento = producto.precio - (producto.precio * producto.oferta / 100);
-        let productoHTML;
-
+        console.log(producto.oferta)
         if (producto.oferta > 0) {
-            productoHTML = `
-            <div class="producto">
+            let divOferta = document.createElement("div");
+            divOferta.className = "producto";
+
+            divOferta.innerHTML = `
+           
                 <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
                      onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
@@ -35,22 +37,41 @@ function mostrarProductos(productos) {
                     <span class="offPorcen">-${producto.oferta}%</span>
                 </p>
                 <p>Stock: ${producto.stock}</p>
-                <button class="botonAccion">Agregar al carrito</button>
-            </div>`;
-            contenedorOfertas.innerHTML += productoHTML;
-            contenedorGeneral.innerHTML += productoHTML;
-        } else {
-            productoHTML = `
-            <div class="producto">
+          `;
+
+           let btnAgregar = document.createElement("button");
+           divOferta.appendChild(btnAgregar);
+         
+           btnAgregar.innerHTML="Agregar al carrito";
+           btnAgregar.className="botonAccion";
+
+           btnAgregar.onclick = ()=>{
+            agregarProductoCarrito(producto);
+           }    
+            contenedorOfertas.appendChild(divOferta); 
+        } 
+            let div = document.createElement("div");
+            div.className = "producto";
+
+            div.innerHTML = `
+
                 <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
                      onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${producto.precio} </p>
                 <p>Stock: ${producto.stock}</p>
-                <button class="botonAccion">Agregar al carrito</button>
-            </div>`;
-            contenedorGeneral.innerHTML += productoHTML;
-        }
+            `;
+            let btnAgregar = document.createElement("button");
+            div.appendChild(btnAgregar);
+          
+            btnAgregar.innerHTML="Agregar al carrito";
+            btnAgregar.className="botonAccion";
+ 
+            btnAgregar.onclick = ()=>{
+             agregarProductoCarrito(producto);
+            }   
+              contenedorGeneral.appendChild(div);
+        
     });
 
     function agregarProductoCarrito(producto) {

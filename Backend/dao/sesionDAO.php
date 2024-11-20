@@ -15,7 +15,6 @@ class SesionDAO{
         $respuesta = $conection->query($sql);
         $fila = $respuesta->fetch_assoc();
         if ($fila != null) {
-            $respuesta = new Respuesta(true, "Sesion Iniciada", $fila["isAdmin"]);
             $_SESSION['sesion'] = [
                 "usuario" => [
                     "email" => $fila["email"],
@@ -25,6 +24,8 @@ class SesionDAO{
                     "isAdmin" => $fila["isAdmin"]
                 ]
             ];
+            $respuesta = new Respuesta(true, "Sesion Iniciada", $_SESSION['sesion']);
+
         } else {
             $respuesta = new Respuesta(false, "Error al iniciar", null);
             $_SESSION['sesion'] = null;

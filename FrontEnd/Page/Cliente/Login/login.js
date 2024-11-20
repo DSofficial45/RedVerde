@@ -19,9 +19,11 @@ async function iniciarSesion(email, password) {
     let respuesta = await new SesionDAO().iniciarSesion(email, password);
     if (respuesta.estado && respuesta.datos) {
         console.log("Datos de usuario:", respuesta.datos);
-        const isAdmin = Number(respuesta.datos.isAdmin);
+        console.log(respuesta.datos);
+        const isAdmin =respuesta.datos.usuario.isAdmin;
         localStorage.setItem("usuario", JSON.stringify(respuesta.datos));
-        window.location.href = isAdmin === 1
+        console.log(isAdmin);   
+        window.location.href = isAdmin == 1
             ? "../../ADMIN/Inicio/inicioADMIN.html"
             : "../PagInicial/index.html";
     } else {

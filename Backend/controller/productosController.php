@@ -40,7 +40,7 @@
         
         echo json_encode($resultado);
     }
-    
+     
     function eliminarProducto(){
         $id = $_POST['id'];
         $resultado = (new productoDAO())->eliminarProducto($id);
@@ -54,8 +54,9 @@
         $stock = $_POST['stock'];
         $descripcion = $_POST['descripcion'];
         $nombre = $_POST['nombre'];
-        $imagen = $_POST['imagen'];
-        $resultado = (new productoDAO())->modificarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $imagen);
+        $categoria = $_POST['categoria'];  
+        $oferta = $_POST['oferta'];
+        $resultado = (new productoDAO())->modificarProducto($id, $fecha, $precio, $stock, $descripcion, $nombre, $categoria, $oferta);
         echo json_encode($resultado);
     }
 ?>

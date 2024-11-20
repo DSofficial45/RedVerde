@@ -26,7 +26,8 @@ function mostrarProductos(productos) {
         if (producto.oferta > 0) {
             productoHTML = `
             <div class="producto">
-                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px">
+                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
+                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${precioConDescuento} </p>
                 <p class="comparativaPrecio">
@@ -34,39 +35,23 @@ function mostrarProductos(productos) {
                     <span class="offPorcen">-${producto.oferta}%</span>
                 </p>
                 <p>Stock: ${producto.stock}</p>
+                <button class="botonAccion">Agregar al carrito</button>
             </div>`;
-            
             contenedorOfertas.innerHTML += productoHTML;
             contenedorGeneral.innerHTML += productoHTML;
-
-            let btn = document.createElement("button");
-        btn.classList.add("btn-add");
-        btn.textContent = "Agregar";
-        btn.onclick = () => {
-            agregarProductoCarrito(producto);
-        }
-        contenedorOfertas.appendChild(btn);
-
         } else {
             productoHTML = `
             <div class="producto">
-                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px">
+                <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
+                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${producto.precio} </p>
                 <p>Stock: ${producto.stock}</p>
+                <button class="botonAccion">Agregar al carrito</button>
             </div>`;
             contenedorGeneral.innerHTML += productoHTML;
-
-        let btn = document.createElement("button");
-        btn.classList.add("btn-add");
-        btn.textContent = "Agregar";
-        btn.onclick = () => {
-            agregarProductoCarrito(producto);
-        }
-        contenedorGeneral.appendChild(btn);
-        
-        }
-    });
+        }
+    });
 
     function agregarProductoCarrito(producto) {
         console.log("Agregando producto", producto);

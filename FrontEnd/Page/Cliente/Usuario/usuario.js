@@ -11,10 +11,22 @@ async function mostrarDatosUsuario() {
         let datosUsuario = respuesta.datos.usuario;
         let datosDiv = document.getElementById('datos');
         datosDiv.innerHTML = `
-                <p class="indicador">Nombre: </p> <p>${datosUsuario.nombre}</p>
-                <p class="indicador">Apellido: </p> <p>${datosUsuario.apellido}</p>
-                <p class="indicador">Email: </p> <p>${datosUsuario.email}</p>
-                <p class="indicador">Teléfono: </p> <p>${datosUsuario.telefono}</p>
+            <div class="contenedor">
+                <p class="indicador">Nombre: </p>
+                <p>${datosUsuario.nombre}</p>
+            </div>
+            <div class="contenedor">
+                <p class="indicador">Apellido: </p>
+                <p>${datosUsuario.apellido}</p>
+            </div>
+            <div class="contenedor">
+                <p class="indicador">Email: </p>
+                <p>${datosUsuario.email}</p>
+            </div>
+            <div class="contenedor">
+                <p class="indicador">Teléfono: </p>
+                <p>${datosUsuario.telefono}</p>
+            </div>
         `;
     } else {
         alert("No se ha encontrado una sesión activa.");

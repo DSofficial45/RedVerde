@@ -193,11 +193,13 @@ main{
 .confirmarTodos:hover {
     background-color: rgb(198, 255, 84);
     color: black;
+    font-weight: bold;
 }
 
-.eliminarTodos :hover {
-    background-color: rgb(198, 255, 84);
-    color: black;
+.eliminarTodos:hover {
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 /*==============================PIE==============================*/

@@ -129,6 +129,8 @@ main {
     background-color: rgb(208, 237, 171);
     border-radius: 10px 10px 0px 0px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    margin-bottom: 0px;
     padding: 20px;
 }
 
@@ -160,10 +162,9 @@ main {
     padding: 10px;
 }
 
-.datos p {
+.contenedor{
     display: flex;
-    align-items: center;
-    gap: 15px;
+    flex-direction: row;
     width: 100%;
     padding: 15px;
     margin: 10px;
@@ -173,9 +174,14 @@ main {
     transition: transform 0.2s ease;
 }
 
-.datos p:hover {
+.contenedor:hover{
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.indicador{
+    color: black;
+    font-weight: bold;
 }
 
 .botones {

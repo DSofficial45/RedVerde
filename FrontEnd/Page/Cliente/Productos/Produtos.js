@@ -74,10 +74,17 @@ function mostrarProductos(productos) {
         
     });
 
-    function agregarProductoCarrito(producto) {
+function agregarProductoCarrito(producto) {
+    producto.stock = 1;
+    console.log("Agregando producto", producto);
+    let carritoDAO = new CarritoDAo(producto);
+    carritoDAO.agregarProductoCarrito(producto); 
+}
+
+    /*function agregarProductoCarrito(producto) {
         console.log("Agregando producto", producto);
         producto.cantidad = 1;
         let carritoDAO = new CarritoDAo(producto);
         carritoDAO.agregarProductoCarrito(producto); 
-    }
+    }*/
 }

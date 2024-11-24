@@ -21,7 +21,6 @@ function mostrarProductos(productos) {
 
     productos.forEach(producto => {
         let precioConDescuento = producto.precio - (producto.precio * producto.oferta / 100);
-        console.log(producto.oferta)
         if (producto.oferta > 0) {
             let divOferta = document.createElement("div");
             divOferta.className = "producto";
@@ -29,7 +28,7 @@ function mostrarProductos(productos) {
             divOferta.innerHTML = `
            
                 <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
-                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
+                     onerror="this.onerror=null; this.src='../../../assets/Fondo/Error404.png';">
                 <p>${producto.nombre}</p>
                 <p> Precio: $${precioConDescuento} </p>
                 <p class="comparativaPrecio">
@@ -56,9 +55,9 @@ function mostrarProductos(productos) {
             div.innerHTML = `
 
                 <img src="${producto.urlImg}" alt="Producto" width="100px" height="100px"
-                     onerror="this.onerror=null; this.src='../../../assets/Fondo/PlantaFondo-1.jpg';">
+                     onerror="this.onerror=null; this.src='../../../assets/Fondo/Error404.png';">
                 <p>${producto.nombre}</p>
-                <p> Precio: $${producto.precio} </p>
+                <p> Precio: $${precioConDescuento} </p>
                 <p>Stock: ${producto.stock}</p>
             `;
             let btnAgregar = document.createElement("button");
@@ -75,6 +74,7 @@ function mostrarProductos(productos) {
     });
 
 function agregarProductoCarrito(producto) {
+    producto.stockReal = producto.stock;
     producto.stock = 1;
     console.log("Agregando producto", producto);
     let carritoDAO = new CarritoDAo(producto);

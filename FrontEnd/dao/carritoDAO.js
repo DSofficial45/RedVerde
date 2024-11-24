@@ -30,7 +30,7 @@ aumentarCantidadCarrito(id) {
     let nuevoCarrito = carrito.map(producto => {
         if (producto.id === id) {
             // Verificar si la cantidad actual es menor que el stock disponible
-            if (producto.stock < producto.stockDisponible) {
+            if (producto.stock < producto.stockReal) {
                 producto.stock++; // Aumentar la cantidad si hay stock disponible
             } else {
                 alert("No puedes aumentar la cantidad más allá del stock disponible");
@@ -55,14 +55,6 @@ disminuirCantidadCarrito(id) {
     });
 
     this.guardarCarrito(nuevoCarrito); // Guardar el carrito actualizado
-}
-
-obtenerStockProducto(id) {
-    // Aquí deberías implementar el código que obtenga el stock real del producto
-    // Esto depende de cómo accedas a tu base de datos o API. Por ejemplo:
-    // Suponiendo que tienes una base de datos o API que te devuelve los datos del producto
-    let producto = this.obtenerProducto(id); // Obtener el producto desde la base de datos
-    return producto.stock; // Devolver el stock real
 }
     
     /*eliminarProductoCarrito(producto) {
@@ -106,15 +98,21 @@ obtenerStockProducto(id) {
             // Si el producto no existe, lo agregamos al carrito
             carrito.push(producto);
         } else {
-            // Si el producto ya existe, actualizamos su cantidad
-            productoExistente.stock += producto.stock; // Se asume que `producto.stock` está definida
+            // Si el producto ya existe, verificamos que la cantidad no exceda el stockReal
+            if (productoExistente.stock + producto.stock <= productoExistente.stockReal) {
+                // Si la cantidad no excede el stock real, actualizamos la cantidad
+                productoExistente.stock += producto.stock; // Se asume que `producto.stock` está definida
+            } else {
+                // Si no se puede aumentar más porque excede el stock disponible, mostramos un mensaje
+                alert("No puedes agregar más unidades de este producto. El stock disponible es: " + productoExistente.stockReal);
+            }
         }
         
         console.log(carrito);
         this.guardarCarrito(carrito); // Guardamos los cambios
-    }    
+    }
 
-    confirmarCompra(direccion, metodoEnvio, metodoPago, fechaVenta) {
+   /* confirmarCompra(direccion, metodoEnvio, metodoPago, fechaVenta) {
         let products = this.obtenerCarrito();
         let venta = {
             direccion: direccion,
@@ -124,5 +122,5 @@ obtenerStockProducto(id) {
             products: products
         }
 
-    }
+    }*/
 }

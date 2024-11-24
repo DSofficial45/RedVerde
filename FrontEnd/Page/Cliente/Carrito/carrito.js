@@ -13,7 +13,106 @@ function obtenerProductos() {
 }
 
 // Función para mostrar los productos en el carrito
+
 function mostrarProductos(productos) {
+    let tbodycarrito = document.querySelector("#tbodyCarrito");
+
+    if (!tbodycarrito) return;  // Verificación de existencia del tbody
+
+    tbodycarrito.innerHTML = "";  // Limpiar tabla antes de mostrar nuevos productos
+
+    let totalPrecio = 0;  // Variable para acumular el precio total
+
+    productos.forEach(producto => {
+        let tr = document.createElement("tr");
+
+        // Imagen del producto
+        let img = document.createElement("img");
+        img.src = producto.urlImg;
+        img.alt = "Imagen del producto";
+        img.style.width = "100px"; // Estilo opcional
+
+        let tdImagen = document.createElement("td");
+        tdImagen.appendChild(img);
+        tr.appendChild(tdImagen);
+
+        // Nombre
+        let tdNombre = document.createElement("td");
+        tdNombre.textContent = producto.nombre;
+        tr.appendChild(tdNombre);
+
+        // Total (precio * cantidad)
+        let tdTotal = document.createElement("td");
+
+        // Verificar si hay una oferta
+        let precioConDescuento = producto.precio;
+        if (producto.oferta) {
+            precioConDescuento = producto.precio - (producto.precio * producto.oferta / 100);
+        }
+
+        let precioProducto = precioConDescuento * producto.stock;
+        tdTotal.textContent = "$" + precioProducto.toFixed(2);
+        tr.appendChild(tdTotal);
+
+        // Cantidad
+        let tdCantidad = document.createElement("td");
+        tdCantidad.textContent = producto.stock;
+        tr.appendChild(tdCantidad);
+
+        // Celda de acciones
+        let tdAcciones = document.createElement("td");
+        let divAcciones = document.createElement("div");
+
+        // Botón eliminar
+        let btnEliminar = document.createElement("button");
+        btnEliminar.innerHTML = "Quitar carrito";
+        btnEliminar.onclick = () => {
+            eliminarProducto(producto.id);  // Pasar producto.id aquí
+        };
+        divAcciones.appendChild(btnEliminar);
+
+        // Botón aumentar
+        let btnAumentar = document.createElement("button");
+        btnAumentar.innerHTML = "Aumentar cantidad";
+        btnAumentar.onclick = () => {
+            aumentar(producto.id);  // Pasar producto.id aquí
+        };
+        divAcciones.appendChild(btnAumentar);
+
+        // Botón disminuir
+        let btnDisminuir = document.createElement("button");
+        btnDisminuir.innerHTML = "Disminuir cantidad";
+        btnDisminuir.onclick = () => {
+            disminuir(producto.id);  // Pasar producto.id aquí
+        };
+        divAcciones.appendChild(btnDisminuir);
+
+        tdAcciones.appendChild(divAcciones);
+        tr.appendChild(tdAcciones);
+
+        // Añadir la fila a la tabla
+        tbodycarrito.appendChild(tr);
+
+        // Acumular el precio total
+        totalPrecio += precioProducto;
+    });
+
+    // Añadir fila con el total general
+    let trTotal = document.createElement("tr");
+    let tdVacio1 = document.createElement("td");
+    tdVacio1.setAttribute("colspan", "4");  // Ocupa 4 columnas
+    tdVacio1.textContent = "Precio Total";
+    trTotal.appendChild(tdVacio1);
+
+    let tdPrecioTotal = document.createElement("td");
+    tdPrecioTotal.textContent = "$" + totalPrecio.toFixed(2);
+    trTotal.appendChild(tdPrecioTotal);
+
+    // Añadir la fila de total a la tabla
+    tbodycarrito.appendChild(trTotal);
+}
+
+/*function mostrarProductos(productos) {
     let tbodycarrito = document.querySelector("#tbodyCarrito");
 
     if (!tbodycarrito) return;  // Verificación de existencia del tbody
@@ -89,7 +188,7 @@ function mostrarProductos(productos) {
         // Añadir la fila a la tabla
         tbodycarrito.appendChild(tr);
     });
-}
+}*/
 
 // Función para eliminar el producto del carrito
 function eliminarProducto(id) {

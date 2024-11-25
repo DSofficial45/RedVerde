@@ -2,6 +2,7 @@ import carritoDAo from "../../../dao/carritoDAO.js";
 
 window.onload = () => {
     let productos = obtenerProductos();
+    agregarevento();
     mostrarProductos(productos);
 };
 
@@ -112,84 +113,6 @@ function mostrarProductos(productos) {
     tbodycarrito.appendChild(trTotal);
 }
 
-/*function mostrarProductos(productos) {
-    let tbodycarrito = document.querySelector("#tbodyCarrito");
-
-    if (!tbodycarrito) return;  // Verificación de existencia del tbody
-
-    tbodycarrito.innerHTML = "";  // Limpiar tabla antes de mostrar nuevos productos
-
-    productos.forEach(producto => {
-        let tr = document.createElement("tr");
-
-        // Imagen del producto
-        let img = document.createElement("img");
-        img.src = producto.urlImg;
-        img.alt = "Imagen del producto";
-        img.style.width = "100px"; // Estilo opcional
-
-        let tdImagen = document.createElement("td");
-        tdImagen.appendChild(img);
-        tr.appendChild(tdImagen);
-
-        // Nombre
-        let tdNombre = document.createElement("td");
-        tdNombre.textContent = producto.nombre;
-        tr.appendChild(tdNombre);
-
-        // Total (precio * cantidad)
-        let tdTotal = document.createElement("td");
-
-        // Verificar si hay una oferta
-        let precioConDescuento = producto.precio;
-        if (producto.oferta) {
-            precioConDescuento = producto.precio - (producto.precio * producto.oferta / 100);
-        }
-
-        tdTotal.textContent = "$" + (precioConDescuento * producto.stock).toFixed(2);
-        tr.appendChild(tdTotal);
-
-        // Cantidad
-        let tdCantidad = document.createElement("td");
-        tdCantidad.textContent = producto.stock;
-        tr.appendChild(tdCantidad);
-
-        // Celda de acciones
-        let tdAcciones = document.createElement("td");
-        let divAcciones = document.createElement("div");
-
-        // Botón eliminar
-        let btnEliminar = document.createElement("button");
-        btnEliminar.innerHTML = "Quitar carrito";
-        btnEliminar.onclick = () => {
-            eliminarProducto(producto.id);  // Pasar producto.id aquí
-        };
-        divAcciones.appendChild(btnEliminar);
-
-        // Botón aumentar
-        let btnAumentar = document.createElement("button");
-        btnAumentar.innerHTML = "Aumentar cantidad";
-        btnAumentar.onclick = () => {
-            aumentar(producto.id);  // Pasar producto.id aquí
-        };
-        divAcciones.appendChild(btnAumentar);
-
-        // Botón disminuir
-        let btnDisminuir = document.createElement("button");
-        btnDisminuir.innerHTML = "Disminuir cantidad";
-        btnDisminuir.onclick = () => {
-            disminuir(producto.id);  // Pasar producto.id aquí
-        };
-        divAcciones.appendChild(btnDisminuir);
-
-        tdAcciones.appendChild(divAcciones);
-        tr.appendChild(tdAcciones);
-
-        // Añadir la fila a la tabla
-        tbodycarrito.appendChild(tr);
-    });
-}*/
-
 // Función para eliminar el producto del carrito
 function eliminarProducto(id) {
     // Crear una instancia del CarritoDAO y eliminar el producto
@@ -218,126 +141,58 @@ function disminuir(id) {
     mostrarProductos(carritoDAO.obtenerCarrito());
 }
 
-/*function mostrarProductos(productos) {
-    let tbodycarrito = document.querySelector("#tbodyCarrito");
-    if (!tbodycarrito) return;  // Verificación de existencia del tbody
-    tbodycarrito.innerHTML = "";
-
-    productos.forEach(producto => {
-        let tr = document.createElement("tr");
-
-        // Imagen del producto
-        let img = document.createElement("img");
-        img.src = producto.urlImg;
-        img.alt = "Imagen del producto";
-        img.style.width = "100px"; // Estilo opcional
-        let tdImagen = document.createElement("td");
-        tdImagen.appendChild(img);
-        tr.appendChild(tdImagen);
-
-        // Nombre
-        let tdPrecio = document.createElement("td");
-        tdPrecio.textContent = producto.nombre;
-        tr.appendChild(tdPrecio);
-
-        // Total (precio * cantidad)
-        let tdTotal = document.createElement("td");
-
-        // Verificar si hay una oferta. Si no existe, se aplica el precio original sin descuento.
-        let precioConDescuento = producto.precio;
-
-        if (producto.oferta) {
-        precioConDescuento = producto.precio - (producto.precio * producto.oferta / 100);
-        }
-
-        // Calcular el total con el precio con descuento y mostrarlo con dos decimales.
-        tdTotal.textContent = "$" + (precioConDescuento * producto.stock).toFixed(2);
-
-        tr.appendChild(tdTotal);
-
-        // Cantidad
-        let tdCantidad = document.createElement("td");
-        tdCantidad.textContent = producto.stock;
-        tr.appendChild(tdCantidad);
-
-        // Celda de acciones
-        let tdAcciones = document.createElement("td");
-        let divAcciones = document.createElement("div");
-
-        // Botón eliminar
-        let btnEliminar = document.createElement("button");
-        btnEliminar.innerHTML = "Quitar carrito";
-        btnEliminar.onclick = () => {
-            eliminarProducto(producto.id);
-        };
-        divAcciones.appendChild(btnEliminar);
-
-        // Botón aumentar
-        let btnAumentar = document.createElement("button");
-        btnAumentar.innerHTML = "Aumentar cantidad";
-        btnAumentar.onclick = () => {
-            aumentar(producto.id);
-        };
-        divAcciones.appendChild(btnAumentar);
-
-        // Botón disminuir
-        let btnDisminuir = document.createElement("button");
-        btnDisminuir.innerHTML = "Disminuir cantidad";
-        btnDisminuir.onclick = () => {
-            disminuir(producto.id);
-        };
-        divAcciones.appendChild(btnDisminuir);
-
-        tdAcciones.appendChild(divAcciones);
-        tr.appendChild(tdAcciones);
-
-        // Añadir la fila a la tabla
-        tbodycarrito.appendChild(tr);
-    });
-}*/
-
-/*function mostrarProductos(productos) {
-    let tbodycarrito = document.querySelector("#tbodyCarrito");
-    tbodycarrito.innerHTML = "";
-    productos.forEach(producto => {
-        let tr = document.createElement("tr");
-        tr.innerHTML = `
-            <td>${producto.imagen}</td>
-            <td>${producto.precio}</td>
-            <td>${producto.cantidad}</td>
-            <td>${(producto.precio * producto.cantidad).toFixed(2)}</td>
-        `;
-        tbodycarrito.appendChild(tr);
-
-        let tdAcciones = document.createElement("td");
-        let divAcciones = document.createElement("div");
-        tdAcciones.appendChild(divAcciones);
-        let btnEliminar = document.createElement("button");
-        btnEliminar.innerHTML = "Quitar carrito";
-        btnEliminar.onclick = () => {
-            eliminarProducto(producto.id);
-        };
-        divAcciones.appendChild(btnEliminar);
-
-        let btnAumentar = document.createElement("button");
-        btnAumentar.innerHTML = "Aumentar cantidad";
-        btnAumentar.onclick = () => {
-            aumentar(producto.id);
-        };
-        divAcciones.appendChild(btnAumentar);
-
-        let btnDisminuir = document.createElement("button");
-        btnDisminuir.innerHTML = "Disminuir cantidad";
-        btnDisminuir.onclick = () => {
-            disminuir(producto.id);
-        };
-        divAcciones.appendChild(btnDisminuir);
-
-        tr.appendChild(tdAcciones);
-    });
-}*/
-
-/*function ActualizarProductos(){
-let productos = obtenerProductos();
-mostrarProductos();
-}*/
+/*function agregarevento() {
+    let metodoEnvio = document.querySelector("#metodoEnvio");
+    let direccionInput = document.querySelector("#direccion");
+    let direccionLabel = document.querySelector("label[for='direccion']"); 
+    let confirmarCompraElement = document.querySelector("#realize-order");
+  
+    metodoEnvio.onchange = () => {
+      let valor = metodoEnvio.value;
+      if (valor === "local") {
+        direccionInput.style.display = "none";
+        direccionLabel.style.display = "none"; 
+      } else {
+        direccionInput.style.display = "block";  
+        direccionLabel.style.display = "block";  
+      }
+    };
+  
+    confirmarCompraElement.onsubmit = (e) => {
+      e.preventDefault();
+      let nombreCompleto = confirmarCompraElement.nombreCompleto.value.trim();
+      let ciudad = confirmarCompraElement.ciudad.value.trim();
+      let numeroDeTelefono = confirmarCompraElement.numerodetelefono.value.trim();
+      let email = confirmarCompraElement.email.value.trim();
+      let metodoEnvio = confirmarCompraElement.metodoEnvio.value;
+      let direccion = confirmarCompraElement.direccion.value.trim();
+      let metodoPago = confirmarCompraElement.metodoPago.value;
+  
+      if (!nombreCompleto || !ciudad || !numeroDeTelefono || !email || !metodoEnvio || !metodoPago) {
+        alert("Por favor, completa todos los campos requeridos.");
+        return;
+      }
+  
+      if (metodoEnvio === "direccion" && !direccion) {
+        alert("Por favor, ingrese su direccion.");
+        return;
+      }
+  
+      confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago);
+    };
+  }
+  
+  async function confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago) {
+    let carritoDAO = new carritoDAo();
+    let respuesta = await carritoDAO.confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago);
+    
+    if (respuesta.estado) {
+      alert("Compra realizada con éxito");
+      localStorage.removeItem('carrito');
+      console.log("carrito")
+      window.location.href = "../productos/productos.html";
+  } else {
+      alert("Error al confirmar la compra. Inténtalo nuevamente.");
+  }
+  
+  }*/

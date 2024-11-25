@@ -121,98 +121,38 @@ main {
     min-height: 70vh;
 }
 
-.todo {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    max-width: 1200px;
-    background-color: rgb(208, 237, 171);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.producto {
+.productoDetalle {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1.5rem;
+    background-color: rgb(208, 237, 171);
     border-bottom: 2px solid rgb(28, 49, 0);
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    font-family: arial;
 }
 
-.selectorImagen {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+.productoDetalle img {
+    border-radius: 20px;
+    background-color: white;
 }
 
-.imagen {
-    width: 400px;
-    height: 400px;
-    background: url('../../../assets/Fondo/PlantaFondo-1.jpg');
-    background-size: cover;
+.datos{
+    padding: 10px;
+}
+
+.datos #agregarCarrito{
+    font-size: 30px;
+    padding: 10px;
     border-radius: 10px;
-}
-
-.info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem;
-    font-family: Arial, sans-serif;
-}
-
-.info .compra button {
-    background-color: rgb(95, 118, 66);
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.info .compra button:hover {
-    background-color: rgb(50, 90, 35);
-}
-
-.comentariosGeneral {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
     background-color: rgb(176, 205, 139);
+    transition: transform 0.2s ease;
 }
 
-.comentar {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-#usuarioNombre a {
-    font-weight: bold;
-    color: rgb(95, 118, 66);
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-#escribirComentario {
-    flex: 1;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid rgb(206, 255, 142);
-    border-radius: 5px;
-}
-
-#escribirComentario:focus {
-    outline: none;
-    border-color: rgb(95, 118, 66);
+.datos #agregarCarrito :hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(176, 205, 139);
 }
 
 /*==============================PIE==============================*/

@@ -54,15 +54,17 @@ function mostrarDetalleProducto(producto) {
 
     // Mostrar la información del producto en el contenedor
     contenedor.innerHTML = `
-        <img src="${producto.urlImg}" alt="${producto.nombre}" 
+        <img src="${producto.urlImg}" alt="${producto.nombre}" width=500px height=500px 
              onerror="this.onerror=null; this.src='../../../assets/Fondo/Error404.png';">
-        <h1>${producto.nombre}</h1>
-        <p><strong>Precio:</strong> $${producto.precio}</p>
-        <p><strong>Oferta:</strong> ${producto.oferta > 0 ? `-${producto.oferta}%` : "Sin oferta"}</p>
-        <p><strong>Precio con descuento:</strong> $${precioConDescuento}</p>
-        <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-        <p><strong>Stock disponible:</strong> ${producto.stock}</p>
-        <button id="agregarCarrito">Agregar al carrito</button>
+        <div class="datos">
+            <h1>${producto.nombre}</h1>
+            <p><strong>Precio:</strong> $${producto.precio}</p>
+            <p><strong>Oferta:</strong> ${producto.oferta > 0 ? `-${producto.oferta}%` : "Sin oferta"}</p>
+            <p><strong>Precio con descuento:</strong> $${precioConDescuento}</p>
+            <p><strong>Descripción:</strong> ${producto.descripcion}</p>
+            <p><strong>Stock disponible:</strong> ${producto.stock}</p>
+            <button id="agregarCarrito">Agregar al carrito</button>
+        </div>
     `;
 
     // Seleccionar el botón y asignar el evento de clic

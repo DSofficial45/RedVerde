@@ -184,16 +184,6 @@ main {
     font-weight: bold;
 }
 
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 70%;
-    padding: 20px;
-    border-radius: 0px 0px 10px 10px;
-    background-color: rgb(176, 205, 139);
-}
-
 .cerrarSesion {
     display: inline-flex;
     justify-content: center;

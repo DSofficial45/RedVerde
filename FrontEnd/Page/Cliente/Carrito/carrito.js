@@ -2,7 +2,7 @@ import carritoDAo from "../../../dao/carritoDAO.js";
 
 window.onload = () => {
     let productos = obtenerProductos();
-    agregarevento();
+    //agregarevento();
     mostrarProductos(productos);
 };
 

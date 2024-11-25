@@ -112,7 +112,11 @@ li a:hover {
 /*==============================CUERPO==============================*/
 
 main{
-    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
 }
 
 h2 {
@@ -122,7 +126,7 @@ h2 {
 }
 
 form {
-    background-color: #1e3c00;
+    background-color: rgb(176, 205, 139);
     display: flex;
     flex-direction: column;
     padding: 50px;
@@ -133,74 +137,41 @@ form {
 
 form h2 {
     font-size: 30px;
-    color: #80ff00;
+    color: #000000;
     margin-bottom: 35px;
+    font-family: arial;
 }
 
 input {
     padding: 17px;
-    background-color: transparent;
-    border: 2px solid #80ff00;
+    background-color: rgb(176, 205, 139);
+    border: 2px solid #152a00;
     margin-bottom: 30px;
     outline: none;
-    color: #80ff00;
+    color: #000000;
     font-size: 16px;
 }
 
 ::placeholder {
-    color: #80ff00;
+    color: rgb(64, 74, 50);
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 30px;
-    color: #80ff00;
-    background-color: #1e3c00;
-    border: 2px solid #80ff00;
+    color: #000000;
+    background-color: rgb(176, 205, 139);
+    border: 2px solid #000000;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-family: impact;
     font-size: 30px;
-    max-width: 80%;
+    width: 100%;
 }
 
 .btn:hover {
-    background-color: #80ff00;
-    color: #1e3c00;
-}
-
-.login {
-    box-sizing: border-box;
-
-}
-
-main {
-    background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 30px;
-    color: #80ff00;
-    background-color: #1e3c00;
-    border: 2px solid #80ff00;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: impact;
-    font-size: 30px;
-    max-width: 40%;
-}
-
-.button:hover {
-    background-color: #80ff00;
+    background-color: #b7ff00;
     color: #1e3c00;
 }
 

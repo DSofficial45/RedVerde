@@ -1,3 +1,4 @@
+import carritoDAo from "../../../dao/carritoDAO.js";
 import productoDAO from "../../../dao/productoDAO.js";
 
 window.onload = async () => {
@@ -46,31 +47,37 @@ async function obtenerProductoPorId(id) {
 function mostrarDetalleProducto(producto) {
     let contenedor = document.querySelector("#productoDetalle");
 
+    // Calcular el precio con descuento, solo si hay oferta
+    let precioConDescuento = producto.oferta > 0 
+        ? producto.precio - (producto.precio * producto.oferta / 100) 
+        : producto.precio;
+
     // Mostrar la información del producto en el contenedor
     contenedor.innerHTML = `
         <img src="${producto.urlImg}" alt="${producto.nombre}" 
              onerror="this.onerror=null; this.src='../../../assets/Fondo/Error404.png';">
         <h1>${producto.nombre}</h1>
         <p><strong>Precio:</strong> $${producto.precio}</p>
-        <p><strong>Oferta:</strong> -${producto.oferta}%</p>
-        <p><strong>Precio con descuento:</strong> $${producto.precio - (producto.precio * producto.oferta / 100)}</p>
+        <p><strong>Oferta:</strong> ${producto.oferta > 0 ? `-${producto.oferta}%` : "Sin oferta"}</p>
+        <p><strong>Precio con descuento:</strong> $${precioConDescuento}</p>
         <p><strong>Descripción:</strong> ${producto.descripcion}</p>
         <p><strong>Stock disponible:</strong> ${producto.stock}</p>
         <button id="agregarCarrito">Agregar al carrito</button>
     `;
 
-    // Asignar evento al botón de agregar al carrito
+    // Seleccionar el botón y asignar el evento de clic
     let btnAgregar = document.querySelector("#agregarCarrito");
     btnAgregar.onclick = () => {
+        // Llamar a la función agregarProductoCarrito con el producto actual
         agregarProductoCarrito(producto);
-        alert("Producto agregado al carrito.");
     };
 }
 
-// Función para agregar el producto al carrito
+
 function agregarProductoCarrito(producto) {
     producto.stockReal = producto.stock;
     producto.stock = 1;
-    let carritoDAO = new CarritoDAO();
-    carritoDAO.agregarProductoCarrito(producto);
+    console.log("Agregando producto", producto);
+    let carritoDAO = new carritoDAo(producto);
+    carritoDAO.agregarProductoCarrito(producto); 
 }

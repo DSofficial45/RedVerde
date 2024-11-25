@@ -58,11 +58,21 @@ function mostrarDetalleProducto(producto) {
              onerror="this.onerror=null; this.src='../../../assets/Fondo/Error404.png';">
         <div class="datos">
             <h1>${producto.nombre}</h1>
-            <p><strong>Precio:</strong> $${producto.precio}</p>
-            <p><strong>Oferta:</strong> ${producto.oferta > 0 ? `-${producto.oferta}%` : "Sin oferta"}</p>
-            <p><strong>Precio con descuento:</strong> $${precioConDescuento}</p>
-            <p><strong>Descripción:</strong> ${producto.descripcion}</p>
-            <p><strong>Stock disponible:</strong> ${producto.stock}</p>
+            <div class="contenedor">
+                <p><strong>Precio:</strong> $${producto.precio}</p>
+            </div>
+            <div class="contenedor">
+                <p><strong>Oferta:</strong> ${producto.oferta > 0 ? `-${producto.oferta}%` : "Sin oferta"}</p>
+            </div>
+            <div class="contenedor">
+                <p><strong>Precio con descuento:</strong> $${precioConDescuento}</p>
+            </div>
+            <div class="contenedor">
+                <p><strong>Descripción:</strong> ${producto.descripcion}</p>
+            </div>
+            <div class="contenedor">
+                <p><strong>Stock disponible:</strong> ${producto.stock}</p>
+            </div>
             <button id="agregarCarrito">Agregar al carrito</button>
         </div>
     `;

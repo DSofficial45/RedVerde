@@ -124,21 +124,31 @@ main {
 .productoDetalle {
     display: flex;
     flex-direction: row;
-    background-color: rgb(208, 237, 171);
+    background-color: rgb(227, 255, 191);
     border-bottom: 2px solid rgb(28, 49, 0);
     padding: 10px;
-    width: 100%;
+    max-width: 85%;
+    min-width: 85%;
     font-size: 20px;
     font-family: arial;
+    border-radius: 20px;
+}
+
+.productoDetalle h1{
+    padding: 10px;
 }
 
 .productoDetalle img {
     border-radius: 20px;
+    padding: 20px;
     background-color: white;
 }
 
 .datos{
     padding: 10px;
+    padding-left: 20px;
+    min-width: 58%;
+    max-width: 58%;
 }
 
 .datos #agregarCarrito{
@@ -147,12 +157,30 @@ main {
     border-radius: 10px;
     background-color: rgb(176, 205, 139);
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
-.datos #agregarCarrito :hover{
+.datos #agregarCarrito:hover{
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: rgb(176, 205, 139);
+    background-color: rgb(227, 255, 191);
+}
+
+.contenedor {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgb(208, 237, 171);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.contenedor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /*==============================PIE==============================*/

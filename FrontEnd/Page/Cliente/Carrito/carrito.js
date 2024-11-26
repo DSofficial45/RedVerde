@@ -4,6 +4,7 @@ window.onload = () => {
     let productos = obtenerProductos();
     //agregarevento();
     mostrarProductos(productos);
+    agregarEventoConfirmarCompra();  // Agrega el evento para confirmar la compra
 };
 
 function obtenerProductos() {
@@ -121,6 +122,7 @@ function eliminarProducto(id) {
 
     // Recargar los productos después de la eliminación
     mostrarProductos(carritoDAO.obtenerCarrito());
+    obtenerProductos();
 }
 
 // Función para aumentar la cantidad de un producto
@@ -130,6 +132,7 @@ function aumentar(id) {
 
     // Recargar los productos después de la actualización
     mostrarProductos(carritoDAO.obtenerCarrito());
+    obtenerProductos();
 }
 
 // Función para disminuir la cantidad de un producto
@@ -139,60 +142,70 @@ function disminuir(id) {
 
     // Recargar los productos después de la actualización
     mostrarProductos(carritoDAO.obtenerCarrito());
+    obtenerProductos();
 }
 
-/*function agregarevento() {
-    let metodoEnvio = document.querySelector("#metodoEnvio");
-    let direccionInput = document.querySelector("#direccion");
-    let direccionLabel = document.querySelector("label[for='direccion']"); 
-    let confirmarCompraElement = document.querySelector("#realize-order");
-  
-    metodoEnvio.onchange = () => {
-      let valor = metodoEnvio.value;
-      if (valor === "local") {
-        direccionInput.style.display = "none";
-        direccionLabel.style.display = "none"; 
-      } else {
-        direccionInput.style.display = "block";  
-        direccionLabel.style.display = "block";  
-      }
-    };
-  
-    confirmarCompraElement.onsubmit = (e) => {
-      e.preventDefault();
-      let nombreCompleto = confirmarCompraElement.nombreCompleto.value.trim();
-      let ciudad = confirmarCompraElement.ciudad.value.trim();
-      let numeroDeTelefono = confirmarCompraElement.numerodetelefono.value.trim();
-      let email = confirmarCompraElement.email.value.trim();
-      let metodoEnvio = confirmarCompraElement.metodoEnvio.value;
-      let direccion = confirmarCompraElement.direccion.value.trim();
-      let metodoPago = confirmarCompraElement.metodoPago.value;
-  
+// Función que agrega el evento de "Confirmar Compra" al botón
+function agregarEventoConfirmarCompra() {
+  const formularioCompra = document.getElementById("formularioCompra");
+
+  formularioCompra.onsubmit = async (e) => {
+      e.preventDefault();  // Evitar que el formulario se envíe de la forma tradicional
+      
+      // Obtener los valores del formulario
+      let nombreCompleto = formularioCompra.nombreCompleto.value.trim();
+      let ciudad = formularioCompra.ciudad.value.trim();
+      let numeroDeTelefono = formularioCompra.numeroDeTelefono.value.trim();
+      let email = formularioCompra.email.value.trim();
+      let metodoEnvio = formularioCompra.metodoEnvio.value;
+      let direccion = formularioCompra.direccion.value.trim();
+      let metodoPago = formularioCompra.metodoPago.value;
+
+      // Validaciones de los campos
       if (!nombreCompleto || !ciudad || !numeroDeTelefono || !email || !metodoEnvio || !metodoPago) {
-        alert("Por favor, completa todos los campos requeridos.");
-        return;
+          alert("Por favor, completa todos los campos requeridos.");
+          return;
       }
-  
+
+      // Validar si el método de envío requiere dirección
       if (metodoEnvio === "direccion" && !direccion) {
-        alert("Por favor, ingrese su direccion.");
-        return;
+          alert("Por favor, ingresa tu dirección.");
+          return;
       }
-  
-      confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago);
-    };
-  }
-  
-  async function confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago) {
-    let carritoDAO = new carritoDAo();
-    let respuesta = await carritoDAO.confirmarCompra(nombreCompleto, ciudad, numeroDeTelefono, email, metodoEnvio, direccion, metodoPago);
-    
-    if (respuesta.estado) {
-      alert("Compra realizada con éxito");
-      localStorage.removeItem('carrito');
-      console.log("carrito")
-      window.location.href = "../productos/productos.html";
-  } else {
-      alert("Error al confirmar la compra. Inténtalo nuevamente.");
-  }
-  
-  }*/
+
+      // Confirmar la compra (pasar los datos al backend)
+      let CarritoDAO = new carritoDAo(); // Usamos carritoDAo con la 'o' minúscula
+      
+      // Obtener el carrito de compras (usualmente lo guardas en localStorage)
+      obtenerProductos();
+
+      // Preparar los datos a enviar
+      let datosCompra = {
+          nombreCompleto,
+          ciudad,
+          numeroDeTelefono,
+          email,
+          metodoEnvio,
+          direccion,
+          metodoPago,
+          productos: carrito.map(producto => ({
+              id: producto.id,
+              nombre: producto.nombre,
+              cantidad: producto.stock,
+              precio: producto.precio
+          }))
+      };
+
+      // Llamar al método de confirmarCompra con los datos
+      let respuesta = await CarritoDAO.confirmarCompra(datosCompra);
+
+      // Manejar la respuesta del servidor
+      if (respuesta.estado) {
+          alert("Compra realizada con éxito");
+          localStorage.removeItem('carrito');  // Limpiar el carrito
+          window.location.href = "../Productos/Productos.html";  // Redirigir a la página de productos
+      } else {
+          alert("Error al confirmar la compra. Inténtalo nuevamente.");
+      }
+  };
+}

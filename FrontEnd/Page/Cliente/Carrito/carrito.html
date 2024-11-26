@@ -54,7 +54,46 @@
                     <button class="confirmarTodos">CONFIRMAR TODOS</button>
                     <button class="eliminarTodos">ELIMINAR TODOS</button>
                 </div>
+
             </div>
+            
+            <div id="modal-ompra" class="modal">
+                <div class="modal-content">
+                    <span id="close-modal" class="close">&times;</span>
+                    <h2>Detalles de la Compra</h2>
+        
+                    <form id="formularioCompra">
+                        <label for="nombreCompleto">Nombre Completo</label>
+                        <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                        
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                        
+                        <label for="numeroDeTelefono">Número de Teléfono</label>
+                        <input type="text" id="numeroDeTelefono" name="numeroDeTelefono" required>
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="metodoEnvio">Método de Envío</label>
+                        <select id="metodoEnvio" name="metodoEnvio" required>
+                          <option value="local">Local</option>
+                          <option value="direccion">Con dirección</option>
+                        </select>
+                        
+                        <label for="direccion" id="direccionLabel">Dirección</label>
+                        <input type="text" id="direccion" name="direccion">
+                        
+                        <label for="metodoPago">Método de Pago</label>
+                        <select id="metodoPago" name="metodoPago" required>
+                          <option value="tarjeta">Tarjeta</option>
+                          <option value="paypal">Paypal</option>
+                        </select>
+                        
+                        <button type="submit">Confirmar Compra</button>
+                      </form>
+                      
+                </div>
         </div>
     </main>
 

@@ -175,6 +175,48 @@ main {
     vertical-align: middle;
 }
 
+table button{
+    padding: 5px;
+    margin: 10px;
+    font-size: 10px;
+    border: none;
+    background-color: rgb(75, 98, 56);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.aumentar{
+    font-family: impact;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.disminuir{
+    font-family: impact;
+    font-size: 20px;
+}
+
+.disminuir:hover{
+    background-color: rgb(198, 255, 84);
+    color: black;
+}
+
+.aumentar:hover{
+    background-color: rgb(198, 255, 84);
+    color: black;
+}
+
+.eliminar:hover{
+    background-color: rgb(255, 0, 0);
+}
+
+.imgEliminar{
+    filter: invert(100%) brightness(100%) sepia(100%) saturate(0);
+}
+
 /*------------------------------ BOTONES ------------------------------*/
 
 .botones {

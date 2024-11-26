@@ -257,6 +257,7 @@ table button{
     padding: 20px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
 }
 
 #modal-ompra h2 {

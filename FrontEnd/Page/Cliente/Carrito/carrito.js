@@ -177,10 +177,8 @@ function agregarEventoConfirmarCompra() {
       }
 
       // Confirmar la compra (pasar los datos al backend)
-      let CarritoDAO = new carritoDAo(); // Usamos carritoDAo con la 'o' minúscula
-      
-      // Obtener el carrito de compras (usualmente lo guardas en localStorage)
-      obtenerProductos();
+      let carritoDAO = new carritoDAo(); 
+      let carrito = carritoDAO.obtenerCarrito();
 
       // Preparar los datos a enviar
       let datosCompra = {
@@ -200,7 +198,8 @@ function agregarEventoConfirmarCompra() {
       };
 
       // Llamar al método de confirmarCompra con los datos
-      let respuesta = await CarritoDAO.confirmarCompra(datosCompra);
+        
+      let respuesta = await carritoDAo.confirmarCompra(datosCompra);
 
       // Manejar la respuesta del servidor
       if (respuesta.estado) {

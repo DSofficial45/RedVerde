@@ -91,22 +91,14 @@ export default class carritoDAo {
             }
         };
 
-        try {
-            // Realizamos la solicitud al servidor
-            let respuestaConsulta = await fetch(url, config);
+        let respuestaConsulta = await fetch(url, config);
 
-            // Verificar si la respuesta fue exitosa
-            if (!respuestaConsulta.ok) {
-                throw new Error('Error en la respuesta del servidor');
-            }
-
-            // Convertimos la respuesta en JSON
-            let respuesta = await respuestaConsulta.json();
-            return respuesta;
-
-        } catch (error) {
-            console.error('Error al realizar la compra:', error);
-            return { estado: false, mensaje: error.message };
+        if (!respuestaConsulta.ok) {
+            throw new Error('Error en la respuesta del servidor');
         }
+
+        let respuesta = await respuestaConsulta.json();
+        return respuesta;
+
     }
 }

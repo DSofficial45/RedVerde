@@ -197,11 +197,8 @@ function agregarEventoConfirmarCompra() {
           }))
       };
 
-      // Llamar al método de confirmarCompra con los datos
-        
-      let respuesta = await carritoDAo.confirmarCompra(datosCompra);
+      let respuesta = await carritoDAO.confirmarCompra(datosCompra);
 
-      // Manejar la respuesta del servidor
       if (respuesta.estado) {
           alert("Compra realizada con éxito");
           localStorage.removeItem('carrito');  // Limpiar el carrito

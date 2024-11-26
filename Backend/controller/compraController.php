@@ -10,7 +10,6 @@
     }
 
     function confirmarCompra(){
-        // Recibimos los datos de la compra a través de POST
         $nombreCompleto = $_POST['nombreCompleto'];
         $ciudad = $_POST['ciudad'];
         $numeroDeTelefono = $_POST['numeroDeTelefono'];
@@ -18,12 +17,11 @@
         $metodoEnvio = $_POST['metodoEnvio'];
         $direccion = $_POST['direccion'];
         $metodoPago = $_POST['metodoPago'];
-        $productos = $_POST['productos']; // Esto debe ser un array de productos
+        $productos = $_POST['productos'];
 
-        // Llamamos al método del DAO para guardar la compra
         $resultado = (new comprasDAO())->guardarCompra($nombreCompleto, $ciudad, $numeroDeTelefono, $email, $metodoEnvio, $direccion, $metodoPago, $productos);
         
-        // Devolvemos la respuesta en formato JSON
         echo json_encode($resultado);
     }
 ?>
+

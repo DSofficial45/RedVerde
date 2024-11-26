@@ -67,26 +67,29 @@ function mostrarProductos(productos) {
 
         // Botón eliminar
         let btnEliminar = document.createElement("button");
-        btnEliminar.innerHTML = "Quitar carrito";
+        btnEliminar.innerHTML = "<img src='../../../assets/Iconos/eliminar.png' width='20px' height='20px' class='imgEliminar'>";
         btnEliminar.onclick = () => {
             eliminarProducto(producto.id);  // Pasar producto.id aquí
         };
+        btnEliminar.classList.add("eliminar");
         divAcciones.appendChild(btnEliminar);
 
         // Botón aumentar
         let btnAumentar = document.createElement("button");
-        btnAumentar.innerHTML = "Aumentar cantidad";
+        btnAumentar.innerHTML = "+";
         btnAumentar.onclick = () => {
             aumentar(producto.id);  // Pasar producto.id aquí
         };
+        btnAumentar.classList.add("aumentar");
         divAcciones.appendChild(btnAumentar);
 
         // Botón disminuir
         let btnDisminuir = document.createElement("button");
-        btnDisminuir.innerHTML = "Disminuir cantidad";
+        btnDisminuir.innerHTML = "-";
         btnDisminuir.onclick = () => {
             disminuir(producto.id);  // Pasar producto.id aquí
         };
+        btnDisminuir.classList.add("disminuir");
         divAcciones.appendChild(btnDisminuir);
 
         tdAcciones.appendChild(divAcciones);

@@ -1,3 +1,4 @@
+import Origen from "./Origen.js";
 
 export default class carritoDAo {
     constructor() {
@@ -112,15 +113,37 @@ disminuirCantidadCarrito(id) {
         this.guardarCarrito(carrito); // Guardamos los cambios
     }
 
-   /* confirmarCompra(direccion, metodoEnvio, metodoPago, fechaVenta) {
-        let products = this.obtenerCarrito();
-        let venta = {
-            direccion: direccion,
-            metodoEnvio: metodoEnvio,
-            metodoPago: metodoPago,
-            fechaVenta: fechaVenta,
-            products: products
-        }
+    // Método para confirmar la compra
+    async confirmarCompra(datosCompra) {
+        // Enviar los datos al backend (puedes usar fetch o AJAX)
+        let url = `${Origen}/Backend/controller/compraController.php?funcion=confirmar`;
+        
+        // Configuración de la solicitud
+        let config = {
+            method: "POST",
+            body: JSON.stringify(datosCompra),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        };
 
-    }*/
+        try {
+            // Realizamos la solicitud al servidor
+            let respuestaConsulta = await fetch(url, config);
+
+            // Verificar si la respuesta fue exitosa
+            if (!respuestaConsulta.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            }
+
+            // Convertimos la respuesta en JSON
+            let respuesta = await respuestaConsulta.json();
+            return respuesta;
+
+        } catch (error) {
+            console.error('Error al realizar la compra:', error);
+            return { estado: false, mensaje: error.message };
+        }
+    }  
+       
 }

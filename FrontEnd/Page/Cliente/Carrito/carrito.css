@@ -13,18 +13,18 @@ body {
 
 /*==============================CABEZA==============================*/
 
-header{
+header {
     display: flex;
     flex-direction: column;
 }
 
 /*------------- CABEZA ARRIBA -------------*/
 
-.cabezaArriba{
+.cabezaArriba {
     background-color: rgb(187, 255, 98);
 }
 
-.cabezaArriba img{
+.cabezaArriba img {
     width: 100%;
 }
 
@@ -38,7 +38,7 @@ header{
 
 /*------------- CABEZA ABAJO -------------*/
 
-.cabezaAbajo{
+.cabezaAbajo {
     display: flex;
     flex-direction: row;
     background-color: rgb(206, 255, 142);
@@ -47,7 +47,7 @@ header{
 
 /* >>> CABEZA MENÚ IZQUIERDO <<<*/
 
-.menuIzquierda{
+.menuIzquierda {
     display: flex;
     list-style: none;
     margin: 0px;
@@ -75,7 +75,7 @@ li a:hover {
 
 /* >>> CABEZA MENÚ DERECHO <<<*/
 
-.menuDerecha{
+.menuDerecha {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,12 +111,13 @@ li a:hover {
 
 /*==============================CUERPO==============================*/
 
-main{
+main {
     min-height: 100vh;
     background: url(../../../assets/Fondo/FondoPlantas-Oscuro.jpg);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .cuerpo {
@@ -124,11 +125,13 @@ main{
     padding: 50px;
     text-align: center;
     width: 80%;
+    display: flex;
+    justify-content: space-between; /* Dividimos el espacio en 2 columnas */
     height: 100vh;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-/*------------------------------TABLA------------------------------*/
+/*-------------------- CARRO DE COMPRAS (IZQUIERDA) --------------------*/
 
 .tabla {
     display: flex;
@@ -137,6 +140,7 @@ main{
     max-height: 80vh;
     overflow-y: auto;
     font-family: Arial;
+    width: 60%; /* Ancho del carrito */
 }
 
 .tabla table {
@@ -144,7 +148,7 @@ main{
     border-collapse: collapse;
 }
 
-.tabla tr{
+.tabla tr {
     border-bottom: 2px solid rgb(95, 118, 66);
 }
 
@@ -171,15 +175,15 @@ main{
     vertical-align: middle;
 }
 
-/*------------------------------BOTONES------------------------------*/
+/*------------------------------ BOTONES ------------------------------*/
 
-.botones{
+.botones {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.confirmarTodos, .eliminarTodos{
+.confirmarTodos, .eliminarTodos {
     padding: 20px;
     margin: 10px;
     font-size: 12px;
@@ -202,6 +206,49 @@ main{
     font-weight: bold;
 }
 
+/*--------------------- CONFIRMAR COMPRA (DERECHA) ----------------------*/
+
+#modal-ompra {
+    display: flex;
+    flex-direction: column;
+    width: 35%; /* Ancho de la sección de confirmación */
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#modal-ompra h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#modal-ompra label {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#modal-ompra input, #modal-ompra select {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#modal-ompra button {
+    padding: 12px;
+    background-color: rgb(95, 118, 66);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal-ompra button:hover {
+    background-color: rgb(198, 255, 84);
+    color: black;
+}
+
 /*==============================PIE==============================*/
 
 footer {
@@ -212,7 +259,7 @@ footer {
 
 /*------------- PIE ARRIBA -------------*/
 
-.pieArriba{
+.pieArriba {
     display: flex;
     flex-direction: row;
     background-color: rgb(13, 24, 0);
@@ -221,7 +268,7 @@ footer {
 
 /* >>> PIE ARRIBA IZQUIERDA <<<*/
 
-.pieArribaIzquierda{
+.pieArribaIzquierda {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -229,13 +276,13 @@ footer {
     width: 50%;
 }
 
-.pieArribaIzquierda img{
+.pieArribaIzquierda img {
     width: 300px;
 }
 
 /* >>> PIE ARRIBA DERECHA <<<*/
 
-.pieArribaDerecha{
+.pieArribaDerecha {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,26 +290,26 @@ footer {
     width: 50%;
 }
 
-.grupo{
+.grupo {
     display: flex;
     flex-direction: column;
     color: white;
     font-family: arial;
 }
 
-.grupo h2{
+.grupo h2 {
     font-size: 30px;
     margin: 5px;
 }
 
-.grupo p{
+.grupo p {
     font-size: 20px;
     margin: 5px;
 }
 
 /*------------- PIE ABAJO -------------*/
 
-.pieAbajo{
+.pieAbajo {
     display: flex;
     justify-content: center;
     background-color: rgb(0, 0, 0);
@@ -273,6 +320,6 @@ footer {
     padding: 10px;
 }
 
-.pieAbajo p{
-    margin: 15px;
+.pieAbajo p {
+    margin: 15px;
 }

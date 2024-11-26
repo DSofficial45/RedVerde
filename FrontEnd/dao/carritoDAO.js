@@ -74,7 +74,7 @@ export default class carritoDAo {
             headers: {
                 "Content-Type": "application/json"
             }
-        };
+        }
 
         let respuestaConsulta = await fetch(url, config);
 
